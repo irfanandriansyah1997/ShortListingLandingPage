@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "es5",
+        "jsx": "react",
+        "module": "es6",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "declaration": false,
+        "removeComments": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "strict": true,
+        "outDir": "build",
+        "lib": ["es6", "es7", "dom"],
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["./src/*"],
+            "storybook/*": ["./.storybook/component/*"],
+            "storybook-atom/*": ["./.storybook/component/atoms/*"],
+            "storybook-template/*": ["./.storybook/component/templates/*"]
+        }
+    },
+    "exclude": ["build", "node_modules"]
+}
