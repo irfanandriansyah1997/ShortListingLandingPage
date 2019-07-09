@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Document</title><link href="https://public.urbanindo.com/fonts/Avenir/stylesheet.css" rel="preload" as="style"><link href="https://fonts.googleapis.com/icon?family=Roboto:300,400|Material+Icons" rel="preload" as="style"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css"><link href="https://public.urbanindo.com/fonts/Avenir/stylesheet.css" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Roboto:300,400|Material+Icons" rel="stylesheet"></head><body><div id="app"></div><script>(function() {
+                if ('serviceWorker' in navigator) {
+                    window.addEventListener('load', () => {
+                        navigator.serviceWorker
+                            .register('sw.js')
+                            .then((registration) => {
+                                console.log('SW registered: ', registration);
+                            })
+                            .catch((registrationError) => {
+                                console.log('SW registration failed: ', registrationError);
+                            });
+                    });
+                }
+            })();</script><script src="script/vendor.80084b2c382cb64de795.chunk.bundle.js?74fc5fbb0e29204f7158"></script><script src="script/main.a2a04e5541559045f45f.bundle.js?74fc5fbb0e29204f7158"></script></body></html>
