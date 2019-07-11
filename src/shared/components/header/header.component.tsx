@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import UserNav from '@/components/user-nav/user-nav.component';
+import UserNav from '@/shared/components/user-nav/user-nav.component';
 
 import './style.scss';
 
@@ -17,12 +17,8 @@ class Header extends React.Component<HeaderProps> {
         const { title } = this.props;
 
         return (
-            <div
-                className="header"
-            >
-                <div className="header__title">
-                    { title }
-                </div>
+            <div className="header">
+                <div className="header__title">{title}</div>
                 <UserNav isLogin />
             </div>
         );

@@ -1,8 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ListingInterface } from '@/interfaces/listing.interface';
+import { ListingInterface } from '@/modules/landing-page/interfaces/listing.interface';
 
-import Header from '@/components/header/header.component';
+import Header from '@/shared/components/header/header.component';
+
+import '@/shared/styles/app.scss';
 
 interface DefaultPropsInterface {
     children?: React.ReactNode;
@@ -51,7 +53,7 @@ class App extends React.Component<DefaultPropsInterface, StateComponent> {
         const { model } = this.state;
 
         return (
-            <div className="container">
+            <div className="wrapper">
                 <Header title="Hallo" />
                 {model.map((item: ListingInterface) => (
                     <div>

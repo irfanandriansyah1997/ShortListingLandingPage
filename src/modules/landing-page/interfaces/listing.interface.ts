@@ -1,4 +1,4 @@
-import { AgentInterface } from '@/interfaces/agent.interface';
+import { AgentInterface } from '@/modules/landing-page/interfaces/agent.interface';
 
 export interface ListingInterface {
     agent?: AgentInterface;
