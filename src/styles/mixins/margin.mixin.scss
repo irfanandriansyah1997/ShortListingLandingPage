@@ -1,0 +1,47 @@
+/**
+ * Margin Mixin
+ */
+
+@mixin margin($direction, $args...) {
+    @if $direction==all {
+        margin: $args;
+    } @else {
+        margin-#{$direction}: $args;
+    }
+}
+
+@mixin margin-left($size) {
+    @include margin(left, $size);
+}
+
+@mixin margin-right($size) {
+    @include margin(right, $size);
+}
+
+@mixin margin-top($size) {
+    @include margin(top, $size);
+}
+
+@mixin margin-bottom($size) {
+    @include margin(bottom, $size);
+}
+
+@mixin no-margin() {
+    @include margin(all, 0);
+}
+
+@mixin no-margin-left() {
+    @include margin(left, 0);
+}
+
+@mixin no-margin-right() {
+    @include margin(right, 0);
+}
+
+@mixin no-margin-top() {
+    @include margin(top, 0);
+}
+
+@mixin no-margin-bottom() {
+    @include margin(bottom, 0);
+}

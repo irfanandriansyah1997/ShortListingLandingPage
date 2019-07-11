@@ -1,0 +1,53 @@
+/**
+ * Background Mixin
+ */
+
+@mixin background-image($path, $position: 0 0, $repeat: no-repeat) {
+    background: {
+        image: url($path);
+        position: $position;
+        repeat: $repeat;
+    }
+}
+
+@mixin background-color($hex) {
+    background-color: get-color($hex);
+}
+
+@mixin no-background() {
+    background: transparent;
+}
+
+@mixin linear-gradient($start-color: #555, $end-color: #333, $deg: 45deg) {
+    background-repeat: repeat-x;
+    background-image: -webkit-linear-gradient($deg, $start-color, $end-color);
+    background-image: -o-linear-gradient($deg, $start-color, $end-color);
+    background-image: linear-gradient($deg, $start-color, $end-color);
+}
+
+@mixin linear-gradient-multi($direction, $color-stops...) {
+    @if is-direction($direction) == false {
+        $color-stops: ($direction, $color-stops);
+        $direction: 180deg;
+    }
+
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(
+        legacy-direction($direction),
+        $color-stops
+    );
+    background: linear-gradient($direction, $color-stops);
+}
+
+/**
+ * Opacity Mixin
+ */
+
+@mixin opacity($value) {
+    $IEValue: $value * 100;
+
+    opacity: $value;
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=' + $IEValue +
+        ')';
+    filter: alpha(opacity=$IEValue);
+}

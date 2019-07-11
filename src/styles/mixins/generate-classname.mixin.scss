@@ -1,0 +1,27 @@
+/**
+ * Generate Classname Mixin
+ */
+
+@mixin generate-class() {
+    @each $value in $z-index-values {
+        .z-index-#{$value} {
+            z-index: #{$value};
+        }
+    }
+
+    @each $alias, $detail in $attribute-name {
+        @each $value in $space-values {
+            .#{$alias}-#{$value} {
+                #{$detail}: #{$value}px;
+            }
+        }
+
+        .no-#{$alias} {
+            #{$detail}: 0;
+        }
+    }
+
+    .no-r {
+        @include no-rounded();
+    }
+}

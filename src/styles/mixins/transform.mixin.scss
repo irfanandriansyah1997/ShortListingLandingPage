@@ -1,0 +1,78 @@
+/**
+ * Transform Mixin
+ */
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    transform: $transform;
+}
+
+@mixin transform-rotate($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+@mixin transform-rotateX($deg) {
+    @include transform(rotateX(#{$deg}deg));
+}
+
+@mixin transform-rotateY($deg) {
+    @include transform(rotateY(#{$deg}deg));
+}
+
+@mixin transform-rotateZ($deg) {
+    @include transform(rotateZ(#{$deg}deg));
+}
+
+@mixin transform-scale($scale) {
+    @include transform(scale(#{$scale}));
+}
+
+@mixin transform-scaleX($scale) {
+    @include transform(scaleX(#{$scale}));
+}
+
+@mixin transform-scaleY($scale) {
+    @include transform(scaleY(#{$scale}));
+}
+
+@mixin transform-scaleZ($scale) {
+    @include transform(scaleZ(#{$scale}));
+}
+
+@mixin transform-scale3D($x, $y, $z) {
+    @include transform(scale3d(#{$x}, #{$y}, #{$z}));
+}
+
+@mixin transform-skew($deg1, $deg2) {
+    @include transform(skew(#{$deg1}deg, #{$deg2}deg));
+}
+
+@mixin transform-skewX($deg) {
+    @include transform(skewX(#{$deg}deg));
+}
+
+@mixin transform-skewY($deg) {
+    @include transform(skewY(#{$deg}deg));
+}
+
+@mixin transform-translate($translatex, $translatey) {
+    @include transform(translate(#{$translatex}, #{$translatey}));
+}
+
+@mixin transform-translateX($translate) {
+    @include transform(translateX(#{$translate}));
+}
+
+@mixin transform-translateY($translate) {
+    @include transform(translateY(#{$translate}));
+}
+
+@mixin transform-translateZ($translate) {
+    @include transform(translateZ(#{$translate}));
+}
+
+@mixin transform-translate3D($x, $y, $z) {
+    @include transform(translate3d(#{$x}, #{$y}, #{$z}));
+}

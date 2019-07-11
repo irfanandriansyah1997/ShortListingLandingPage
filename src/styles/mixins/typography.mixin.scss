@@ -1,0 +1,89 @@
+/**
+ * Typography Mixin
+ */
+
+$type_transform: (
+    'cap': capitalize,
+    'capitalize': capitalize,
+    'inh': inherit,
+    'inherit': inherit,
+    'init': initial,
+    'initial': initial,
+    'lower': lowercase,
+    'lowercase': lowercase,
+    'none': none,
+    'unset': unset,
+    'upper': uppercase,
+    'uppercase': uppercase
+);
+
+@mixin font-face(
+    $name,
+    $color,
+    $size,
+    $weight: 400,
+    $style: normal,
+    $transform: none,
+    $decoration: none,
+    $line-height: 20
+) {
+    @include font-family($name);
+    @include font-weight($weight);
+    @include font-size($size);
+    @include font-style($style);
+    @include font-color($color);
+    @include line-height($line-height);
+
+    text-transform: text-transform($transform);
+    text-decoration: $decoration;
+}
+
+@mixin font-family($name) {
+    font-family: text-type($name);
+}
+
+@mixin font-size($size) {
+    font-size: text-size($size);
+}
+
+@mixin font-weight($weight) {
+    font-weight: text-weight($weight);
+}
+
+@mixin font-style($style) {
+    font-style: $style;
+}
+
+@mixin font-color($color) {
+    color: get-color($color);
+}
+
+@function text-transform($transform) {
+    @if map_has_key($type_transform, $transform) {
+        $transform: map_get($type_transform, $transform);
+
+        @return $transform;
+    } @else {
+        @warn 'There is not item "#{$transform}" in this list; chose one of: #{$type_transform}';
+
+        @return null;
+    }
+}
+
+@mixin line-height($height) {
+    line-height: $height + px;
+}
+
+@mixin letter-spacing($range) {
+    letter-spacing: $range + px;
+}
+
+@function text-type($font) {
+    @if $font == 'primary' {
+        @return $font-primary;
+    } @else if $font == 'secondary' {
+        @return $font-secondary;
+    }
+
+    @return $font;
+}
