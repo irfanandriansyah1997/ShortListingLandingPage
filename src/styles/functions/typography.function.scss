@@ -1,0 +1,35 @@
+@function text-size($size) {
+    @if map_has_key($font-size-general, $size) {
+        @return map_get($font-size-general, $size);
+    }
+
+    @return $size;
+}
+
+@function text-weight($size) {
+    @if map_has_key($font-weight-general, $size) {
+        @return map_get($font-weight-general, $size);
+    }
+
+    @return $size;
+}
+
+@function text-transform($transform) {
+    @if map_has_key($type_transform, $transform) {
+        $transform: map_get($type_transform, $transform);
+
+        @return $transform;
+    } @else {
+        @warn 'There is not item "#{$transform}" in this list; chose one of: #{$type_transform}';
+
+        @return null;
+    }
+}
+
+@mixin line-height($height) {
+    line-height: $height + px;
+}
+
+@mixin letter-spacing($range) {
+    letter-spacing: $range + px;
+}

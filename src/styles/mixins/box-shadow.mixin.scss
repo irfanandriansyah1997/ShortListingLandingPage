@@ -1,0 +1,40 @@
+/**
+ * Box Shadow Mixin
+ */
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow: inset $top $left $blur $color;
+        -mox-box-shadow: inset $top $left $blur $color;
+        box-shadow: inset $top $left $blur $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -mox-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
+}
+
+@mixin box-shadow-multi($args...) {
+    -webkit-box-shadow: $args;
+    -mox-box-shadow: $args;
+    box-shadow: $args;
+}
+
+@mixin no-box-shadow() {
+    -webkit-box-shadow: initial;
+    -mox-box-shadow: initial;
+    box-shadow: initial;
+}
+
+/**
+ *
+ *
+ */
+
+@mixin text-shadow($args...) {
+    text-shadow: $args;
+}
+
+@mixin no-text-shadow() {
+    @include text-shadow(initial);
+}

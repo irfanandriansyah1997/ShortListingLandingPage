@@ -1,0 +1,64 @@
+/**
+ * Border Radius Mixin
+ */
+
+@mixin rounded($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin no-rounded() {
+    @include rounded(0);
+}
+
+/**
+   * Border Mixin
+   */
+
+@mixin border($direction, $width, $type, $color: null) {
+    @if $direction==all {
+        @include border(left, $width, $type, get-color($color));
+        @include border(right, $width, $type, get-color($color));
+        @include border(top, $width, $type, get-color($color));
+        @include border(bottom, $width, $type, get-color($color));
+    } @else {
+        border-#{$direction}: $width $type $color;
+    }
+}
+
+@mixin border-left($width, $type, $color: null) {
+    @include border(left, $width, $type, get-color($color));
+}
+
+@mixin border-right($width, $type, $color: null) {
+    @include border(right, $width, $type, get-color($color));
+}
+
+@mixin border-top($width, $type, $color: null) {
+    @include border(top, $width, $type, get-color($color));
+}
+
+@mixin border-bottom($width, $type, $color: null) {
+    @include border(bottom, $width, $type, get-color($color));
+}
+
+@mixin no-border() {
+    @include border(all, 0, solid, #000);
+}
+
+@mixin no-border-left() {
+    @include border(left, 0, solid, #000);
+}
+
+@mixin no-border-right() {
+    @include border(right, 0, solid, #000);
+}
+
+@mixin no-border-top() {
+    @include border(top, 0, solid, #000);
+}
+
+@mixin no-border-bottom() {
+    @include border(bottom, 0, solid, #000);
+}

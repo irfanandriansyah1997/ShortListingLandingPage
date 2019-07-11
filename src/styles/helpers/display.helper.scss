@@ -1,0 +1,59 @@
+/**
+ * Display Component Helper
+ */
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.table-cell {
+    display: table-cell;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.container {
+    width: calc(100% - 232px);
+
+    @include margin(all, auto);
+
+    &::before,
+    &::after {
+        content: '';
+    }
+
+    &::before {
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+}

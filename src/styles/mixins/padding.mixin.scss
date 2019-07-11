@@ -1,0 +1,47 @@
+/**
+ * Padding Mixin
+ */
+
+@mixin padding($direction, $args...) {
+    @if $direction==all {
+        padding: $args;
+    } @else {
+        padding-#{$direction}: $args;
+    }
+}
+
+@mixin padding-left($size) {
+    @include padding(left, $size);
+}
+
+@mixin padding-right($size) {
+    @include padding(right, $size);
+}
+
+@mixin padding-top($size) {
+    @include padding(top, $size);
+}
+
+@mixin padding-bottom($size) {
+    @include padding(bottom, $size);
+}
+
+@mixin no-padding() {
+    @include padding(all, 0);
+}
+
+@mixin no-padding-left() {
+    @include padding(left, 0);
+}
+
+@mixin no-padding-right() {
+    @include padding(right, 0);
+}
+
+@mixin no-padding-top() {
+    @include padding(top, 0);
+}
+
+@mixin no-padding-bottom() {
+    @include padding(bottom, 0);
+}

@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.1);
+
+    &__title {
+            font-family: Avenir Next;
+            font-size: 24px;
+            font-weight: 600;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.33;
+            letter-spacing: normal;
+            color: #3e4246;
+    }
+}
