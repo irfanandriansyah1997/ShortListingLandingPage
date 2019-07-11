@@ -1,0 +1,38 @@
+/**
+ * Text Style Component Helper
+ */
+
+.bold {
+    @include font-weight(bold);
+}
+
+.regular {
+    @include font-weight(normal);
+}
+
+.light {
+    @include font-weight(300);
+}
+
+.semibold {
+    @include font-weight(500);
+}
+
+.italic {
+    @include font-style(italic);
+}
+
+.break-word {
+    word-wrap: break-word;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.truncate {
+    @extend .no-wrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
