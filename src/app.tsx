@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { ListingInterface } from '@/modules/landing-page/interfaces/listing.interface';
 
-import Header from '@/shared/components/header/header.component';
+import Header from '@/shared/components/molecules/header/header.component';
 
 import '@/shared/styles/app.scss';
 
