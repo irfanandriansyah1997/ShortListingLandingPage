@@ -1,0 +1,6 @@
+@import '@/shared/styles/import.scss';
+
+.ui-text {
+    @include font-face(primary, text-light, 16px, 400, normal, none, none, 24);
+    @include margin(all, 10px 0 20px);
+}
