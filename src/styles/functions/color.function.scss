@@ -1,0 +1,7 @@
+@function get-color($color) {
+  @if map_has_key($color-general, $color) {
+    @return map_get($color-general, $color);
+  }
+
+  @return $color;
+}
