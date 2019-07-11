@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 
 import Heading from 'storybook/atoms/heading/heading.component';
 import Text from 'storybook/atoms/text/text.component';
-import { DefaultPropsInterface } from '@/interfaces/object.interface';
+import { DefaultPropsInterface } from '@/shared/interfaces/component.interface';
 import './style.scss';
 
 interface props extends DefaultPropsInterface {
