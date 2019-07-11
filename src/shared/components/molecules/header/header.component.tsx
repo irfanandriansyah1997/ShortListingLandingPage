@@ -11,25 +11,28 @@ interface HeaderProps {
 
 class Header extends React.Component<HeaderProps> {
     static propTypes = {
-        title: PropTypes.func.isRequired
+        title: PropTypes.string.isRequired
     };
 
     render() {
         const { title } = this.props;
+        const profilePictureUrl = 'https://img.crocdn.co.uk/images/products2/pl/20/00/02/29/pl2000022950.jpg';
 
         return (
-            <div
-                className="header"
-            >
-                <div className="header__title">
-                    <Text textType="h6">
-                        { title }
-                    </Text>
+            <div className="header">
+                <div className="header__content">
+                    <div className="header__title">
+                        <Text textType="h6">
+                            { title }
+                        </Text>
+                    </div>
+                    <UserNav
+                        isLogin
+                        profilePictureUrl={profilePictureUrl}
+                        shareLink="www.share.com/link"
+                    />
                 </div>
-                <UserNav
-                    isLogin
-                    shareLink="www.share.com/link"
-                />
+                <hr />
             </div>
         );
     }

@@ -31,5 +31,5 @@ export interface ListingAttributeInterface {
 
 export interface ListingList {
     count: number;
-    propertyData: ListingInterface[];
+    properties: ListingInterface[];
 }

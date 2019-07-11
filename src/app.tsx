@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ListingInterface } from '@/modules/landing-page/interfaces/listing.interface';
+import { ListingInterface, ListingList } from '@/modules/landing-page/interfaces/listing.interface';
+import Shortlist from '@/modules/landing-page/components/molecules/shortlist/shortlist.component';
 
 import Header from '@/shared/components/molecules/header/header.component';
 
@@ -16,11 +17,10 @@ interface StateComponent {
 }
 
 class App extends React.Component<DefaultPropsInterface, StateComponent> {
-    constructor(props: DefaultPropsInterface) {
-        super(props);
-
-        this.state = {
-            model: [
+    getPropertyData(): ListingList {
+        return {
+            count: 2,
+            properties: [
                 {
                     description: 'string',
                     id: 1,
@@ -50,20 +50,12 @@ class App extends React.Component<DefaultPropsInterface, StateComponent> {
     }
 
     render() {
-        const { model } = this.state;
-
         return (
             <div className="wrapper">
                 <Header title="Hallo" />
-                {model.map((item: ListingInterface) => (
-                    <div>
-                        {item.status === 1 ? (
-                            <h1>{item.description}</h1>
-                        ) : (
-                            <h2>{item.description}</h2>
-                        )}
-                    </div>
-                ))}
+                <div className="content">
+                    <Shortlist propertyData={this.getPropertyData()} />
+                </div>
             </div>
         );
     }

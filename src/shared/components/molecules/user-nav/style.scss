@@ -44,8 +44,10 @@
         .profileImage {
             width: 32px;
             height: 32px;
-            background-image: url("https://d1101gxsp27gd6.cloudfront.net/logo/99-mobile-1001_2x.png");
-            background-size: cover;
+
+            .avatar {
+                border-radius: 16px;
+            }
         }
     }
 }
