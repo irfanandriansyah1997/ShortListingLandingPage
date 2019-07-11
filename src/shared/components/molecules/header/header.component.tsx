@@ -22,8 +22,8 @@ class Header extends React.Component<HeaderProps> {
             <div className="header">
                 <div className="header__content">
                     <div className="header__title">
-                        <Text textType="h6">
-                            { title }
+                        <Text tag="h4" fontWeight={400}>
+                            {title}
                         </Text>
                     </div>
                     <UserNav

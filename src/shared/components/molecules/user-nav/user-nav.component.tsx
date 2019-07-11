@@ -30,22 +30,20 @@ class UserNav extends React.Component<UserNavProps> {
                 ) : (
                     <div className="user-nav__bar">
                         <div className="shareTitle">
-                            <Text> Share Link : </Text>
+                            <Text tag="h3" fontWeight={400}>
+                                Share Link :
+                            </Text>
                         </div>
                         <div className="shareLink">
                             <div className="shareLink__text">
-                                <Text>
-                                    { shareLink }
+                                <Text tag="h3" fontWeight={400}>
+                                    {shareLink}
                                 </Text>
                             </div>
                             <div className="shareLink__icon">copy</div>
                         </div>
                         <div className="profileImage">
-                            <Image
-                                imageType="avatar"
-                                size={32}
-                                source={profilePictureUrl}
-                            />
+                            <Image imageType="avatar" size={32} source={profilePictureUrl} />
                         </div>
                     </div>
                 )}
