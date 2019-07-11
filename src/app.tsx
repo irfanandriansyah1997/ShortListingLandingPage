@@ -4,8 +4,6 @@ import { ListingInterface } from '@/interfaces/listing.interface';
 
 import Header from '@/components/header/header.component';
 
-import '@/style/app.scss';
-
 interface DefaultPropsInterface {
     children?: React.ReactNode;
     as?: any;
