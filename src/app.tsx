@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import ListingInterface from '@/interfaces/listing.interface';
+import { ListingInterface } from '@/interfaces/listing.interface';
 
 import Header from '@/components/header/header.component';
 
@@ -55,16 +55,15 @@ class App extends React.Component<DefaultPropsInterface, StateComponent> {
         return (
             <div className="container">
                 <Header title="Hallo" />
-                {
-                    model.map((item: ListingInterface) => (
-                        <div>
-                            { item.status === 1
-                                ? <h1>{item.description}</h1>
-                                : <h2>{item.description}</h2>
-                            }
-                        </div>
-                    ))
-                }
+                {model.map((item: ListingInterface) => (
+                    <div>
+                        {item.status === 1 ? (
+                            <h1>{item.description}</h1>
+                        ) : (
+                            <h2>{item.description}</h2>
+                        )}
+                    </div>
+                ))}
             </div>
         );
     }
