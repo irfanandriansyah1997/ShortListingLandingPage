@@ -1,0 +1,152 @@
+@import '@/styles/scss/import.scss';
+@import url('https://public.urbanindo.com/fonts/UrbanIndoIcons-20190423021518/fonts.css');
+@import url('https://public.urbanindo.com/fonts/Avenir/stylesheet.css');
+@import url('https://fonts.googleapis.com/icon?family=Roboto:300,400|Material+Icons|Inconsolata');
+
+body {
+    @include no-padding();
+    @include no-margin();
+    @include background-color(rgba(get-color(primary), 0.025));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.ui-default {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    hr {
+        @include margin(all, 20px 0);
+        @include no-border();
+        @include border-bottom(1px, dashed, border-light);
+    }
+
+    &__heading {
+        display: flex;
+        height: 250px;
+        width: 100%;
+        background-repeat: repeat-x;
+        background-image: -webkit-linear-gradient(
+            39deg,
+            rgba(62, 145, 214, 0.97),
+            #5e4fe2
+        );
+        background-image: -o-linear-gradient(
+            39deg,
+            rgba(62, 145, 214, 0.97),
+            #5e4fe2
+        );
+        background-image: linear-gradient(
+            39deg,
+            rgba(62, 145, 214, 0.97),
+            #5e4fe2
+        );
+
+        @include padding(all, 30px 60px);
+
+        img {
+            width: 150px;
+            height: initial;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+
+            @include padding(all, 40px 40px 0);
+        }
+
+        h1 {
+            @include font-face(
+                primary,
+                white,
+                32px,
+                600,
+                normal,
+                none,
+                none,
+                36
+            );
+            @include no-margin();
+        }
+
+        p {
+            @include font-face(
+                primary,
+                white,
+                16px,
+                400,
+                normal,
+                none,
+                none,
+                30
+            );
+            @include no-margin();
+        }
+    }
+
+    &__content {
+        width: calc(100% - 100px);
+        min-height: 300px;
+        overflow: hidden;
+
+        @include margin-top(-60px);
+        @include rounded(5px);
+        @include background-color(white);
+        @include padding(all, 30px);
+        @include margin-bottom(50px);
+        @include box-shadow-multi(
+            0 1px 2px rgba(0, 0, 0, 0.05),
+            0 2px 4px rgba(0, 0, 0, 0.075)
+        );
+
+        &__heading {
+            @include margin(all, -30px -30px 30px);
+            @include padding(all, 20px 30px 10px);
+            @include border-bottom(1px, dashed, border-light);
+
+            .ui-text {
+                @include margin-bottom(0);
+            }
+        }
+
+        pre {
+            @include no-margin();
+        }
+
+        &__example {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            color: #383a42;
+            background: #fff;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .ui-default {
+        &__heading {
+            height: initial;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            @include padding(all, 30px 10px 85px);
+        }
+
+        &__content {
+            width: calc(100% - 50px);
+        }
+    }
+}
