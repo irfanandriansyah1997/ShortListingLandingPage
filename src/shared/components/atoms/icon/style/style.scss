@@ -1,0 +1,29 @@
+@import '@/styles/scss/import.scss';
+
+.ui-atomic-icon {
+    @include font-size(2xl);
+    @include margin(all, 5px);
+
+    outline: 0;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+    -o-user-select: none;
+    user-select: none;
+
+    &--small {
+        @include font-size(base);
+
+        &.material-icons {
+            @include font-size(base);
+        }
+    }
+
+    &--big {
+        @include font-size(3xl);
+
+        &.material-icons {
+            @include font-size(3xl);
+        }
+    }
+}
