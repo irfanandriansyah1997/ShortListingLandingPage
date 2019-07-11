@@ -14,14 +14,21 @@ import '@/shared/styles/app.scss';
  * Atomic Component
  */
 import IconStorybook from '@/shared/components/atoms/icon/storybook/icon.component.stories';
+import TextStorybook from '@/shared/components/atoms/text/storybook/text.component.stories';
 
 /**
  * Atomic Markdown
  */
 import IconMD from '@/shared/components/atoms/icon/storybook/docs.md';
 
-storiesOf('Atomic Component', module).add('Icon', () => <IconStorybook />, {
-    notes: {
-        markdown: IconMD
-    }
-});
+storiesOf('Atomic Component', module)
+    .add('Icon', () => <IconStorybook />, {
+        notes: {
+            markdown: IconMD
+        }
+    })
+    .add('Text', () => <TextStorybook />, {
+        notes: {
+            markdown: IconMD
+        }
+    });
