@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
-import './style.scss';
+import './style/style.scss';
 
 class Button extends React.Component {
     static propTypes = {
@@ -16,7 +16,9 @@ class Button extends React.Component {
         const { children } = this.props;
 
         return (
-            <button type="submit" className="button">{children}</button>
+            <button type="submit" className="button">
+                {children}
+            </button>
         );
     }
 }
