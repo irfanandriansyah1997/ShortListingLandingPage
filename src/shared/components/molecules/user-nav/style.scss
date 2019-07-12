@@ -1,3 +1,5 @@
+@import '@/shared/styles/import.scss';
+
 .user-nav {
     margin-left: auto;
 
@@ -14,14 +16,17 @@
             line-height: 1.33;
             letter-spacing: normal;
             color: #3e4246;
-            margin-right: 16px
+            margin-right: 16px;
         }
 
         .shareLink {
             display: flex;
+            align-items: center;
+            justify-content: center;
             min-width: 267px;
             border: solid 1px #ddd;
             border-radius: 2px;
+            height: 32px;
             padding: 8px;
             margin-right: 24px;
 
@@ -38,6 +43,10 @@
 
             &__icon {
                 margin-left: auto;
+
+                i.material-icons {
+                    @include font-size(xs);
+                }
             }
         }
 

@@ -5,4 +5,5 @@ export interface PropsInterface extends DefaultPropsInterface {
     tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
     fontWeight: 300 | 400 | 500 | 600 | 700;
     align: 'center' | 'left' | 'right' | 'initial';
+    name?: string;
 }
