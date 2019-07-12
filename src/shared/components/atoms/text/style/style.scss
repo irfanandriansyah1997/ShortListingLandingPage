@@ -27,7 +27,7 @@
 
         &-text {
             @include font-color(heading);
-            @include font-size(sm);
+            @include font-size(xs);
             @include line-height(16);
         }
 

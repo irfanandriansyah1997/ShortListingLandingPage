@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import Button from '@/shared/components/atoms/button/button.component';
 import Image from '@/shared/components/atoms/image/image.component';
 import Text from '@/shared/components/atoms/text/text.component';
+import Icon from '@/shared/components/atoms/icon/icon.component';
 
 import './style.scss';
 
@@ -36,11 +37,14 @@ class UserNav extends React.Component<UserNavProps> {
                         </div>
                         <div className="shareLink">
                             <div className="shareLink__text">
-                                <Text tag="h3" fontWeight={400}>
+                                <Text tag="p" fontWeight={400}>
                                     {shareLink}
                                 </Text>
                             </div>
-                            <div className="shareLink__icon">copy</div>
+
+                            <div className="shareLink__icon">
+                                <Icon>file_copy</Icon>
+                            </div>
                         </div>
                         <div className="profileImage">
                             <Image imageType="avatar" size={32} source={profilePictureUrl} />
