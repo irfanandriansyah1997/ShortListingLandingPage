@@ -1,1 +1,65 @@
 @import '@/shared/styles/import.scss';
+
+.ui-atomic-text {
+    @include font-face(primary, heading, xs, 400, normal, none, none, 12);
+
+    /*
+     * Styling
+     */
+    &--style {
+        &-heading {
+            @include font-color(heading);
+            @include font-size(2xl);
+            @include line-height(32);
+        }
+
+        &-subheading {
+            @include font-color(heading);
+            @include font-size(sm);
+            @include line-height(19);
+        }
+
+        &-subheading {
+            @include font-color(heading);
+            @include font-size(sm);
+            @include line-height(19);
+        }
+
+        &-text {
+            @include font-color(heading);
+            @include font-size(sm);
+            @include line-height(16);
+        }
+
+        &-caption {
+            @include font-color(text-light);
+            @include font-size(sm);
+            @include line-height(16);
+        }
+    }
+
+    /*
+     * Font-weight
+     */
+    &--font-weight {
+        &-light {
+            @include font-weight(300);
+        }
+
+        &-normal {
+            @include font-weight(400);
+        }
+
+        &-medium {
+            @include font-weight(500);
+        }
+
+        &-semibold {
+            @include font-weight(600);
+        }
+
+        &-bold {
+            @include font-weight(700);
+        }
+    }
+}
