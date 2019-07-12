@@ -52,7 +52,7 @@ class App extends React.Component<DefaultPropsInterface, StateComponent> {
     render() {
         return (
             <div className="wrapper">
-                <Header title="Hallo" />
+                <Header title="Listing 500 Juta" />
                 <div className="content">
                     <Shortlist propertyData={this.getPropertyData()} />
                 </div>

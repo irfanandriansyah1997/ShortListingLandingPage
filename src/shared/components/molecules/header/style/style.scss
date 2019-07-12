@@ -1,0 +1,16 @@
+@import '@/shared/styles/import.scss';
+
+.ui-molecules-header {
+    flex-direction: column;
+
+    @include padding(all, 25px 25px 25px 0);
+    @include margin-left(25px);
+    @include border-bottom(1px, solid, border);
+
+    &__content {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
