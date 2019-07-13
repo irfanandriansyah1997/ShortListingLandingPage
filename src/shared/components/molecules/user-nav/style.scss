@@ -45,7 +45,7 @@
                 margin-left: auto;
 
                 i.material-icons {
-                    @include font-size(xs);
+                    @include font-size(base);
                 }
             }
         }
@@ -53,10 +53,6 @@
         .profileImage {
             width: 32px;
             height: 32px;
-
-            .avatar {
-                border-radius: 16px;
-            }
         }
     }
 }

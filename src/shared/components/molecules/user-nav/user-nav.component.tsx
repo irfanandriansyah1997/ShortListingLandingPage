@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import Button from '@/shared/components/atoms/button/button.component';
-import Image from '@/shared/components/atoms/image/image.component';
+import Avatar from '@/shared/components/atoms/avatar/avatar.component';
 import Text from '@/shared/components/atoms/text/text.component';
 import Icon from '@/shared/components/atoms/icon/icon.component';
 
@@ -47,7 +47,12 @@ class UserNav extends React.Component<UserNavProps> {
                             </div>
                         </div>
                         <div className="profileImage">
-                            <Image imageType="avatar" size={32} source={profilePictureUrl} />
+                            <Avatar
+                                className="avatar"
+                                src={profilePictureUrl}
+                                alt="user profile"
+                                size={32}
+                            />
                         </div>
                     </div>
                 )}

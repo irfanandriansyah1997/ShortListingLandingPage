@@ -6,7 +6,7 @@
 
 import * as React from 'react';
 import { render } from 'enzyme';
-import Icon from './icon.component';
+import Icon from '../icon.component';
 
 require('config/enzyme.config');
 

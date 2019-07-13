@@ -1,32 +1,43 @@
+/**
+ * Image Component
+ * @author Ghazwan S. M. <ghazwan.sihamudin@gmail.com>
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.09
+ */
+
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import { convert_obj_to_string } from '@/shared/utils/string.utils';
+import { PropsInterface } from './interfaces/component.interface';
 
-interface ImageProps {
-    imageType: string;
-    size: number;
-    source: string;
-}
+import './styles/style.scss';
 
-class Text extends React.Component<ImageProps> {
+class Image extends React.Component<PropsInterface> {
     static propTypes = {
-        imageType: PropTypes.string.isRequired,
-        size: PropTypes.number.isRequired,
-        source: PropTypes.string.isRequired
+        src: PropTypes.string.isRequired,
+        alt: PropTypes.string.isRequired,
+        className: PropTypes.string
     };
 
-    render(): React.ReactNode {
-        const { imageType, size, source } = this.props;
+    static defaultProps = {
+        className: ''
+    };
 
-        return (
-            <img
-                alt="avatar"
-                className={imageType}
-                src={source}
-                height={size}
-                width={size}
-            />
-        );
+    get className(): string {
+        const { className } = this.props;
+
+        return convert_obj_to_string({
+            [`${className}`]: true,
+            'ui-atomic-image': true
+        });
+    }
+
+    render(): React.ReactNode {
+        const { alt, src } = this.props;
+        const { className } = this;
+
+        return <img className={className} alt={alt} src={src} />;
     }
 }
 
-export default Text;
+export default Image;

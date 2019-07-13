@@ -34,7 +34,7 @@ class Icon extends React.Component<IconProps> {
         onClick: (): void => {}
     };
 
-    get style() {
+    get style(): DefaultDynamicObject {
         const { color, size } = this.props;
         const response: DefaultDynamicObject = {
             color
@@ -47,7 +47,7 @@ class Icon extends React.Component<IconProps> {
         return response;
     }
 
-    get className() {
+    get className(): string {
         const { size } = this.props;
         const response: DefaultDynamicObject = {
             'ui-atomic-icon': true,

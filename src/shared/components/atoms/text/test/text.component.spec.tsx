@@ -1,12 +1,12 @@
 /**
- * Icon Component Test
+ * Text Component Test
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2019.07.11
  */
 
 import * as React from 'react';
 import { render } from 'enzyme';
-import Text from './text.component';
+import Text from '../text.component';
 import { PropsInterface } from '@/shared/components/atoms/text/interfaces/component.interface';
 
 require('config/enzyme.config');
@@ -30,7 +30,7 @@ const FIXTURE: PropsInterface[] = [
 ];
 
 describe('Testing text component in atomic component ', () => {
-    it('Test render icon material component', () => {
+    it('Test render text component', () => {
         FIXTURE.map((item: PropsInterface) => {
             const icon = render(<Text {...item} />);
 
