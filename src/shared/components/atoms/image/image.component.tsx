@@ -23,7 +23,7 @@ class Image extends React.Component<PropsInterface> {
         className: ''
     };
 
-    get className() {
+    get className(): string {
         const { className } = this.props;
 
         return convert_obj_to_string({

@@ -6,7 +6,7 @@
 
 import * as React from 'react';
 import { render } from 'enzyme';
-import Text from './text.component';
+import Text from '../text.component';
 import { PropsInterface } from '@/shared/components/atoms/text/interfaces/component.interface';
 
 require('config/enzyme.config');
