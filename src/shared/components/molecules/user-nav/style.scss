@@ -45,7 +45,7 @@
                 margin-left: auto;
 
                 i.material-icons {
-                    @include font-size(xs);
+                    @include font-size(base);
                 }
             }
         }
