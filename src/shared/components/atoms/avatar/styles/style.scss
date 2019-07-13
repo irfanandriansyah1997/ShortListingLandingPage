@@ -1,0 +1,32 @@
+@import '@/shared/styles/import.scss';
+
+.ui-atomic-avatar {
+    position: relative;
+    display: block;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+
+    &--size-big {
+        width: 48px;
+        height: 48px;
+    }
+
+    &--size-default {
+        width: 32px;
+        height: 32px;
+    }
+
+    &--size-small {
+        width: 24px;
+        height: 24px;
+    }
+
+    .ui-atomic-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @include rounded(50%);
+    }
+}
