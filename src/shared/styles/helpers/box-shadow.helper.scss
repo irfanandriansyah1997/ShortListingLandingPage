@@ -1,0 +1,47 @@
+/**
+ * Box Shadow Helper Class
+ */
+
+$color-shadow: rgb(62, 66, 70);
+
+.shadow--effect-default-1 {
+    &:hover {
+        @include box-shadow-multi(0 0 6px 0 rgba($color-shadow, 0.2));
+    }
+}
+
+.shadow--effect-default-2 {
+    &:hover {
+        @include box-shadow-multi(0 0 16px 0 rgba($color-shadow, 0.1));
+    }
+}
+
+.shadow--effect-elevate-xs {
+    &:hover {
+        @include box-shadow-multi(0 1px 5px 0 rgba($color-shadow, 0.12));
+    }
+}
+
+.shadow--effect-elevate-sm {
+    &:hover {
+        @include box-shadow-multi(0 2px 8px 0 rgba($color-shadow, 0.1));
+    }
+}
+
+.shadow--effect-elevate-md {
+    &:hover {
+        @include box-shadow-multi(0 4px 8px 0 rgba($color-shadow, 0.15));
+    }
+}
+
+.shadow--effect-elevate-lg {
+    &:hover {
+        @include box-shadow-multi(0 8px 16px 0 rgba($color-shadow, 0.2));
+    }
+}
+
+.shadow--effect-elevate-xl {
+    &:hover {
+        @include box-shadow-multi(0 10px 50px 0 rgba($color-shadow, 0.08));
+    }
+}
