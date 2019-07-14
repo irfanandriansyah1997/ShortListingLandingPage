@@ -1,3 +1,9 @@
+/**
+ * Redux Store Setup
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.13
+ */
+
 /* eslint-disable */
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
@@ -5,6 +11,7 @@ import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 
 import AuthReducer from './auth/reducers/auth.reducers';
+import ListingReducer from './listing/reducers/listing.reducers';
 
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistConfig: PersistConfig = {
@@ -15,7 +22,8 @@ const persistConfig: PersistConfig = {
 
 export default (initialState: any = {}) => {
     const reducers = combineReducers({
-        AuthReducer
+        AuthReducer,
+        ListingReducer
     });
     const persistReducers = persistReducer(persistConfig, reducers);
 

@@ -1,4 +1,10 @@
-import { AgentInterface } from '@/modules/landing-page/interfaces/agent.interface';
+/**
+ * Listing Model Interface
+ * @author Ghazwan S. M. <ghazwan.sihamudin@gmail.com>
+ * @since 2019.07.13
+ */
+
+import { AgentInterface } from '@/store/listing/interfaces/agent.interface';
 
 export interface ListingInterface {
     agent?: AgentInterface;
@@ -29,7 +35,7 @@ export interface ListingAttributeInterface {
     price: number;
 }
 
-export interface ListingList {
+export interface ListingListInterface {
     count: number;
     properties: ListingInterface[];
 }

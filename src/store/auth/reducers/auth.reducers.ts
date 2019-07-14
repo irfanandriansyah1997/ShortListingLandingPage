@@ -1,3 +1,10 @@
+/**
+ * Auth Store Reducers
+ * @author Ghazwan S. M. <ghazwan.sihamudin@gmail.com>
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.13
+ */
+
 import { AuthModelInterface } from '@/store/auth/interfaces/auth.interface';
 import { ReducerInterface } from '@/shared/interfaces/store.interface';
 import { DefaultAuthModel } from '@/store/auth/model/auth.model';

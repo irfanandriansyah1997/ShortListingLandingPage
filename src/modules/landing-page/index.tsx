@@ -1,3 +1,10 @@
+/**
+ * Landing Page Modules
+ * @author Ghazwan S. M. <ghazwan.sihamudin@gmail.com>
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.13
+ */
+
 import * as React from 'react';
 import ViewModelLandingPage from './view-model';
 import ControllerLandingPage from './controller';

@@ -1,3 +1,9 @@
+/**
+ * View Model Core
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.13
+ */
+
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -10,17 +16,24 @@ import {
     Props,
     ComposedComponentProps
 } from '@/shared/interfaces/viewmodel.interface';
+import { DefaultAuthModel } from '@/store/auth/model/auth.model';
 
 export const propTypes = {
-    login: PropTypes.func.isRequired,
-    logout: PropTypes.func.isRequired,
+    login: PropTypes.func,
+    logout: PropTypes.func,
     auth: PropTypes.shape({
         username: PropTypes.string,
         email: PropTypes.string,
         password: PropTypes.string,
         photo_profile: PropTypes.string,
         isLogin: PropTypes.bool
-    }).isRequired
+    })
+};
+
+export const defaultProps = {
+    login: (_: AuthModelInterface) => {},
+    logout: () => {},
+    auth: DefaultAuthModel
 };
 
 const ViewModelCore = (ComposedComponent: React.ComponentClass<ComposedComponentProps & any>) => {
@@ -36,7 +49,7 @@ const ViewModelCore = (ComposedComponent: React.ComponentClass<ComposedComponent
     class Component extends React.Component<Props> {
         static propTypes = propTypes;
 
-        static defaultProps = {};
+        static defaultProps = defaultProps;
 
         get authStore(): AuthStoreInterface {
             const { login, logout, auth } = this.props;
