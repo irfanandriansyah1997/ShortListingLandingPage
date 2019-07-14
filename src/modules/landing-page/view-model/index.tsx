@@ -1,7 +1,10 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Core, { propTypes as defaultPropTypes } from '@/shared/core/viewmodel.core';
+import Core, {
+    propTypes as defaultPropTypes,
+    defaultProps as defaultPropsTypes
+} from '@/shared/core/viewmodel.core';
 import { StoreInterface } from '@/store/interfaces/store.interface';
 import { Props, StateProps } from '@/modules/landing-page/interfaces/viewmodel.interface';
 
@@ -9,7 +12,11 @@ export const propTypes = {
     landingPageModel: PropTypes.shape({
         isLogin: PropTypes.bool.isRequired
     }).isRequired,
-    authModel: PropTypes.shape(defaultPropTypes).isRequired
+    authModel: PropTypes.shape(defaultPropTypes)
+};
+
+export const defaultProps = {
+    authModel: defaultPropsTypes
 };
 
 const mapStateToProps = (state: StoreInterface): StateProps => ({
@@ -19,8 +26,10 @@ const mapStateToProps = (state: StoreInterface): StateProps => ({
 });
 
 const ViewModel = (ComposedComponent: React.ComponentClass<Props>) => {
-    class Component extends React.Component<Props> {
+    class ViewModelComponent extends React.Component<Props> {
         static propTypes = propTypes;
+
+        static defaultProps = defaultProps;
 
         render() {
             return <ComposedComponent {...this.props} />;
@@ -33,7 +42,7 @@ const ViewModel = (ComposedComponent: React.ComponentClass<Props>) => {
             null
         )(
             // @ts-ignore
-            Component
+            ViewModelComponent
         )
     );
 };
