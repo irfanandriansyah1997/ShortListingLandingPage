@@ -1,9 +1,41 @@
 import * as React from 'react';
 import { Props } from '@/modules/landing-page/interfaces/viewmodel.interface';
+import { propTypes } from '@/modules/landing-page/view-model';
+import Views from '@/modules/landing-page/views';
+import { AuthModelInterface } from '@/store/auth/interfaces/auth.interface';
+import { ControllerProps } from '../interfaces/controller.interface';
 
 class LandingPageControler extends React.Component<Props> {
+    static propTypes = {
+        ...propTypes
+    };
+
+    get authModel(): AuthModelInterface {
+        const { authModel } = this.props;
+
+        return authModel.model;
+    }
+
+    get controllerProps(): ControllerProps {
+        return {
+            actionSetLogin: this.actionSetLogin,
+            actionSetLogout: this.actionSetLogout,
+            authModel: this.authModel
+        };
+    }
+
+    actionSetLogin(user: AuthModelInterface): void {
+        const { authModel } = this.props;
+        authModel.action.login(user);
+    }
+
+    actionSetLogout(): void {
+        const { authModel } = this.props;
+        authModel.action.logout();
+    }
+
     render(): React.ReactNode {
-        return <div>Ini Controler</div>;
+        return <Views {...this.controllerProps} />;
     }
 }
 

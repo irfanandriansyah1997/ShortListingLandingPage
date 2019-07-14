@@ -11,20 +11,26 @@ abstract class ProviderCore extends React.Component {
 
     protected ctrl = null;
 
-    setViewModel(model: any) {
+    set ViewModel(model: any) {
         this.vm = model;
     }
 
-    get viewModel(): any {
+    get ViewModel(): any {
         return this.vm;
     }
 
-    setController(controller: any) {
+    set Controller(controller: any) {
         this.ctrl = controller;
     }
 
-    get controller(): any {
+    get Controller(): any {
         return this.ctrl;
+    }
+
+    get Module(): any {
+        const { ViewModel, Controller } = this;
+
+        return ViewModel(Controller);
     }
 
     abstract render(): React.ReactNode;
