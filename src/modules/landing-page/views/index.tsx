@@ -2,7 +2,7 @@ import * as React from 'react';
 import Header from '@/shared/components/molecules/header/header.component';
 import { ControllerProps } from '@/modules/landing-page/interfaces/controller.interface';
 import Shortlist from '@/modules/landing-page/components/molecules/shortlist/shortlist.component';
-import { ListingInterface, ListingList } from '@/modules/landing-page/interfaces/listing.interface';
+import { ListingInterface, ListingList } from '@/store/listing/interfaces/listing.interface';
 
 interface StateComponent {
     model: ListingInterface[];
