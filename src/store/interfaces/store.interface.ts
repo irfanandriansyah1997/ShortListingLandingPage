@@ -6,7 +6,9 @@
  */
 
 import { AuthModelInterface } from '../auth/interfaces/auth.interface';
+import { ListingListInterface } from '../listing/interfaces/listing.interface';
 
 export interface StoreInterface {
     AuthReducer: AuthModelInterface;
+    ListingReducer: ListingListInterface;
 }

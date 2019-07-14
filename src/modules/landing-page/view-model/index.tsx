@@ -16,7 +16,10 @@ import { Props, StateProps } from '@/modules/landing-page/interfaces/viewmodel.i
 
 export const propTypes = {
     landingPageModel: PropTypes.shape({
-        isLogin: PropTypes.bool.isRequired
+        model: PropTypes.shape({
+            count: PropTypes.number,
+            properties: PropTypes.arrayOf(PropTypes.shape({}))
+        })
     }).isRequired,
     authModel: PropTypes.shape(defaultPropTypes)
 };
@@ -27,7 +30,7 @@ export const defaultProps = {
 
 const mapStateToProps = (state: StoreInterface): StateProps => ({
     landingPageModel: {
-        isLogin: state.AuthReducer.isLogin
+        model: state.ListingReducer
     }
 });
 

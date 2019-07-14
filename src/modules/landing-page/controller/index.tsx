@@ -10,6 +10,7 @@ import { propTypes, defaultProps } from '@/modules/landing-page/view-model';
 import Views from '@/modules/landing-page/views';
 import { AuthModelInterface } from '@/store/auth/interfaces/auth.interface';
 import { ControllerProps } from '../interfaces/controller.interface';
+import { ListingListInterface } from '@/store/listing/interfaces/listing.interface';
 
 class LandingPageControler extends React.Component<Props> {
     static propTypes = propTypes;
@@ -22,11 +23,18 @@ class LandingPageControler extends React.Component<Props> {
         return authModel.model;
     }
 
+    get listingModel(): ListingListInterface {
+        const { landingPageModel } = this.props;
+
+        return landingPageModel.model;
+    }
+
     get controllerProps(): ControllerProps {
         return {
             actionSetLogin: this.actionSetLogin,
             actionSetLogout: this.actionSetLogout,
-            authModel: this.authModel
+            authModel: this.authModel,
+            listingModel: this.listingModel
         };
     }
 

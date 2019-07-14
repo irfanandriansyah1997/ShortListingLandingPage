@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { ListingList } from '@/store/listing/interfaces/listing.interface';
+import { ListingListInterface } from '@/store/listing/interfaces/listing.interface';
 
 import './style.scss';
 
 interface ShortlistProps {
-    propertyData: ListingList;
+    propertyData: ListingListInterface;
 }
 
 class Shortlist extends React.Component<ShortlistProps> {

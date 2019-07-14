@@ -5,10 +5,11 @@
  */
 
 import { ComposedComponentProps } from '@/shared/interfaces/viewmodel.interface';
+import { ListingListInterface } from '@/store/listing/interfaces/listing.interface';
 
 export interface StateProps {
     landingPageModel: {
-        isLogin: boolean;
+        model: ListingListInterface;
     };
 }
 

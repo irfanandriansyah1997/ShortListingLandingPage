@@ -13,7 +13,7 @@ export interface AgentInterface {
 
 export interface AgentContactInterface {
     address: string;
-    telephone: number;
-    telephone2: number;
-    website: string;
+    telephone: string;
+    telephone2?: string;
+    website?: string;
 }

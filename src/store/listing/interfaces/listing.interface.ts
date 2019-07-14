@@ -35,7 +35,7 @@ export interface ListingAttributeInterface {
     price: number;
 }
 
-export interface ListingList {
+export interface ListingListInterface {
     count: number;
     properties: ListingInterface[];
 }
