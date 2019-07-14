@@ -9,13 +9,8 @@ import * as React from 'react';
 import Header from '@/shared/components/molecules/header/header.component';
 import { ControllerProps } from '@/modules/landing-page/interfaces/controller.interface';
 import Shortlist from '@/modules/landing-page/components/molecules/shortlist/shortlist.component';
-import { ListingInterface } from '@/store/listing/interfaces/listing.interface';
 
-interface StateComponent {
-    model: ListingInterface[];
-}
-
-class LandingPageModule extends React.Component<ControllerProps, StateComponent> {
+class LandingPageView extends React.Component<ControllerProps> {
     render() {
         const { listingModel } = this.props;
         return (
@@ -29,4 +24,4 @@ class LandingPageModule extends React.Component<ControllerProps, StateComponent>
     }
 }
 
-export default LandingPageModule;
+export default LandingPageView;
