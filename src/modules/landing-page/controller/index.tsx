@@ -17,6 +17,13 @@ class LandingPageControler extends React.Component<Props> {
 
     static defaultProps = defaultProps;
 
+    constructor(props: Props) {
+        super(props);
+
+        this.actionSetLogin = this.actionSetLogin.bind(this);
+        this.actionSetLogout = this.actionSetLogout.bind(this);
+    }
+
     get authModel(): AuthModelInterface {
         const { authModel } = this.props;
 
