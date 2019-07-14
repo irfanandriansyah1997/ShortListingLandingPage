@@ -5,3 +5,13 @@ export interface AuthModelInterface {
     photo_profile: string;
     isLogin: boolean;
 }
+
+export interface AuthActionInterface {
+    login: (option: AuthModelInterface) => void;
+    logout: () => void;
+}
+
+export interface AuthStoreInterface {
+    model: AuthModelInterface;
+    action: AuthActionInterface;
+}
