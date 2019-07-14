@@ -5,11 +5,11 @@
  */
 
 import { SET_LISTING } from '@/store/listing/reducers/listing.reducers';
-import { ListingInterface } from '../interfaces/listing.interface';
+import { ListingInterface } from '@/store/listing/interfaces/listing.interface';
 
 export const setListing = (param: ListingInterface[]) => ({
     type: SET_LISTING,
     payload: {
-        ...param
+        param
     }
 });

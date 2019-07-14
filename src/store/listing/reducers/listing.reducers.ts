@@ -17,8 +17,8 @@ const Reducers = (
     switch (action.type) {
     case SET_LISTING:
         return {
-            count: action.payload.length,
-            properties: action.payload
+            count: action.payload.param.length,
+            properties: action.payload.param
         };
     default:
         return state;
