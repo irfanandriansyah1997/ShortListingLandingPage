@@ -1,0 +1,14 @@
+@import '@/shared/styles/import.scss';
+
+.ui-molecules-sidebar {
+    flex-direction: column;
+    z-index: 100;
+    width: 419px;
+    height: calc(100% - 82px);
+    top: 82px;
+    left: 0;
+    align-items: flex-start;
+
+    @include border-right(1px, solid, border);
+    @include padding(all, 29px 25px);
+}
