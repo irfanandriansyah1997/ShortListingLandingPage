@@ -1,3 +1,9 @@
+/**
+ * Component Interface
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.13
+ */
+
 import { ReactNode } from 'react';
 
 export interface DefaultPropsInterface {

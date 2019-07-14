@@ -1,5 +1,5 @@
 /**
- * View Model Core
+ * View Model Core Interface
  * @author Irfan Andriansyah <irfan@99.co>
  * @since 2019.07.13
  */

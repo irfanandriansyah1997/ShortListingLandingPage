@@ -1,3 +1,9 @@
+/**
+ * Listing Model Interface
+ * @author Ghazwan S. M. <ghazwan.sihamudin@gmail.com>
+ * @since 2019.07.13
+ */
+
 import { AgentInterface } from '@/store/listing/interfaces/agent.interface';
 
 export interface ListingInterface {

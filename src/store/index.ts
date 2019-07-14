@@ -1,3 +1,9 @@
+/**
+ * Redux Store Setup
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.13
+ */
+
 /* eslint-disable */
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer, PersistConfig } from 'redux-persist';

@@ -1,3 +1,9 @@
+/**
+ * Landing Page Controller
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.13
+ */
+
 import * as React from 'react';
 import { Props } from '@/modules/landing-page/interfaces/viewmodel.interface';
 import { propTypes, defaultProps } from '@/modules/landing-page/view-model';

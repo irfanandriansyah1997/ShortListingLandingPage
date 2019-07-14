@@ -1,3 +1,9 @@
+/**
+ * Auth Model Interface
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.13
+ */
+
 export interface AuthModelInterface {
     username: string;
     email: string;

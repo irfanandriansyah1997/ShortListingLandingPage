@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { ListingList } from '@/modules/landing-page/interfaces/listing.interface';
+import { ListingList } from '@/store/listing/interfaces/listing.interface';
 
 import './style.scss';
 
@@ -21,13 +21,9 @@ class Shortlist extends React.Component<ShortlistProps> {
 
         return (
             <div className="shortlist">
-                <div className="shortlist__sidebar">
-                    { propertyData.count }
-                </div>
+                <div className="shortlist__sidebar">{propertyData.count}</div>
                 <hr />
-                <div className="shortlist__detail">
-                    a
-                </div>
+                <div className="shortlist__detail">a</div>
             </div>
         );
     }

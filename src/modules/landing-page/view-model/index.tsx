@@ -1,3 +1,9 @@
+/**
+ * Landing Page View Model
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.13
+ */
+
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
