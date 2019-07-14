@@ -1,8 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import configureStore from './store';
 import LandingPageModule from '@/modules/landing-page';
 
 import '@/shared/styles/app.scss';
+
+const { store, persistor } = configureStore();
 
 interface DefaultPropsInterface {
     children?: React.ReactNode;
@@ -11,7 +16,13 @@ interface DefaultPropsInterface {
 
 class App extends React.Component<DefaultPropsInterface> {
     render() {
-        return <LandingPageModule />;
+        return (
+            <Provider store={store}>
+                <PersistGate loading={null} persistor={persistor}>
+                    <LandingPageModule />
+                </PersistGate>
+            </Provider>
+        );
     }
 }
 
