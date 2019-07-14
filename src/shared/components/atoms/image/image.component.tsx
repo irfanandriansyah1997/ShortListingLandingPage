@@ -10,7 +10,7 @@ import * as PropTypes from 'prop-types';
 import { convert_obj_to_string } from '@/shared/utils/string.utils';
 import { PropsInterface } from './interfaces/component.interface';
 
-import './styles/style.scss';
+import './style/style.scss';
 
 class Image extends React.Component<PropsInterface> {
     static propTypes = {

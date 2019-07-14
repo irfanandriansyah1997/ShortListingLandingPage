@@ -10,7 +10,7 @@ import ImageComponent from '@/shared/components/atoms/image/image.component';
 import { convert_obj_to_string } from '@/shared/utils/string.utils';
 import { PropsInterface } from './interfaces/component.interface';
 
-import './styles/style.scss';
+import './style/style.scss';
 
 class Avatar extends React.Component<PropsInterface> {
     static propTypes = {
