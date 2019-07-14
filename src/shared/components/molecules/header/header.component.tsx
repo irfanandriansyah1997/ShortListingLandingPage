@@ -16,7 +16,7 @@ class Header extends React.Component<PropsInterface> {
         const profilePictureUrl = 'https://img.crocdn.co.uk/images/products2/pl/20/00/02/29/pl2000022950.jpg';
 
         return (
-            <div className="ui-molecules-header flex">
+            <div className="ui-molecules-header flex fixed">
                 <div className="ui-molecules-header__content flex">
                     <Text
                         tag="h4"

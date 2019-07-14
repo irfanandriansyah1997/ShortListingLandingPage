@@ -1,0 +1,12 @@
+@import '@/shared/styles/import.scss';
+
+.ui-landing-page-module {
+    min-height: 100vh;
+
+    @include padding-top(82px);
+
+    &__content {
+        width: 100vw;
+        justify-content: flex-end;
+    }
+}
