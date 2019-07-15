@@ -1,10 +1,29 @@
 @import '@/shared/styles/import.scss';
 
 .ui-molecules-shortlist {
+    $c: &;
+
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     width: calc(100% - 419px);
 
-    @include padding(all, 28px 25px);
+    @include padding(all, 28px 25px 75px);
+
+    &__heading {
+        width: 100%;
+
+        @include padding(all, 0 0 28px);
+        @include border-bottom(1px, solid, border);
+
+        #{$c}__id {
+            @include font-color(text-light);
+        }
+    }
+
+    &__table {
+        width: 100%;
+
+        @include padding(all, 24px 0);
+    }
 }

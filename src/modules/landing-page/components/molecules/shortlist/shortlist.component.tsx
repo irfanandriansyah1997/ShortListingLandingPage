@@ -5,6 +5,7 @@ import Text from '@/shared/components/atoms/text/text.component';
 import ContactAgent from '@/modules/landing-page/components/molecules/contact-agent/contact-agent.component';
 
 import './style.scss';
+import TableComponent from '@/shared/components/molecules/table/table.component';
 
 interface ShortlistProps {
     listing: ListingInterface;
@@ -20,34 +21,43 @@ class Shortlist extends React.Component<ShortlistProps> {
 
         return (
             <div className="ui-molecules-shortlist flex relative">
-                <Text name="ui-molecules-shortlist__id" tag="p" styling="text" fontWeight={500}>
-                    {listing.id}
-                </Text>
-                <Text
-                    name="ui-molecules-shortlist__price"
-                    tag="h3"
-                    styling="subheading"
-                    fontWeight={600}
-                >
-                    {listing.attribute.priceTag}
-                </Text>
-                <Text
-                    name="ui-molecules-shortlist__title"
-                    tag="h3"
-                    styling="subheading"
-                    fontWeight={600}
-                >
-                    {listing.title}
-                </Text>
-                <Text
-                    name="ui-molecules-shortlist__location"
-                    tag="h3"
-                    styling="subheading"
-                    fontWeight={600}
-                >
-                    {listing.location}
-                    {listing.agent.contact.telephone}
-                </Text>
+                <div className="ui-molecules-shortlist__heading">
+                    <Text
+                        name="ui-molecules-shortlist__id mb-8"
+                        tag="p"
+                        styling="subheading"
+                        fontWeight={500}
+                    >
+                        {listing.id}
+                    </Text>
+                    <Text
+                        name="ui-molecules-shortlist__price mb-16"
+                        tag="h3"
+                        styling="heading"
+                        fontWeight={600}
+                    >
+                        {listing.attribute.priceTag}
+                    </Text>
+                    <Text
+                        name="ui-molecules-shortlist__title mb-8"
+                        tag="h3"
+                        styling="subheading"
+                        fontWeight={600}
+                    >
+                        {listing.title}
+                    </Text>
+                    <Text
+                        name="ui-molecules-shortlist__location mb-16"
+                        tag="h3"
+                        styling="text"
+                        fontWeight={400}
+                    >
+                        {listing.location}
+                    </Text>
+                </div>
+                <div className="ui-molecules-shortlist__table">
+                    <TableComponent title="Detail Property" dataRow={listing.formattedAttributes} />
+                </div>
                 <ContactAgent photo={listing.agent.picture} name={listing.agent.name} />
             </div>
         );
