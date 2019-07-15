@@ -1,16 +1,12 @@
-.button {
-    font-family: Avenir Next;
-    font-size: 12px;
-    font-weight: 600;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #ffffff;
+@import '@/shared/styles/import.scss';
+
+.ui-atomic-button {
+    @include font-face(primary, white, xs, 500, normal, upper, none, 16);
     height: 40px;
-    min-width: 120px;
     border-radius: 4px;
-    background-color: #424b5a;
-    border-style: none;
+
+    @include padding(all, 13px 6px);
+    @include no-border();
+    @include background-color(heading);
+    @include transition(0.31s cubic-bezier(0.7, 0.3, 0, 1));
 }

@@ -16,13 +16,14 @@ import './style/style.scss';
 class LandingPageView extends React.Component<ControllerProps> {
     render() {
         const { listingModel } = this.props;
+        const { properties, selected } = listingModel;
         return (
             <div className="ui-landing-page-module">
                 <Header title="Listing 500 Juta" />
 
                 <div className="ui-landing-page-module__content flex">
                     <Sidebar listing={listingModel} />
-                    <Shortlist propertyData={listingModel} />
+                    <Shortlist listing={properties[selected]} />
                 </div>
             </div>
         );

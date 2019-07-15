@@ -1,12 +1,10 @@
-.shortlist {
+@import '@/shared/styles/import.scss';
+
+.ui-molecules-shortlist {
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
     width: calc(100% - 419px);
-    padding: 25px;
 
-    &__sidebar {
-        width: 50%;
-    }
-
-    &__detail {
-        width: 50%;
-    }
+    @include padding(all, 28px 25px);
 }

@@ -64,7 +64,15 @@ describe('Testing action for listing store', () => {
                             'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553131.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
                     }
                 ],
-                propertyType: PropertyTypeEnum.HOUSE
+                propertyType: PropertyTypeEnum.HOUSE,
+                agent: {
+                    name: 'Jajang',
+                    picture: 'images',
+                    contact: {
+                        address: 'Padalarang',
+                        telephone: '085721079753'
+                    }
+                }
             }
         ];
 
