@@ -25,7 +25,7 @@ class ContactAgent extends React.Component<PropsInterface> {
         return (
             <div className="ui-molecules-contact-agent flex fixed">
                 <div className="ui-molecules-contact-agent__profile flex">
-                    <Avatar size={24} src={photo} alt="Fabiana Capmany" />
+                    <Avatar size={24} src={photo} alt={name} />
 
                     <Text
                         name="ui-molecules-shortlist__id ml-8"

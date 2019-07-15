@@ -39,7 +39,6 @@ class Card extends React.Component<PropsInterface> {
 
         return convert_obj_to_string({
             [`${className}`]: true,
-            'ui-atomic-image': true,
             relative: true,
             'inline-flex': true,
             'ui-atomic-card': true,
