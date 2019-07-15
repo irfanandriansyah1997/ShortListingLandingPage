@@ -1,9 +1,10 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import { DefaultPropsInterface } from '@/shared/interfaces/component.interface';
 
 import './style/style.scss';
 
-class Button extends React.Component {
+class Button extends React.Component<DefaultPropsInterface> {
     static propTypes = {
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.node),
