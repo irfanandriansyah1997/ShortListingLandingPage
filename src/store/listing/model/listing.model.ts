@@ -8,10 +8,7 @@
 
 import { ListingListInterface } from '@/store/listing/interfaces/listing.interface';
 import { CertificationType } from '@/store/listing/interfaces/listing/listing_model.interface';
-import {
-    ListingTypeEnum,
-    PropertyTypeEnum
-} from '@/store/listing/interfaces/listing/listing_type.interface';
+import { ListingTypeEnum, PropertyTypeEnum } from '@/store/listing/interfaces/listing/listing_type.interface';
 
 export const DefaultListingModel: ListingListInterface = {
     count: 2,
@@ -33,7 +30,48 @@ export const DefaultListingModel: ListingListInterface = {
                 carports: 1,
                 garages: 1
             },
-            formattedAttributes: [],
+            formattedAttributes: [
+                {
+                    label: 'Tipe Properti',
+                    name: 'propertyType',
+                    value: 'Rumah'
+                },
+                {
+                    label: 'Kamar Tidur',
+                    name: 'bathrooms',
+                    value: '3 Kamar Tidur'
+                },
+                {
+                    label: 'Kamar Mandi',
+                    name: 'bedrooms',
+                    value: '2 Kamar Mandi'
+                },
+                {
+                    label: 'Luas Tanah',
+                    name: 'landSize',
+                    value: '142 m<sup>2</sup>'
+                },
+                {
+                    label: 'Luas Bangunan',
+                    name: 'buildingSize',
+                    value: '217 m<sup>2</sup>'
+                },
+                {
+                    label: 'Sertifikat',
+                    name: 'certification',
+                    value: 'SHM'
+                },
+                {
+                    label: 'Carpot',
+                    name: 'carpots',
+                    value: 1
+                },
+                {
+                    label: 'Garasi',
+                    name: 'garage',
+                    value: 1
+                }
+            ],
             listingType: ListingTypeEnum.FOR_SALE,
             mainPicture:
                 'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553127.V800/Manyar-Jaya-Surabaya-Indonesia.jpg',
@@ -87,7 +125,48 @@ export const DefaultListingModel: ListingListInterface = {
                 carports: 2,
                 garages: 1
             },
-            formattedAttributes: [],
+            formattedAttributes: [
+                {
+                    label: 'Tipe Properti',
+                    name: 'propertyType',
+                    value: 'Rumah'
+                },
+                {
+                    label: 'Kamar Tidur',
+                    name: 'bedrooms',
+                    value: '6 Kamar Tidur'
+                },
+                {
+                    label: 'Kamar Mandi',
+                    name: 'bathrooms',
+                    value: '141 Kamar Mandi'
+                },
+                {
+                    label: 'Luas Tanah',
+                    name: 'landSize',
+                    value: '142 m<sup>2</sup>'
+                },
+                {
+                    label: 'Luas Bangunan',
+                    name: 'buildingSize',
+                    value: '100 m<sup>2</sup>'
+                },
+                {
+                    label: 'Sertifikat',
+                    name: 'certification',
+                    value: 'PPJB'
+                },
+                {
+                    label: 'Carpot',
+                    name: 'carpots',
+                    value: 2
+                },
+                {
+                    label: 'Garasi',
+                    name: 'garage',
+                    value: 1
+                }
+            ],
             listingType: ListingTypeEnum.FOR_SALE,
             mainPicture:
                 'https://picture.urbanindo.com/listing/719589588/08/8700bae7/dijual-kost-an-daerah-dago-bandung/780/780.jpg',

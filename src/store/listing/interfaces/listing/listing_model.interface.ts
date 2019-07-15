@@ -34,5 +34,5 @@ export interface ListingAttributeInterface {
 export interface FormattedAttribute {
     name: string;
     label: string;
-    value: string;
+    value: string | number;
 }

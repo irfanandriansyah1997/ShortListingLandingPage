@@ -5,9 +5,7 @@ module.exports = {
         jasmine: true,
         jest: true
     },
-    plugins: [
-        '@typescript-eslint'
-    ],
+    plugins: ['@typescript-eslint'],
     extends: ['airbnb', 'plugin:@typescript-eslint/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -40,14 +38,14 @@ module.exports = {
                 extensions: ['.js', '.jsx', '.ts', '.tsx', '.es6']
             }
         },
-        "jsx-a11y/label-has-for": [
+        'jsx-a11y/label-has-for': [
             2,
             {
-                "components": ["Label"],
-                "required": {
-                    "every": ["nesting", "id"]
+                components: ['Label'],
+                required: {
+                    every: ['nesting', 'id']
                 },
-                "allowChildren": true
+                allowChildren: true
             }
         ],
         'linebreak-style': [2, 'unix'],
@@ -65,17 +63,17 @@ module.exports = {
             }
         ],
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        "no-mixed-operators": [
-            "error",
+        'no-mixed-operators': [
+            'error',
             {
-                "groups": [
-                    ["+", "-", "*", "/", "%", "**"],
-                    ["&", "|", "^", "~", "<<", ">>", ">>>"],
-                    ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
-                    ["&&", "||"],
-                    ["in", "instanceof"]
+                groups: [
+                    ['+', '-', '*', '/', '%', '**'],
+                    ['&', '|', '^', '~', '<<', '>>', '>>>'],
+                    ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
+                    ['&&', '||'],
+                    ['in', 'instanceof']
                 ],
-                "allowSamePrecedence": true
+                allowSamePrecedence: true
             }
         ],
         'no-restricted-properties': [0],
@@ -91,6 +89,7 @@ module.exports = {
         'space-before-function-paren': 'off',
         'react/prefer-stateless-function': 'off',
         'react/no-unescaped-entities': 0,
+        'react/no-danger': 0,
         'react/require-default-props': 2,
         'react/jsx-indent-props': [2, 4],
         'react/jsx-first-prop-new-line': [1, 'multiline'],
@@ -102,7 +101,7 @@ module.exports = {
             }
         ],
         'react/jsx-indent': [1, 4],
-        "space-infix-ops": [0],
+        'space-infix-ops': [0],
         '@typescript-eslint/no-var-requires': 0,
         '@typescript-eslint/indent': 0,
         '@typescript-eslint/camelcase': 0,
@@ -111,7 +110,7 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 0,
         '@typescript-eslint/no-explicit-any': 0, // would prefer to enable this
         '@typescript-eslint/no-use-before-define': 0, // this is duplicated
-        '@typescript-eslint/interface-name-prefix': 0, // I don't agree
+        '@typescript-eslint/interface-name-prefix': 0 // I don't agree
     },
     globals: {
         document: false,
@@ -124,8 +123,8 @@ module.exports = {
             rules: {
                 'vars-on-top': 0,
                 'no -var': 0, // this is how typescript works
-                'spaced-comment': 0,
+                'spaced-comment': 0
             }
-        },
+        }
     ]
 };
