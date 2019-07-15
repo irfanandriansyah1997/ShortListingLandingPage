@@ -4,7 +4,7 @@ import { PropsInterface } from '@/shared/components/molecules/sidebar/interfaces
 import { ListingInterface } from '@/store/listing/interfaces/listing.interface';
 
 import './style/style.scss';
-import Card from '../../atoms/card/card.component';
+import CardListing from '@/shared/components/molecules/card-listing/card-listing.component';
 
 class Sidebar extends React.Component<PropsInterface> {
     static propTypes = {
@@ -20,18 +20,14 @@ class Sidebar extends React.Component<PropsInterface> {
         return (
             <div className="ui-molecules-sidebar flex fixed">
                 {listing.properties.map((item: ListingInterface) => (
-                    <Card className="asas" hoverType="elevate-sm" type="border" rounded>
-                        <div style={{ padding: '15px' }}>
-                            <img
-                                style={{ width: '100px', height: '100px', objectFit: 'cover' }}
-                                src={item.mainPicture}
-                                alt={item.title}
-                            />
-                            <p>{item.attribute.priceTag}</p>
-                            <div>{item.title}</div>
-                            <div>{item.location}</div>
-                        </div>
-                    </Card>
+                    <CardListing
+                        key={item.id}
+                        id={item.id}
+                        title={item.title}
+                        price={item.attribute.priceTag}
+                        src={item.mainPicture}
+                        location={item.location}
+                    />
                 ))}
             </div>
         );

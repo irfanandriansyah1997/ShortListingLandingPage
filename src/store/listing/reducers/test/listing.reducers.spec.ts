@@ -87,4 +87,24 @@ describe('Testing reducers for listing store', () => {
             selected: 0
         });
     });
+
+    it('Invoke function unknown', () => {
+        expect(
+            Reducers(
+                {
+                    count: 0,
+                    properties: [],
+                    selected: 0
+                },
+                {
+                    type: 'unknown',
+                    payload: {}
+                }
+            )
+        ).toStrictEqual({
+            count: 0,
+            properties: [],
+            selected: 0
+        });
+    });
 });

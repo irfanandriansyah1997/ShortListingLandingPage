@@ -10,5 +10,5 @@
     align-items: flex-start;
 
     @include border-right(1px, solid, border);
-    @include padding(all, 21px 17px);
+    @include padding(all, 21px 25px);
 }

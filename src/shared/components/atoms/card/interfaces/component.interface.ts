@@ -12,4 +12,5 @@ export interface PropsInterface extends DefaultPropsInterface {
         | 'elevate-xl';
     rounded?: boolean;
     className?: string;
+    onClick?: () => void;
 }

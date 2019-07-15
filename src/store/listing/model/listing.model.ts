@@ -61,6 +61,48 @@ export const DefaultListingModel: ListingListInterface = {
                 }
             ],
             propertyType: PropertyTypeEnum.HOUSE
+        },
+        {
+            id: '#PGA68N',
+            title: 'Dijual Kost-an Daerah Dago Bandung',
+            location: 'Jl. Dago Pojok  Dago',
+            description: 'Testing Description',
+            attribute: {
+                bedrooms: 6,
+                bathrooms: 5,
+                buildingSize: 100,
+                landSize: 141,
+                floors: 2,
+                price: 1500000000,
+                priceTag: 'Rp. 1.5 Milyar',
+                certification: CertificationType.PPJB,
+                carports: 2,
+                garages: 1
+            },
+            formattedAttributes: [],
+            listingType: ListingTypeEnum.FOR_SALE,
+            mainPicture:
+                'https://picture.urbanindo.com/listing/719589588/08/8700bae7/dijual-kost-an-daerah-dago-bandung/780/780.jpg',
+            pictures: [
+                {
+                    caption: 'Testing Picture',
+                    url:
+                        'https://picture.urbanindo.com/listing/719589588/01/444fb4d6/dijual-kost-an-daerah-dago-bandung/780/780.jpg'
+                },
+                {
+                    url:
+                        'https://picture.urbanindo.com/listing/719589588/01/c5ed2484/dijual-kost-an-daerah-dago-bandung/780/780.jpg'
+                },
+                {
+                    url:
+                        'https://picture.urbanindo.com/listing/719589588/01/973ccfc3/dijual-kost-an-daerah-dago-bandung/780/780.jpg'
+                },
+                {
+                    url:
+                        'https://picture.urbanindo.com/listing/719589588/02/204fca96/dijual-kost-an-daerah-dago-bandung/620/412.jpg'
+                }
+            ],
+            propertyType: PropertyTypeEnum.HOUSE
         }
     ],
     selected: 0

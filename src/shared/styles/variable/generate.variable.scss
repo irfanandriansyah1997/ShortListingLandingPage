@@ -2,21 +2,39 @@
  * Custom value for generate classname
  */
 
-$space-values: (3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50) !default;
+$space-values: (
+    2,
+    3,
+    4,
+    5,
+    8,
+    10,
+    15,
+    16,
+    20,
+    25,
+    30,
+    32,
+    35,
+    40,
+    45,
+    50,
+    64
+) !default;
 
 $z-index-values: (1, 2, 3, 4, 5, 100, 200, 300, 400, 500, 600, 700, 800, 900);
 
 $attribute-name: (
-  p: padding,
-  pt: padding-top,
-  pr: padding-right,
-  pb: padding-bottom,
-  pl: padding-left,
-  m: margin,
-  mt: margin-top,
-  mr: margin-right,
-  mb: margin-bottom,
-  ml: margin-left
+    p: padding,
+    pt: padding-top,
+    pr: padding-right,
+    pb: padding-bottom,
+    pl: padding-left,
+    m: margin,
+    mt: margin-top,
+    mr: margin-right,
+    mb: margin-bottom,
+    ml: margin-left
 ) !default;
 
 /**
