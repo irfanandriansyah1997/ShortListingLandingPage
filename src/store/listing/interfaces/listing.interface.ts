@@ -26,7 +26,7 @@ export interface ListingInterface {
     mainPicture: string;
     pictures: PictureInterface[];
     propertyType: PropertyTypeEnum;
-    agent?: AgentInterface;
+    agent: AgentInterface;
 }
 
 export interface ListingListInterface {

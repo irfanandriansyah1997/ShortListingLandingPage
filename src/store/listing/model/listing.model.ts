@@ -60,7 +60,15 @@ export const DefaultListingModel: ListingListInterface = {
                         'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553131.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
                 }
             ],
-            propertyType: PropertyTypeEnum.HOUSE
+            propertyType: PropertyTypeEnum.HOUSE,
+            agent: {
+                name: 'Co Con',
+                picture: 'https://randomuser.me/api/portraits/men/9.jpg',
+                contact: {
+                    address: 'Rancaekek',
+                    telephone: '085721079753'
+                }
+            }
         },
         {
             id: '#PGA68N',
@@ -102,7 +110,15 @@ export const DefaultListingModel: ListingListInterface = {
                         'https://picture.urbanindo.com/listing/719589588/02/204fca96/dijual-kost-an-daerah-dago-bandung/620/412.jpg'
                 }
             ],
-            propertyType: PropertyTypeEnum.HOUSE
+            propertyType: PropertyTypeEnum.HOUSE,
+            agent: {
+                name: 'Andrew Thian',
+                picture: 'https://randomuser.me/api/portraits/men/8.jpg',
+                contact: {
+                    address: 'Padalarang',
+                    telephone: '085721079753'
+                }
+            }
         }
     ],
     selected: 0

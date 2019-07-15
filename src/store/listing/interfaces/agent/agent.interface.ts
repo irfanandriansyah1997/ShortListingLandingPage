@@ -5,7 +5,6 @@
  */
 
 export interface AgentInterface {
-    id: number;
     name: string;
     picture: string;
     contact: AgentContactInterface;
