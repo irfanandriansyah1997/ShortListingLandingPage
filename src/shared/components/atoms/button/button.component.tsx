@@ -16,7 +16,7 @@ class Button extends React.Component {
         const { children } = this.props;
 
         return (
-            <button type="submit" className="button">
+            <button type="submit" className="ui-atomic-button shadow--effect-elevate-md">
                 {children}
             </button>
         );
