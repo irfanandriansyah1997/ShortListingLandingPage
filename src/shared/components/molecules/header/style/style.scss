@@ -2,10 +2,21 @@
 
 .ui-molecules-header {
     flex-direction: column;
+    z-index: 100;
+    width: 100vw;
+    top: 0;
 
-    @include padding(all, 25px 25px 25px 0);
-    @include margin-left(25px);
-    @include border-bottom(1px, solid, border);
+    @include padding(all, 25px);
+    @include background-color(white);
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 25px;
+        width: calc(100%);
+        @include border-bottom(1px, solid, border);
+    }
 
     &__content {
         width: 100%;

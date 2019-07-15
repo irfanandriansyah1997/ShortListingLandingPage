@@ -21,7 +21,8 @@ const FIXTURE: Props = {
     landingPageModel: {
         model: {
             count: 0,
-            properties: []
+            properties: [],
+            selected: 0
         }
     }
 };

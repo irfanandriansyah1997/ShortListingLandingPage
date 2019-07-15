@@ -7,33 +7,61 @@
 /* eslint-disable */
 
 import { ListingListInterface } from '@/store/listing/interfaces/listing.interface';
+import { CertificationType } from '@/store/listing/interfaces/listing/listing_model.interface';
+import {
+    ListingTypeEnum,
+    PropertyTypeEnum
+} from '@/store/listing/interfaces/listing/listing_type.interface';
 
 export const DefaultListingModel: ListingListInterface = {
-    count: 1,
+    count: 2,
     properties: [
         {
-            description: 'test description',
-            id: 1,
-            listingType: 1,
-            location: 'Bandung Jawa Barat',
-            marketType: 1,
-            picture:
-                'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-            propertyType: 1,
-            rentType: 1,
-            status: 1,
-            title: 'Rumah dijual murah di bandung',
-            agent: {
-                id: 1,
-                name: 'Bambang',
-                picture: 'https://randomuser.me/api/portraits/men/94.jpg',
-                contact: {
-                    address: 'Padalarang, Bandung Barat',
-                    telephone: '085721079753',
-                    telephone2: '087718291947',
-                    website: '-'
+            id: '#123abce',
+            title: 'Dijual Rumah Nusaloka di BSD Tangerang Selatan',
+            location: 'BSD, Tangerang Selatan, Jakarta Barat',
+            description: 'Testing Description',
+            attribute: {
+                bedrooms: 3,
+                bathrooms: 2,
+                buildingSize: 217,
+                landSize: 142,
+                floors: 2,
+                price: 700000000,
+                priceTag: 'Rp. 700 Juta',
+                certification: CertificationType.HAK_MILIK,
+                carports: 1,
+                garages: 1
+            },
+            formattedAttributes: [],
+            listingType: ListingTypeEnum.FOR_SALE,
+            mainPicture:
+                'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553127.V800/Manyar-Jaya-Surabaya-Indonesia.jpg',
+            pictures: [
+                {
+                    caption: 'Testing Picture',
+                    url:
+                        'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553127.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
+                },
+                {
+                    url:
+                        'https://id1-cdn.pgimgs.com/listing/16497579/UPHO.90553128.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
+                },
+                {
+                    url:
+                        'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553129.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
+                },
+                {
+                    url:
+                        'https://id1-cdn.pgimgs.com/listing/16497579/UPHO.90553130.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
+                },
+                {
+                    url:
+                        'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553131.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
                 }
-            }
+            ],
+            propertyType: PropertyTypeEnum.HOUSE
         }
-    ]
+    ],
+    selected: 0
 };

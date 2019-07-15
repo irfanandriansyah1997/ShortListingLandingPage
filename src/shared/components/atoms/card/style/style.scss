@@ -1,0 +1,45 @@
+@import '@/shared/styles/import.scss';
+
+.ui-atomic-card {
+    $c: &;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 50px;
+    min-height: 50px;
+    word-wrap: break-word;
+
+    @include rounded(0);
+    @include margin(all, 8px);
+    @include no-box-shadow();
+    @include transition(0.31s cubic-bezier(0.7, 0.3, 0, 1));
+
+    &:hover,
+    &#{$c}--active {
+        &#{$c}--type-border {
+            @include border(all, thin, solid, heading);
+        }
+    }
+
+    /*
+     * Type Card
+     */
+    &--rounded {
+        @include rounded(5px);
+    }
+
+    &--type-base {
+        @include background-color(transparent);
+    }
+
+    &--type-flat,
+    &--type-border {
+        @include background-color(white);
+    }
+
+    &--type-border {
+        @include border(all, thin, solid, border);
+    }
+}
