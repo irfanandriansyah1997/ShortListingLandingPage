@@ -1,0 +1,18 @@
+@import '@/shared/styles/import.scss';
+
+.ui-molecules-contact-agent {
+    width: calc(100% - 419px);
+    bottom: 0;
+    height: 72px;
+    left: 419px;
+    justify-content: space-between;
+    align-items: center;
+
+    @include background-color(white);
+    @include padding(all, 0 25px);
+    @include box-shadow-multi(0 -1px 8px 0 rgba(62, 66, 70, 0.08));
+
+    &__profile {
+        align-items: center;
+    }
+}
