@@ -4,38 +4,33 @@
  * @since 2019.07.13
  */
 
-import { AgentInterface } from '@/store/listing/interfaces/agent.interface';
+import { AgentInterface } from '@/store/listing/interfaces/agent/agent.interface';
+import {
+    PropertyTypeEnum,
+    ListingTypeEnum
+} from '@/store/listing/interfaces/listing/listing_type.interface';
+import {
+    ListingAttributeInterface,
+    FormattedAttribute
+} from '@/store/listing/interfaces/listing/listing_model.interface';
+import { PictureInterface } from '@/store/listing/interfaces/picture/picture.interface';
 
 export interface ListingInterface {
-    agent?: AgentInterface;
-    attribute?: ListingAttributeInterface;
-    description: string;
-    id: number;
-    listingType: number;
-    location: string;
-    marketType: number;
-    picture: string;
-    propertyType: number;
-    rentType: number;
-    status: number;
+    id: number | string;
     title: string;
-}
-
-export interface ListingAttributeInterface {
-    bathrooms: number;
-    bedrooms: number;
-    buildingSize: number;
-    carports: number;
-    certification: number;
-    floors: number;
-    garages: number;
-    landSize: number;
-    maidBathrooms: number;
-    maidBedrooms: number;
-    price: number;
+    location: string;
+    description: string;
+    attribute: ListingAttributeInterface;
+    formattedAttributes: FormattedAttribute[];
+    listingType: ListingTypeEnum;
+    mainPicture: string;
+    pictures: PictureInterface[];
+    propertyType: PropertyTypeEnum;
+    agent?: AgentInterface;
 }
 
 export interface ListingListInterface {
     count: number;
     properties: ListingInterface[];
+    selected: number;
 }

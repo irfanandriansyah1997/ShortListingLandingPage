@@ -17,6 +17,7 @@ const Reducers = (
     switch (action.type) {
     case SET_LISTING:
         return {
+            ...state,
             count: action.payload.param.length,
             properties: action.payload.param
         };
