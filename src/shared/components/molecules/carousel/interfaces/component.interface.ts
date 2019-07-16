@@ -4,3 +4,12 @@ import { PictureInterface } from '@/store/listing/interfaces/picture/picture.int
 export interface PropsInterface extends DefaultPropsInterface {
     images: PictureInterface[];
 }
+
+export interface StateInterface {
+    position: number;
+}
+
+export enum OnChangePositionEnum {
+    MINUS = 0,
+    ADD = 1
+}

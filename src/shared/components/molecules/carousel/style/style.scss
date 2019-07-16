@@ -25,6 +25,8 @@
 
         img {
             height: 100%;
+            width: 100%;
+            object-fit: cover;
         }
     }
 
@@ -34,6 +36,7 @@
         height: 32px;
         align-items: center;
         justify-content: center;
+        z-index: 1;
 
         @include transform-translateY(-50%);
         @include no-border();
