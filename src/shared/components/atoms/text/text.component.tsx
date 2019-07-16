@@ -15,13 +15,9 @@ import './style/style.scss';
 class Text extends React.Component<PropsInterface> {
     static propTypes = {
         styling: PropTypes.oneOf(['heading', 'subheading', 'text', 'caption']),
-        tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span']).isRequired,
+        tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'div']).isRequired,
         fontWeight: PropTypes.oneOf([300, 400, 500, 600, 700]).isRequired,
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.node),
-            PropTypes.node,
-            PropTypes.string
-        ]).isRequired,
+        children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.string]).isRequired,
         align: PropTypes.oneOf(['center', 'left', 'right', 'initial']),
         name: PropTypes.string
     };

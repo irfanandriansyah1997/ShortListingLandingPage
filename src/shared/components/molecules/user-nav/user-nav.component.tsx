@@ -43,16 +43,11 @@ class UserNav extends React.Component<UserNavProps> {
                             </div>
 
                             <div className="shareLink__icon">
-                                <Icon>file_copy</Icon>
+                                <Icon>filter_none</Icon>
                             </div>
                         </div>
                         <div className="profileImage">
-                            <Avatar
-                                className="avatar"
-                                src={profilePictureUrl}
-                                alt="user profile"
-                                size={32}
-                            />
+                            <Avatar className="avatar" src={profilePictureUrl} alt="user profile" size={32} />
                         </div>
                     </div>
                 )}
