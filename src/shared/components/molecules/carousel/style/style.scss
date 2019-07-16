@@ -1,0 +1,64 @@
+@import '@/shared/styles/import.scss';
+
+.ui-molecules-carousel {
+    width: 100%;
+    height: 272px;
+    overflow: hidden;
+
+    @include rounded(4px);
+    @include background-color(table-field);
+
+    &__content {
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+
+        @include transition(0.31s cubic-bezier(0.7, 0.3, 0, 1));
+    }
+
+    &__item {
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 100%;
+        height: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__control {
+        top: 50%;
+        width: 32px;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+
+        @include transform-translateY(-50%);
+        @include no-border();
+        @include rounded(50%);
+        @include background-color(rgba(get-color(white), 0.5));
+        @include transition(0.31s cubic-bezier(0.7, 0.3, 0, 1));
+
+        &:hover {
+            @include background-color(rgba(get-color(white), 0.9));
+        }
+
+        i {
+            @include font-color(heading);
+            @include no-margin();
+        }
+    }
+
+    &__prev {
+        left: 16px;
+    }
+
+    &__next {
+        right: 16px;
+    }
+}

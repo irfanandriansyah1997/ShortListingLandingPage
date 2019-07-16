@@ -11,6 +11,7 @@ import { PropsInterface } from './interfaces/component.interface';
 import ContactAgent from '@/modules/landing-page/components/molecules/contact-agent/contact-agent.component';
 import CommentForm from '@/modules/landing-page/components/molecules/comment-form/comment-form.component';
 import Text from '@/shared/components/atoms/text/text.component';
+import Carousel from '@/shared/components/molecules/carousel/carousel.component';
 import Table from '@/shared/components/molecules/table/table.component';
 import TextExpand from '@/shared/components/molecules/text-expand/text-expand.component';
 import ListingTranslator from '@/store/listing/translator/listing.translator';
@@ -35,7 +36,8 @@ class Shortlist extends React.Component<PropsInterface> {
 
         return (
             <div className="ui-molecules-shortlist flex relative">
-                <div className="ui-molecules-shortlist__heading">
+                <Carousel images={listing.pictures} />
+                <div className="ui-molecules-shortlist__heading mt-25">
                     <Text name="ui-molecules-shortlist__id mb-8" tag="p" styling="subheading" fontWeight={500}>
                         {listing.id}
                     </Text>
