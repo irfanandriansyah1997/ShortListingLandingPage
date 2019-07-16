@@ -5,10 +5,7 @@
  */
 
 import { AgentInterface } from '@/store/listing/interfaces/agent/agent.interface';
-import {
-    PropertyTypeEnum,
-    ListingTypeEnum
-} from '@/store/listing/interfaces/listing/listing_type.interface';
+import { PropertyTypeEnum, ListingTypeEnum } from '@/store/listing/interfaces/listing/listing_type.interface';
 import {
     ListingAttributeInterface,
     FormattedAttribute
