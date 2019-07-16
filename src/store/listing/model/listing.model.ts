@@ -17,7 +17,12 @@ export const DefaultListingModel: ListingListInterface = {
             id: '#123abce',
             title: 'Dijual Rumah Nusaloka di BSD Tangerang Selatan',
             location: 'BSD, Tangerang Selatan, Jakarta Barat',
-            description: 'Testing Description',
+            description: `<p></p><p>RUMAH DIJUAL</p>
+<p>JALAN BUANA MEKAR 1 NO. 22<br>Trs. BUAH BATU <br>Bandung </p>
+<p>Sertifikat Hak Milik </p>
+<p>Luas tanah:  225 m2 <br>Luas bangunan: 200 m2 <br>Lantai: 2 1/2 Lantai <br>Dapur: Dapur Kotor dan Dapur Bersih<br>Hadap: Utara<br>Mobil: Carport dan Garasi</p>
+<p>Informasi:<br>- 7 menit ke Gerbang TOL Buah Batu, <br>- 10 menit ke Carrefour, <br>- 10 menit ke Buah Batu Square<br>- 20 menit ke Trans Studio Mall <br>- Listrik: 3500 watt <br>- Air: Submersible<br>- Filter : Yamaha Filter<br>- Semi Furnished<br>- Internet Fiber Optic by Firstmedia<br>- CCTV</p>
+<p></p>`,
             attribute: {
                 bedrooms: 3,
                 bathrooms: 2,

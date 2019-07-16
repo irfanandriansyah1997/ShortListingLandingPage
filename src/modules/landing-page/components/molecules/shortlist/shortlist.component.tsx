@@ -9,8 +9,10 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { PropsInterface } from './interfaces/component.interface';
 import ContactAgent from '@/modules/landing-page/components/molecules/contact-agent/contact-agent.component';
+import CommentForm from '@/modules/landing-page/components/molecules/comment-form/comment-form.component';
 import Text from '@/shared/components/atoms/text/text.component';
-import TableComponent from '@/shared/components/molecules/table/table.component';
+import Table from '@/shared/components/molecules/table/table.component';
+import TextExpand from '@/shared/components/molecules/text-expand/text-expand.component';
 import ListingTranslator from '@/store/listing/translator/listing.translator';
 import { AttributeListingTranslatorInterface } from '@/store/listing/interfaces/translator/translator.interface';
 
@@ -53,8 +55,10 @@ class Shortlist extends React.Component<PropsInterface> {
                     </div>
                 </div>
                 <div className="ui-molecules-shortlist__table">
-                    <TableComponent title="Detail Property" dataRow={listing.formattedAttributes} />
+                    <Table title="Detail Property" dataRow={listing.formattedAttributes} />
                 </div>
+                <TextExpand content={listing.description} title="Deskripsi" />
+                <CommentForm title="Catatan" placeholder="Tulis catatan disini..." />
                 <ContactAgent photo={listing.agent.picture} name={listing.agent.name} />
             </div>
         );
