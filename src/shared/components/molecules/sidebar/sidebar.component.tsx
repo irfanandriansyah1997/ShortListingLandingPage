@@ -1,10 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import { LandingPageContext } from '@/modules/landing-page/controller';
+import { Props } from '@/modules/landing-page/interfaces/viewmodel.interface';
+import CardListing from '@/shared/components/molecules/card-listing/card-listing.component';
 import { PropsInterface } from '@/shared/components/molecules/sidebar/interfaces/component.interface';
 import { ListingInterface } from '@/store/listing/interfaces/listing.interface';
 
 import './style/style.scss';
-import CardListing from '@/shared/components/molecules/card-listing/card-listing.component';
 
 class Sidebar extends React.Component<PropsInterface> {
     static propTypes = {
@@ -18,18 +20,22 @@ class Sidebar extends React.Component<PropsInterface> {
         const { listing } = this.props;
 
         return (
-            <div className="ui-molecules-sidebar flex fixed">
-                {listing.properties.map((item: ListingInterface) => (
-                    <CardListing
-                        key={item.id}
-                        id={item.id}
-                        title={item.title}
-                        price={item.attribute.priceTag}
-                        src={item.mainPicture}
-                        location={item.location}
-                    />
-                ))}
-            </div>
+            <LandingPageContext.Consumer>
+                {(_: Props) => (
+                    <div className="ui-molecules-sidebar flex fixed">
+                        {listing.properties.map((item: ListingInterface) => (
+                            <CardListing
+                                key={item.id}
+                                id={item.id}
+                                title={item.title}
+                                price={item.attribute.priceTag}
+                                src={item.mainPicture}
+                                location={item.location}
+                            />
+                        ))}
+                    </div>
+                )}
+            </LandingPageContext.Consumer>
         );
     }
 }

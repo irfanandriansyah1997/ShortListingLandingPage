@@ -12,6 +12,8 @@ import { AuthModelInterface } from '@/store/auth/interfaces/auth.interface';
 import { ControllerProps } from '../interfaces/controller.interface';
 import { ListingListInterface } from '@/store/listing/interfaces/listing.interface';
 
+export const LandingPageContext = React.createContext<Props | null>(null);
+
 class LandingPageControler extends React.Component<Props> {
     static propTypes = propTypes;
 
@@ -56,7 +58,11 @@ class LandingPageControler extends React.Component<Props> {
     }
 
     render(): React.ReactNode {
-        return <Views {...this.controllerProps} />;
+        return (
+            <LandingPageContext.Provider value={this.props}>
+                <Views {...this.controllerProps} />
+            </LandingPageContext.Provider>
+        );
     }
 }
 
