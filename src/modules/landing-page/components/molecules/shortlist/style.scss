@@ -21,6 +21,18 @@
         }
     }
 
+    &__atrribute {
+        align-items: center;
+
+        .ui-atomic-attribute-info {
+            @include margin-right(18px);
+
+            &:last-child {
+                @include no-margin();
+            }
+        }
+    }
+
     &__table {
         width: 100%;
 
