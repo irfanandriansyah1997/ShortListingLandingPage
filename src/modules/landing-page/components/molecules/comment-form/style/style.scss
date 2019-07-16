@@ -1,0 +1,15 @@
+@import '@/shared/styles/import.scss';
+
+.ui-molecules-comment-form {
+    width: 100%;
+
+    textarea {
+        width: 100%;
+        min-height: 150px;
+
+        @include border(all, 1px, solid, border);
+        @include rounded(4px);
+        @include padding(all, 16px);
+        @include font-face(primary, text, sm, 400, normal, none, none, 16);
+    }
+}
