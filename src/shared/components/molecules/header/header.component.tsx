@@ -6,13 +6,19 @@ import { PropsInterface } from './interfaces/component.interface';
 
 import './style/style.scss';
 
+
 class Header extends React.Component<PropsInterface> {
     static propTypes = {
+        isLogin: PropTypes.bool,
         title: PropTypes.string.isRequired
     };
 
+    static defaultProps = {
+        isLogin: false
+    }
+
     render() {
-        const { title } = this.props;
+        const { isLogin, title } = this.props;
         const profilePictureUrl = 'https://img.crocdn.co.uk/images/products2/pl/20/00/02/29/pl2000022950.jpg';
 
         return (
@@ -28,7 +34,7 @@ class Header extends React.Component<PropsInterface> {
                     </Text>
 
                     <UserNav
-                        isLogin
+                        isLogin={isLogin}
                         profilePictureUrl={profilePictureUrl}
                         shareLink="www.share.com/link"
                     />

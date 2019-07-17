@@ -11,5 +11,5 @@ export const DefaultAuthModel: AuthModelInterface = {
     password: '',
     username: '',
     photo_profile: '',
-    isLogin: true
+    isLogin: false
 };

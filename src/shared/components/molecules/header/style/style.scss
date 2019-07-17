@@ -4,7 +4,9 @@
     flex-direction: column;
     z-index: 100;
     width: 100vw;
+    height: 80px;
     top: 0;
+    right: 0;
 
     @include padding(all, 25px);
     @include background-color(white);

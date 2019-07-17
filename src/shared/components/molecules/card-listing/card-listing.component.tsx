@@ -10,9 +10,13 @@ import { PropsInterface } from './interfaces/component.interface';
 import Card from '@/shared/components/atoms/card/card.component';
 import Image from '@/shared/components/atoms/image/image.component';
 import Text from '@/shared/components/atoms/text/text.component';
+<<<<<<< HEAD
 import Icon from '@/shared/components/atoms/icon/icon.component';
 import OverflowMenu from '@/shared/components/molecules/overflow-menu/overflow-menu.component';
 import { convert_obj_to_string } from '@/shared/utils/string.utils';
+=======
+import OverflowMenuComponent from '@/shared/components/molecules/overflow-menu/overflow-menu.component';
+>>>>>>> feat(component): Add and improve components.
 
 import './style/style.scss';
 

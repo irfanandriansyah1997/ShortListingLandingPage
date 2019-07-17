@@ -1,6 +1,11 @@
+import * as React from 'react';
 import { DefaultPropsInterface } from '@/shared/interfaces/component.interface';
 
 export interface PropsInterface extends DefaultPropsInterface {
-    isLogin: boolean;
-    title: string;
+    onClick?: () => void;
+    actionElement: React.ReactNode;
+}
+
+export interface StateTypes {
+    opened: boolean;
 }

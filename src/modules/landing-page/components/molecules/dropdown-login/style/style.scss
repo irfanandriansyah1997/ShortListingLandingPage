@@ -1,0 +1,6 @@
+@import '@/shared/styles/import.scss';
+
+.ui-molecule-dropdown-login {
+    @include font-face(primary, white, xs, 500, normal, upper, none, 16);
+    min-height: 40px;
+}

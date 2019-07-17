@@ -1,7 +1,13 @@
 @import '@/shared/styles/import.scss';
 
-.user-nav {
+.ui-molecules-user-nav {
     margin-left: auto;
+
+    &__login {
+        button {
+            width: 130px;
+        }
+    }
 
     &__bar {
         display: flex;
