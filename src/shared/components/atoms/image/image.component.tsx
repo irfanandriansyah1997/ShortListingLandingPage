@@ -16,11 +16,13 @@ class Image extends React.Component<PropsInterface> {
     static propTypes = {
         src: PropTypes.string.isRequired,
         alt: PropTypes.string.isRequired,
-        className: PropTypes.string
+        className: PropTypes.string,
+        onClick: PropTypes.func
     };
 
     static defaultProps = {
-        className: ''
+        className: '',
+        onClick: () => {}
     };
 
     get className(): string {
@@ -33,10 +35,12 @@ class Image extends React.Component<PropsInterface> {
     }
 
     render(): React.ReactNode {
-        const { alt, src } = this.props;
+        const { alt, src, onClick } = this.props;
         const { className } = this;
 
-        return <img className={className} alt={alt} src={src} />;
+        return (
+            <img className={className} alt={alt} src={src} onClick={onClick} onKeyDown={onClick} role="presentation" />
+        );
     }
 }
 

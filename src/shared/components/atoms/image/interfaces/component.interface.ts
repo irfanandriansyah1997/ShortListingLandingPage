@@ -4,4 +4,5 @@ export interface PropsInterface extends DefaultPropsInterface {
     src: string;
     alt: string;
     className?: string;
+    onClick?: () => void;
 }
