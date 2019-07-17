@@ -9,6 +9,7 @@ import { DefaultListingModel } from '@/store/listing/model/listing.model';
 import { ListingListInterface } from '../interfaces/listing.interface';
 
 export const SET_LISTING = 'SET_LISTING';
+export const SET_ACTIVE_LISTING = 'SET_ACTIVE_LISTING';
 
 const Reducers = (
     state: ListingListInterface = DefaultListingModel,
@@ -21,6 +22,8 @@ const Reducers = (
             count: action.payload.param.length,
             properties: action.payload.param
         };
+    case SET_ACTIVE_LISTING:
+        return state;
     default:
         return state;
     }

@@ -24,6 +24,7 @@ class LandingPageControler extends React.Component<Props> {
 
         this.actionSetLogin = this.actionSetLogin.bind(this);
         this.actionSetLogout = this.actionSetLogout.bind(this);
+        this.actionSetActiveListing = this.actionSetActiveListing.bind(this);
     }
 
     get authModel(): AuthModelInterface {
@@ -42,6 +43,7 @@ class LandingPageControler extends React.Component<Props> {
         return {
             actionSetLogin: this.actionSetLogin,
             actionSetLogout: this.actionSetLogout,
+            actionSetActiveListing: this.actionSetActiveListing,
             authModel: this.authModel,
             listingModel: this.listingModel
         };
@@ -50,6 +52,10 @@ class LandingPageControler extends React.Component<Props> {
     actionSetLogin(user: AuthModelInterface): void {
         const { authModel } = this.props;
         authModel.action.login(user);
+    }
+
+    actionSetActiveListing(listingID: number | string): void {
+        console.log(listingID);
     }
 
     actionSetLogout(): void {

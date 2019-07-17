@@ -23,6 +23,9 @@ const FIXTURE: Props = {
             count: 0,
             properties: [],
             selected: 0
+        },
+        action: {
+            activeListing: (listingID: number | string) => {}
         }
     }
 };
