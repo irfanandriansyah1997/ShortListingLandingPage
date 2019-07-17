@@ -11,6 +11,7 @@ import { ListingListInterface } from '@/store/listing/interfaces/listing.interfa
 export interface ControllerProps extends DefaultPropsInterface {
     actionSetLogin: (option: AuthModelInterface) => void;
     actionSetLogout: () => void;
+    actionSetActiveListing: (listingID: number | string) => void;
     authModel: AuthModelInterface;
     listingModel: ListingListInterface;
 }

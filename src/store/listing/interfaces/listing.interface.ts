@@ -31,3 +31,7 @@ export interface ListingListInterface {
     properties: ListingInterface[];
     selected: number;
 }
+
+export interface ListingActionInterface {
+    activeListing: (listingID: number | string) => void;
+}

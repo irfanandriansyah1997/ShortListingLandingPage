@@ -2,11 +2,11 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { PropsInterface, StateInterface, OnChangePositionEnum } from './interfaces/component.interface';
 import { PictureInterface } from '@/store/listing/interfaces/picture/picture.interface';
+import { DefaultDynamicObject } from '@/shared/interfaces/object.interface';
 import Image from '@/shared/components/atoms/image/image.component';
 import Icon from '@/shared/components/atoms/icon/icon.component';
 
 import './style/style.scss';
-import { DefaultDynamicObject } from '@/shared/interfaces/object.interface';
 
 class Carousel extends React.Component<PropsInterface, StateInterface> {
     static propTypes = {
@@ -84,8 +84,8 @@ class Carousel extends React.Component<PropsInterface, StateInterface> {
                     <Icon>chevron_right</Icon>
                 </button>
                 <div className="ui-molecules-carousel__content flex" style={style}>
-                    {images.map((item: PictureInterface) => (
-                        <div className="ui-molecules-carousel__item flex">
+                    {images.map((item: PictureInterface, index: number) => (
+                        <div className="ui-molecules-carousel__item flex" key={item.id}>
                             <Image src={item.url} alt={getCaption(item)} />
                         </div>
                     ))}

@@ -84,23 +84,28 @@ export const DefaultListingModel: ListingListInterface = {
                 {
                     caption: 'Testing Picture',
                     url:
-                        'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553127.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
+                        'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553127.V800/Manyar-Jaya-Surabaya-Indonesia.jpg',
+                    id: 'ID-property-1'
                 },
                 {
                     url:
-                        'https://id1-cdn.pgimgs.com/listing/16497579/UPHO.90553128.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
+                        'https://id1-cdn.pgimgs.com/listing/16497579/UPHO.90553128.V800/Manyar-Jaya-Surabaya-Indonesia.jpg',
+                    id: 'ID-property-2'
                 },
                 {
                     url:
-                        'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553129.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
+                        'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553129.V800/Manyar-Jaya-Surabaya-Indonesia.jpg',
+                    id: 'ID-property-3'
                 },
                 {
                     url:
-                        'https://id1-cdn.pgimgs.com/listing/16497579/UPHO.90553130.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
+                        'https://id1-cdn.pgimgs.com/listing/16497579/UPHO.90553130.V800/Manyar-Jaya-Surabaya-Indonesia.jpg',
+                    id: 'ID-property-4'
                 },
                 {
                     url:
-                        'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553131.V800/Manyar-Jaya-Surabaya-Indonesia.jpg'
+                        'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553131.V800/Manyar-Jaya-Surabaya-Indonesia.jpg',
+                    id: 'ID-property-5'
                 }
             ],
             propertyType: PropertyTypeEnum.HOUSE,
@@ -179,19 +184,23 @@ export const DefaultListingModel: ListingListInterface = {
                 {
                     caption: 'Testing Picture',
                     url:
-                        'https://picture.urbanindo.com/listing/719589588/01/444fb4d6/dijual-kost-an-daerah-dago-bandung/780/780.jpg'
+                        'https://picture.urbanindo.com/listing/719589588/01/444fb4d6/dijual-kost-an-daerah-dago-bandung/780/780.jpg',
+                    id: 'ID-property-1'
                 },
                 {
                     url:
-                        'https://picture.urbanindo.com/listing/719589588/01/c5ed2484/dijual-kost-an-daerah-dago-bandung/780/780.jpg'
+                        'https://picture.urbanindo.com/listing/719589588/01/c5ed2484/dijual-kost-an-daerah-dago-bandung/780/780.jpg',
+                    id: 'ID-property-2'
                 },
                 {
                     url:
-                        'https://picture.urbanindo.com/listing/719589588/01/973ccfc3/dijual-kost-an-daerah-dago-bandung/780/780.jpg'
+                        'https://picture.urbanindo.com/listing/719589588/01/973ccfc3/dijual-kost-an-daerah-dago-bandung/780/780.jpg',
+                    id: 'ID-property-3'
                 },
                 {
                     url:
-                        'https://picture.urbanindo.com/listing/719589588/02/204fca96/dijual-kost-an-daerah-dago-bandung/620/412.jpg'
+                        'https://picture.urbanindo.com/listing/719589588/02/204fca96/dijual-kost-an-daerah-dago-bandung/620/412.jpg',
+                    id: 'ID-property-4'
                 }
             ],
             propertyType: PropertyTypeEnum.HOUSE,

@@ -6,4 +6,5 @@ export interface PropsInterface extends DefaultPropsInterface {
     fontWeight: 300 | 400 | 500 | 600 | 700;
     align: 'center' | 'left' | 'right' | 'initial';
     name?: string;
+    onClick?: () => void;
 }

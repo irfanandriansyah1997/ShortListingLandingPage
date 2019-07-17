@@ -5,12 +5,22 @@
  */
 
 import { ComposedComponentProps } from '@/shared/interfaces/viewmodel.interface';
-import { ListingListInterface } from '@/store/listing/interfaces/listing.interface';
+import { ListingListInterface, ListingActionInterface } from '@/store/listing/interfaces/listing.interface';
 
-export interface StateProps {
+export interface MergedProps {
     landingPageModel: {
         model: ListingListInterface;
+        action: ListingActionInterface;
     };
 }
 
-export type Props = ComposedComponentProps & StateProps;
+export interface StateProps {
+    model: ListingListInterface;
+}
+
+export interface DispatchProps {
+    action: ListingActionInterface;
+}
+
+export type defaultPropsType = ComposedComponentProps & ListingListInterface & ListingActionInterface;
+export type Props = ComposedComponentProps & MergedProps;

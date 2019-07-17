@@ -7,7 +7,6 @@ import { PropsInterface } from '@/shared/components/molecules/sidebar/interfaces
 import { ListingInterface } from '@/store/listing/interfaces/listing.interface';
 
 import './style/style.scss';
-import { AuthModelInterface } from '@/store/auth/interfaces/auth.interface';
 
 class Sidebar extends React.Component<PropsInterface> {
     static propTypes = {
@@ -19,19 +18,10 @@ class Sidebar extends React.Component<PropsInterface> {
 
     render(): React.ReactNode {
         const { listing } = this.props;
-        const param: AuthModelInterface = {
-            email: 'ghaghozu',
-            password: 'asasaskhuih1ue',
-            username: 'gha'
-        };
-
         return (
             <LandingPageContext.Consumer>
-                {(context: ControllerProps) => (
+                {(_: ControllerProps) => (
                     <div className="ui-molecules-sidebar flex fixed">
-                        <button type="submit" onClick={() => context.actionSetLogin(param)}>
-                            Login
-                        </button>
                         {listing.properties.map((item: ListingInterface) => (
                             <CardListing
                                 key={item.id}
@@ -40,6 +30,7 @@ class Sidebar extends React.Component<PropsInterface> {
                                 price={item.attribute.priceTag}
                                 src={item.mainPicture}
                                 location={item.location}
+                                onClick={() => console.log(item.id)}
                             />
                         ))}
                     </div>

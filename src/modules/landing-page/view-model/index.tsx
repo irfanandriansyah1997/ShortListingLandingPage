@@ -7,48 +7,86 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Core, {
-    propTypes as defaultPropTypes,
-    defaultProps as defaultPropsTypes
-} from '@/shared/core/viewmodel.core';
+import { Props, defaultPropsType } from '@/modules/landing-page/interfaces/viewmodel.interface';
+import Core, { propTypes as defaultPropTypes, defaultProps as defaultPropsTypes } from '@/shared/core/viewmodel.core';
 import { StoreInterface } from '@/store/interfaces/store.interface';
-import { Props, StateProps } from '@/modules/landing-page/interfaces/viewmodel.interface';
+import { ListingListInterface, ListingActionInterface } from '@/store/listing/interfaces/listing.interface';
+import { setActive } from '@/store/listing/action/listing.action';
+
+export const defaultStatePropTypes = {
+    count: PropTypes.number,
+    properties: PropTypes.arrayOf(PropTypes.shape({})),
+    selected: PropTypes.number
+};
+
+export const defaultDispatchPropTypes = {
+    activeListing: PropTypes.func
+};
+
+export const defaultAuthPropTypes = {
+    authModel: PropTypes.shape(defaultPropTypes)
+};
 
 export const propTypes = {
     landingPageModel: PropTypes.shape({
-        model: PropTypes.shape({
-            count: PropTypes.number,
-            properties: PropTypes.arrayOf(PropTypes.shape({}))
-        })
+        model: PropTypes.shape(defaultStatePropTypes),
+        action: PropTypes.shape(defaultDispatchPropTypes)
     }).isRequired,
-    authModel: PropTypes.shape(defaultPropTypes)
+    ...defaultAuthPropTypes
 };
 
 export const defaultProps = {
     authModel: defaultPropsTypes
 };
 
-const mapStateToProps = (state: StoreInterface): StateProps => ({
-    landingPageModel: {
-        model: state.ListingReducer
-    }
+const mapStateToProps = (state: StoreInterface): ListingListInterface => ({
+    ...state.ListingReducer
+});
+
+const mapDispatchToProps = (dispatch: any): ListingActionInterface => ({
+    activeListing: (listingID: number | string) => dispatch(setActive(listingID))
 });
 
 const ViewModel = (ComposedComponent: React.ComponentClass<Props>) => {
-    class ViewModelComponent extends React.Component<Props> {
-        static propTypes = propTypes;
+    class ViewModelComponent extends React.Component<defaultPropsType> {
+        static propTypes = {
+            ...defaultDispatchPropTypes,
+            ...defaultStatePropTypes,
+            ...defaultAuthPropTypes
+        };
 
         static defaultProps = defaultProps;
 
+        get store(): Props {
+            const {
+                activeListing, count, properties, selected, ...temp
+            } = this.props;
+
+            return {
+                landingPageModel: {
+                    action: {
+                        activeListing
+                    },
+                    model: {
+                        count,
+                        properties,
+                        selected
+                    }
+                },
+                ...temp
+            };
+        }
+
         render() {
-            return <ComposedComponent {...this.props} />;
+            const { store } = this;
+            return <ComposedComponent {...store} />;
         }
     }
 
     return Core(
         connect(
             mapStateToProps,
-            null
+            mapDispatchToProps
         )(
             // @ts-ignore
             ViewModelComponent
