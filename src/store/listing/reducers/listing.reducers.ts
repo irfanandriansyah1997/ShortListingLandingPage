@@ -6,10 +6,25 @@
 
 import { ReducerInterface } from '@/shared/interfaces/store.interface';
 import { DefaultListingModel } from '@/store/listing/model/listing.model';
-import { ListingListInterface } from '../interfaces/listing.interface';
+import { ListingListInterface, ListingInterface } from '@/store/listing/interfaces/listing.interface';
 
 export const SET_LISTING = 'SET_LISTING';
 export const SET_ACTIVE_LISTING = 'SET_ACTIVE_LISTING';
+
+const getActivePosition = (listing: ListingInterface[], id: string | number) => {
+    const activeListing = listing
+        .map((item: ListingInterface, index: number): any => ({
+            ...item,
+            index
+        }))
+        .filter((item: any) => item.id === id);
+
+    if (activeListing.length > 0) {
+        return activeListing[0].index;
+    }
+
+    return 0;
+};
 
 const Reducers = (
     state: ListingListInterface = DefaultListingModel,
@@ -23,7 +38,10 @@ const Reducers = (
             properties: action.payload.param
         };
     case SET_ACTIVE_LISTING:
-        return state;
+        return {
+            ...state,
+            selected: getActivePosition(state.properties, action.payload.param)
+        };
     default:
         return state;
     }

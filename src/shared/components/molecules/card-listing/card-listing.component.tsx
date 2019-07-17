@@ -44,7 +44,7 @@ class CardListing extends React.Component<PropsInterface> {
 
     render(): React.ReactNode {
         const {
-            id, title, src, price, location, onClick
+            id, title, src, price, location
         } = this.props;
 
         return (
@@ -52,10 +52,10 @@ class CardListing extends React.Component<PropsInterface> {
                 className="ui-molecules-card-listing no-ml no-mr"
                 hoverType="elevate-sm"
                 type="border"
-                onClick={onClick}
+                onClick={this.onClickCard}
                 rounded
             >
-                <Image src={src} alt={title} className="ui-molecules-card-listing__image" />
+                <Image src={src} alt={title} onClick={this.onClickCard} className="ui-molecules-card-listing__image" />
                 <div className="ui-molecules-card-listing__content relative">
                     <DropdownComponent />
                     <Text

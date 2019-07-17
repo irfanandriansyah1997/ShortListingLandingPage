@@ -20,7 +20,7 @@ class Sidebar extends React.Component<PropsInterface> {
         const { listing } = this.props;
         return (
             <LandingPageContext.Consumer>
-                {(_: ControllerProps) => (
+                {(context: ControllerProps) => (
                     <div className="ui-molecules-sidebar flex fixed">
                         {listing.properties.map((item: ListingInterface) => (
                             <CardListing
@@ -30,7 +30,7 @@ class Sidebar extends React.Component<PropsInterface> {
                                 price={item.attribute.priceTag}
                                 src={item.mainPicture}
                                 location={item.location}
-                                onClick={() => console.log(item.id)}
+                                onClick={() => context.actionSetActiveListing(item.id)}
                             />
                         ))}
                     </div>

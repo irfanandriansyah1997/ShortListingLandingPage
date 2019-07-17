@@ -10,7 +10,7 @@ import { propTypes, defaultProps } from '@/modules/landing-page/view-model';
 import Views from '@/modules/landing-page/views';
 import { AuthModelInterface } from '@/store/auth/interfaces/auth.interface';
 import { ControllerProps } from '../interfaces/controller.interface';
-import { ListingListInterface } from '@/store/listing/interfaces/listing.interface';
+import { ListingListInterface, ListingInterface } from '@/store/listing/interfaces/listing.interface';
 
 export const LandingPageContext = React.createContext<ControllerProps | null>(null);
 
@@ -45,8 +45,20 @@ class LandingPageControler extends React.Component<Props> {
             actionSetLogout: this.actionSetLogout,
             actionSetActiveListing: this.actionSetActiveListing,
             authModel: this.authModel,
-            listingModel: this.listingModel
+            listingModel: {
+                ...this.listingModel,
+                activeListing: this.activeListing
+            }
         };
+    }
+
+    get activeListing(): ListingInterface | undefined {
+        const { properties, selected } = this.listingModel;
+
+        if (selected <= properties.length - 1) {
+            return properties[selected];
+        }
+        return undefined;
     }
 
     actionSetLogin(user: AuthModelInterface): void {
@@ -55,7 +67,8 @@ class LandingPageControler extends React.Component<Props> {
     }
 
     actionSetActiveListing(listingID: number | string): void {
-        console.log(listingID);
+        const { landingPageModel } = this.props;
+        landingPageModel.action.activeListing(listingID);
     }
 
     actionSetLogout(): void {

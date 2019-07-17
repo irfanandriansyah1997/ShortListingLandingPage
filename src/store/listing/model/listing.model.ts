@@ -23,6 +23,8 @@ export const DefaultListingModel: ListingListInterface = {
 <p>Luas tanah:  225 m2 <br>Luas bangunan: 200 m2 <br>Lantai: 2 1/2 Lantai <br>Dapur: Dapur Kotor dan Dapur Bersih<br>Hadap: Utara<br>Mobil: Carport dan Garasi</p>
 <p>Informasi:<br>- 7 menit ke Gerbang TOL Buah Batu, <br>- 10 menit ke Carrefour, <br>- 10 menit ke Buah Batu Square<br>- 20 menit ke Trans Studio Mall <br>- Listrik: 3500 watt <br>- Air: Submersible<br>- Filter : Yamaha Filter<br>- Semi Furnished<br>- Internet Fiber Optic by Firstmedia<br>- CCTV</p>
 <p></p>`,
+            link:
+                'https://www.olx.co.id/iklan/rumah-dijual-murah-siap-huni-di-arcamanik-bandung-strategis-disko-dp-IDAd7W6.html?ad_type=OR#5e2fc97f72',
             attribute: {
                 bedrooms: 3,
                 bathrooms: 2,
@@ -123,6 +125,8 @@ export const DefaultListingModel: ListingListInterface = {
             title: 'Dijual Kost-an Daerah Dago Bandung',
             location: 'Jl. Dago Pojok  Dago',
             description: 'Testing Description',
+            link:
+                'https://www.olx.co.id/iklan/cluster-murah-strategis-di-serpong-park-IDAd7Uy.html?ad_type=OR#5e2fc97f72',
             attribute: {
                 bedrooms: 6,
                 bathrooms: 5,

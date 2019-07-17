@@ -6,12 +6,16 @@
 
 import { AuthModelInterface } from '@/store/auth/interfaces/auth.interface';
 import { DefaultPropsInterface } from '@/shared/interfaces/component.interface';
-import { ListingListInterface } from '@/store/listing/interfaces/listing.interface';
+import { ListingListInterface, ListingInterface } from '@/store/listing/interfaces/listing.interface';
+
+export interface CustomListingInterface extends ListingListInterface {
+    activeListing?: ListingInterface;
+}
 
 export interface ControllerProps extends DefaultPropsInterface {
     actionSetLogin: (option: AuthModelInterface) => void;
     actionSetLogout: () => void;
     actionSetActiveListing: (listingID: number | string) => void;
     authModel: AuthModelInterface;
-    listingModel: ListingListInterface;
+    listingModel: CustomListingInterface;
 }
