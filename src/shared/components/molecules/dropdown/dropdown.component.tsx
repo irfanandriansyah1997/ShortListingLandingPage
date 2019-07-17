@@ -26,11 +26,11 @@ class DropDownComponent extends React.Component {
     }
 
     actionHide() {
-        console.log('hide');
+        // TODO ACTION HIDE
     }
 
     actionDelete() {
-        console.log('delete');
+        // TODO ACTION DELETE
     }
 
     handleClick(data: any) {
