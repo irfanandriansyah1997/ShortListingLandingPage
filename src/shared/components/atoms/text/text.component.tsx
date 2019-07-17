@@ -19,13 +19,15 @@ class Text extends React.Component<PropsInterface> {
         fontWeight: PropTypes.oneOf([300, 400, 500, 600, 700]).isRequired,
         children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.string]).isRequired,
         align: PropTypes.oneOf(['center', 'left', 'right', 'initial']),
-        name: PropTypes.string
+        name: PropTypes.string,
+        onClick: PropTypes.func
     };
 
     static defaultProps = {
         styling: 'text',
         align: 'initial',
-        name: ''
+        name: '',
+        onClick: () => {}
     };
 
     get className(): string {
@@ -50,10 +52,10 @@ class Text extends React.Component<PropsInterface> {
     }
 
     render(): React.ReactNode {
-        const { children, tag } = this.props;
+        const { children, tag, onClick } = this.props;
         const { className } = this;
 
-        return React.createElement(tag, { className }, children);
+        return React.createElement(tag, { className, onClick }, children);
     }
 }
 

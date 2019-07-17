@@ -28,6 +28,20 @@ class CardListing extends React.Component<PropsInterface> {
         onClick: () => {}
     };
 
+    constructor(props: PropsInterface) {
+        super(props);
+
+        this.onClickCard = this.onClickCard.bind(this);
+    }
+
+    onClickCard(): void {
+        const { onClick } = this.props;
+
+        if (onClick) {
+            onClick();
+        }
+    }
+
     render(): React.ReactNode {
         const {
             id, title, src, price, location, onClick
@@ -49,6 +63,7 @@ class CardListing extends React.Component<PropsInterface> {
                         tag="p"
                         styling="text"
                         fontWeight={500}
+                        onClick={this.onClickCard}
                     >
                         {id}
                     </Text>
@@ -57,6 +72,7 @@ class CardListing extends React.Component<PropsInterface> {
                         tag="h3"
                         styling="subheading"
                         fontWeight={600}
+                        onClick={this.onClickCard}
                     >
                         {price}
                     </Text>
@@ -65,6 +81,7 @@ class CardListing extends React.Component<PropsInterface> {
                         tag="h3"
                         styling="subheading"
                         fontWeight={600}
+                        onClick={this.onClickCard}
                     >
                         {title}
                     </Text>
@@ -73,6 +90,7 @@ class CardListing extends React.Component<PropsInterface> {
                         tag="span"
                         styling="text"
                         fontWeight={400}
+                        onClick={this.onClickCard}
                     >
                         {location}
                     </Text>
