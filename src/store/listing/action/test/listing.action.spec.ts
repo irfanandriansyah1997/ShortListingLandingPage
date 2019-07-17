@@ -36,6 +36,8 @@ describe('Testing action for listing store', () => {
                 },
                 formattedAttributes: [],
                 listingType: ListingTypeEnum.FOR_SALE,
+                link:
+                    'https://www.olx.co.id/iklan/rumah-dijual-murah-siap-huni-di-arcamanik-bandung-strategis-disko-dp-IDAd7W6.html?ad_type=OR#5e2fc97f72',
                 mainPicture:
                     'https://id2-cdn.pgimgs.com/listing/16497579/UPHO.90553127.V800/Manyar-Jaya-Surabaya-Indonesia.jpg',
                 pictures: [

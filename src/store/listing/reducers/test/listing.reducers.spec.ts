@@ -19,6 +19,8 @@ const param: ListingInterface[] = [
         title: 'Dijual Rumah Nusaloka di BSD Tangerang Selatan',
         location: 'BSD, Tangerang Selatan, Jakarta Barat',
         description: 'Testing Description',
+        link:
+            'https://www.olx.co.id/iklan/rumah-dijual-murah-siap-huni-di-arcamanik-bandung-strategis-disko-dp-IDAd7W6.html?ad_type=OR#5e2fc97f72',
         attribute: {
             bedrooms: 3,
             bathrooms: 2,

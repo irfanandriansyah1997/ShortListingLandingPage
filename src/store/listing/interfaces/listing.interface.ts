@@ -21,6 +21,7 @@ export interface ListingInterface {
     formattedAttributes: FormattedAttribute[];
     listingType: ListingTypeEnum;
     mainPicture: string;
+    link: string;
     pictures: PictureInterface[];
     propertyType: PropertyTypeEnum;
     agent: AgentInterface;
