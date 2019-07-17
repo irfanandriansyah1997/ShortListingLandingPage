@@ -1,0 +1,39 @@
+.ui-molecules-dropdown {
+    float: right;
+    margin-top: -10px;
+    
+    #clickableAwesomeFont {
+        cursor: pointer;
+    }
+
+    .ui-atomic-dropdown--style-body {
+        background-color: #ffffff;
+        padding: 5px 10px 10px 10px;
+        margin-left: -55px;
+        margin-top: -12px;
+        position: absolute;
+        width: 100px;
+        height: 56px;
+        border-radius: 4px;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.08);
+        border: solid 1px #dddddd;
+
+        div {
+            cursor: pointer;
+            padding: 3px;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #424b5b;
+        }
+
+        div:active {
+            background-color: #f7f8f9;
+            box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.08);
+            border: solid 0.5px #dddddd;
+        }
+    }
+}
