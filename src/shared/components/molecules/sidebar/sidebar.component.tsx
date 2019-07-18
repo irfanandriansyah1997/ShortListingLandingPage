@@ -31,6 +31,8 @@ class Sidebar extends React.Component<PropsInterface> {
                                 src={item.mainPicture}
                                 location={item.location}
                                 onClick={() => context.actionSetActiveListing(item.id)}
+                                onDelete={() => console.log(`delete ${item.id}`)}
+                                onHide={() => console.log(`hide ${item.id}`)}
                             />
                         ))}
                     </div>
