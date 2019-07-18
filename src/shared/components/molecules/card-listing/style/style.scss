@@ -1,12 +1,35 @@
 @import '@/shared/styles/import.scss';
 
 .ui-molecules-card-listing {
+    $c: &;
+
     width: 100%;
     overflow: hidden;
     flex-direction: row;
     flex: 0 0 105px;
     min-height: 105px;
     cursor: pointer;
+
+    &--hide {
+        #{$c}__image,
+        .ui-atomic-text {
+            opacity: 0.5;
+        }
+
+        &.ui-atomic-card {
+            &:hover,
+            &.ui-atomic-card--active {
+                &.ui-atomic-card--type-border {
+                    @include border(
+                        all,
+                        1px,
+                        solid,
+                        rgba(get-color(heading), 0.15)
+                    );
+                }
+            }
+        }
+    }
 
     &__image {
         width: 105px;
@@ -22,6 +45,7 @@
             position: absolute;
             top: 0;
             right: 5px;
+            z-index: 1;
         }
     }
 

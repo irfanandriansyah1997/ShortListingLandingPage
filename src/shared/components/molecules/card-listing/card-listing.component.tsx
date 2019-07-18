@@ -11,6 +11,7 @@ import Card from '@/shared/components/atoms/card/card.component';
 import Image from '@/shared/components/atoms/image/image.component';
 import Text from '@/shared/components/atoms/text/text.component';
 import OverflowMenu from '@/shared/components/molecules/overflow-menu/overflow-menu.component';
+import { convert_obj_to_string } from '@/shared/utils/string.utils';
 
 import './style/style.scss';
 
@@ -46,19 +47,25 @@ class CardListing extends React.Component<PropsInterface> {
         }
     }
 
+    get className(): string {
+        const { hide } = this.props;
+
+        return convert_obj_to_string({
+            'ui-molecules-card-listing': true,
+            'ui-molecules-card-listing--hide': hide,
+            'no-ml': true,
+            'no-mr': true
+        });
+    }
+
     render(): React.ReactNode {
         const {
             id, title, src, price, location, onDelete, onHide
         } = this.props;
+        const { className } = this;
 
         return (
-            <Card
-                className="ui-molecules-card-listing no-ml no-mr"
-                hoverType="elevate-sm"
-                type="border"
-                onClick={this.onClickCard}
-                rounded
-            >
+            <Card className={className} hoverType="elevate-sm" type="border" onClick={this.onClickCard} rounded>
                 <Image src={src} alt={title} onClick={this.onClickCard} className="ui-molecules-card-listing__image" />
                 <div className="ui-molecules-card-listing__content relative">
                     <OverflowMenu onDelete={onDelete} onHide={onHide} />
