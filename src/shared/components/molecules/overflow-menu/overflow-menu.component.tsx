@@ -42,7 +42,7 @@ class OverflowMenuComponent extends React.Component {
     render(): React.ReactNode {
         const { opened } = this.state;
         return (
-            <div className="ui-molecules-overflow-menu absolute">
+            <div className="ui-molecules-overflow-menu">
                 <span id="clickableAwesomeFont" className="absolute">
                     <Icon onClick={() => this.handleClick(this.state)}>more_horiz</Icon>
                 </span>

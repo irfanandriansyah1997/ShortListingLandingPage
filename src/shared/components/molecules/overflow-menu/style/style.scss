@@ -1,21 +1,19 @@
 @import '@/shared/styles/import.scss';
 
 .ui-molecules-overflow-menu {
-    top: 0;
-    right: 0;
     height: 34px;
     width: 34px;
 
     #clickableAwesomeFont {
         cursor: pointer;
         z-index: 1;
-        right: 5px;
+        right: 0;
     }
 
     .ui-atomic-dropdown--style-body {
         background-color: #ffffff;
         top: 5px;
-        right: 5px;
+        right: 0;
         position: absolute;
         width: 100px;
         border-radius: 4px;
