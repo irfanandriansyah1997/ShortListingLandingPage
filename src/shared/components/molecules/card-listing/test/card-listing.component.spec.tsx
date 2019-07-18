@@ -17,7 +17,9 @@ const FIXTURE: PropsInterface[] = [
         location: 'Padalarang',
         price: 'Rp. 750 Juta',
         src: 'image',
-        title: 'Rumah Dijual'
+        title: 'Rumah Dijual',
+        hide: true,
+        active: true
     }
 ];
 
@@ -26,18 +28,10 @@ describe('Testing card listing component in molecules component ', () => {
         FIXTURE.map((item: PropsInterface) => {
             const card = mount(<CardListing {...item} />);
 
-            expect(card.find('Text[name="ui-molecules-card-listing__id mb-8"]').text()).toBe(
-                item.id
-            );
-            expect(card.find('Text[name="ui-molecules-card-listing__price mb-8"]').text()).toBe(
-                item.price
-            );
-            expect(card.find('Text[name="ui-molecules-card-listing__title mb-4"]').text()).toBe(
-                item.title
-            );
-            expect(card.find('Text[name="ui-molecules-card-listing__location"]').text()).toBe(
-                item.location
-            );
+            expect(card.find('Text[name="ui-molecules-card-listing__id mb-8"]').text()).toBe(item.id);
+            expect(card.find('Text[name="ui-molecules-card-listing__price mb-8"]').text()).toBe(item.price);
+            expect(card.find('Text[name="ui-molecules-card-listing__title mb-4"]').text()).toBe(item.title);
+            expect(card.find('Text[name="ui-molecules-card-listing__location"]').text()).toBe(item.location);
 
             return true;
         });

@@ -13,6 +13,7 @@ import './style/style.scss';
 
 class OverflowMenuComponent extends React.Component<PropsInterface> {
     static propTypes = {
+        hide: PropTypes.bool.isRequired,
         onHide: PropTypes.func,
         onDelete: PropTypes.func
     };
@@ -34,10 +35,11 @@ class OverflowMenuComponent extends React.Component<PropsInterface> {
     };
 
     showMenu() {
+        const { hide } = this.props;
         return (
             <div className="ui-atomic-dropdown--style-body absolute">
                 <div role="button" onClick={this.actionHide} onKeyPress={this.actionHide} tabIndex={0}>
-                    Hide
+                    {hide ? 'Unhide' : 'Hide'}
                 </div>
                 <div role="button" onClick={this.actionDelete} onKeyDown={this.actionDelete} tabIndex={0}>
                     Delete

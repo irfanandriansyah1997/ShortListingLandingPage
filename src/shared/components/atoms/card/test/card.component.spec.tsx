@@ -15,17 +15,20 @@ const FIXTURE: PropsInterface[] = [
     {
         hoverType: 'default-1',
         type: 'flat',
-        rounded: false
+        rounded: false,
+        active: true
     },
     {
         hoverType: 'elevate-sm',
         type: 'base',
-        rounded: false
+        rounded: false,
+        active: false
     },
     {
         hoverType: 'elevate-xs',
         type: 'border',
-        rounded: true
+        rounded: true,
+        active: false
     }
 ];
 

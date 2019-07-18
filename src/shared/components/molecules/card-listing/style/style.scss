@@ -1,12 +1,56 @@
 @import '@/shared/styles/import.scss';
 
 .ui-molecules-card-listing {
+    $c: &;
+
     width: 100%;
     overflow: hidden;
     flex-direction: row;
     flex: 0 0 105px;
     min-height: 105px;
     cursor: pointer;
+
+    &--hide {
+        #{$c}__image,
+        .ui-atomic-text {
+            opacity: 0.5;
+        }
+
+        &.ui-atomic-card {
+            &:hover {
+                &.ui-atomic-card--type-border {
+                    @include border(
+                        all,
+                        1px,
+                        solid,
+                        rgba(get-color(heading), 0.15)
+                    );
+                }
+            }
+
+            &.ui-atomic-card--active {
+                &:hover {
+                    &.ui-atomic-card--type-border {
+                        @include border(
+                            all,
+                            1px,
+                            solid,
+                            rgba(get-color(heading), 0.5)
+                        );
+                    }
+                }
+
+                &.ui-atomic-card--type-border {
+                    @include border(
+                        all,
+                        1px,
+                        solid,
+                        rgba(get-color(heading), 0.5)
+                    );
+                }
+            }
+        }
+    }
 
     &__image {
         width: 105px;
@@ -17,11 +61,28 @@
         width: calc(100% - 105px);
 
         @include padding(all, 8px 16px);
+    }
 
-        .ui-molecules-overflow-menu {
-            position: absolute;
-            top: 0;
-            right: 5px;
+    &__action {
+        flex-direction: row;
+        align-items: center;
+        top: 0;
+        right: 5px;
+        z-index: 1;
+
+        &__show-listing {
+            width: 34px;
+            height: 34px;
+            align-items: center;
+            justify-content: center;
+
+            @include no-padding();
+            @include no-border();
+            @include background-color(transparent);
+
+            .ui-atomic-icon {
+                @include font-size(lg);
+            }
         }
     }
 
