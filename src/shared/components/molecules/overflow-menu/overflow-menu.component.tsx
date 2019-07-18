@@ -2,7 +2,7 @@ import * as React from 'react';
 import Icon from '@/shared/components/atoms/icon/icon.component';
 import './style/style.scss';
 
-class DropDownComponent extends React.Component {
+class OverflowMenuComponent extends React.Component {
     constructor(props: any) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
@@ -10,11 +10,11 @@ class DropDownComponent extends React.Component {
 
     state = {
         opened: false
-    }
+    };
 
     showMenu() {
         return (
-            <div className="ui-atomic-dropdown--style-body">
+            <div className="ui-atomic-dropdown--style-body absolute">
                 <div role="button" onClick={() => this.actionHide} onKeyPress={() => this.actionHide} tabIndex={0}>
                     Hide
                 </div>
@@ -42,16 +42,14 @@ class DropDownComponent extends React.Component {
     render(): React.ReactNode {
         const { opened } = this.state;
         return (
-            <div className="ui-molecules-dropdown">
-                <span id="clickableAwesomeFont">
+            <div className="ui-molecules-overflow-menu absolute">
+                <span id="clickableAwesomeFont" className="absolute">
                     <Icon onClick={() => this.handleClick(this.state)}>more_horiz</Icon>
                 </span>
-                {
-                    opened ? this.showMenu(): null
-                }
+                {opened ? this.showMenu() : null}
             </div>
         );
     }
 }
 
-export default DropDownComponent;
+export default OverflowMenuComponent;

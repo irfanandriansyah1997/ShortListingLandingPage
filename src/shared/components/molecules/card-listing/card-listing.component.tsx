@@ -10,7 +10,7 @@ import { PropsInterface } from './interfaces/component.interface';
 import Card from '@/shared/components/atoms/card/card.component';
 import Image from '@/shared/components/atoms/image/image.component';
 import Text from '@/shared/components/atoms/text/text.component';
-import DropdownComponent from '@/shared/components/molecules/dropdown/dropdown.component';
+import OverflowMenu from '@/shared/components/molecules/overflow-menu/overflow-menu.component';
 
 import './style/style.scss';
 
@@ -57,7 +57,7 @@ class CardListing extends React.Component<PropsInterface> {
             >
                 <Image src={src} alt={title} onClick={this.onClickCard} className="ui-molecules-card-listing__image" />
                 <div className="ui-molecules-card-listing__content relative">
-                    <DropdownComponent />
+                    <OverflowMenu />
                     <Text
                         name="ui-molecules-card-listing__id mb-8"
                         tag="p"
