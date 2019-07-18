@@ -10,6 +10,7 @@ import { ListingListInterface } from '@/store/listing/interfaces/listing.interfa
 import { CertificationType } from '@/store/listing/interfaces/listing/listing_model.interface';
 import { ListingTypeEnum, PropertyTypeEnum } from '@/store/listing/interfaces/listing/listing_type.interface';
 
+
 export const DefaultListingModel: ListingListInterface = {
     count: 2,
     properties: [
