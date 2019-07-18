@@ -1,0 +1,26 @@
+@import '@/shared/styles/import.scss';
+
+.ui-molecules-alert {
+    @include padding(all, 16px 16px);
+
+    /*
+     * Theme
+     */
+    &--theme {
+        &-default {
+            @include background-color(table-field);
+        }
+    }
+
+    .ui-atomic-icon {
+        flex: 0 0 24px;
+
+        @include font-size(base);
+    }
+
+    &__content {
+        p {
+            max-width: 500px;
+        }
+    }
+}

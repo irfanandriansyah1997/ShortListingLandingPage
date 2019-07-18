@@ -10,6 +10,12 @@
 
     @include padding(all, 28px 25px 75px);
 
+    .ui-molecules-alert {
+        width: calc(100% + 50px);
+
+        @include margin(all, -28px -25px 16px);
+    }
+
     &__heading {
         width: 100%;
 
