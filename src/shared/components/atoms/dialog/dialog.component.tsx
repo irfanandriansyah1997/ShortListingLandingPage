@@ -23,11 +23,13 @@ class Dialog extends React.PureComponent<PropsInterface, StateInterface> {
         children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node, PropTypes.string]).isRequired,
         type: PropTypes.oneOf([DialogType.POPUP]),
         show: PropTypes.bool.isRequired,
-        onCloseDialog: PropTypes.func.isRequired
+        onCloseDialog: PropTypes.func.isRequired,
+        className: PropTypes.string
     };
 
     static defaultProps = {
-        type: DialogType.POPUP
+        type: DialogType.POPUP,
+        className: ''
     };
 
     static getDerivedStateFromProps(props: PropsInterface, state: StateInterface) {
@@ -53,9 +55,10 @@ class Dialog extends React.PureComponent<PropsInterface, StateInterface> {
     }
 
     get className(): string {
-        const { type } = this.props;
+        const { type, className } = this.props;
 
         return convert_obj_to_string({
+            [`${className}`]: true,
             'ui-atomic-dialog': true,
             'ui-atomic-dialog--type-popup': type === DialogType.POPUP
         });

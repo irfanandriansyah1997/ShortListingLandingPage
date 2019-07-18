@@ -6,7 +6,23 @@
     border-radius: 4px;
 
     @include padding(all, 13px 6px);
-    @include no-border();
-    @include background-color(heading);
     @include transition(0.31s cubic-bezier(0.7, 0.3, 0, 1));
+
+    &--style {
+        &-default {
+            @include border(all, 1px, solid, heading);
+            @include background-color(heading);
+        }
+
+        &-border {
+            @include font-color(heading);
+            @include border(all, 1px, solid, heading);
+            @include background-color(transparent);
+
+            &:hover {
+                @include background-color(heading);
+                @include font-color(white);
+            }
+        }
+    }
 }

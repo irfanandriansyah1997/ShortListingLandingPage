@@ -1,0 +1,17 @@
+@import '@/shared/styles/import.scss';
+
+.ui-molecules-delete-dialog {
+    .ui-atomic-dialog__content {
+        min-height: initial;
+
+        @include padding(all, 24px 16px);
+    }
+
+    &__button {
+        button {
+            width: 98px;
+
+            @include margin(all, 0 8px);
+        }
+    }
+}
