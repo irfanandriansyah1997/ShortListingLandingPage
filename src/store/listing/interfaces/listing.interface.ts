@@ -25,6 +25,7 @@ export interface ListingInterface {
     pictures: PictureInterface[];
     propertyType: PropertyTypeEnum;
     agent: AgentInterface;
+    hide: boolean;
 }
 
 export interface ListingListInterface {

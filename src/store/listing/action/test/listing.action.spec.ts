@@ -21,6 +21,7 @@ describe('Testing action for listing store', () => {
                 id: '#123abce',
                 title: 'Dijual Rumah Nusaloka di BSD Tangerang Selatan',
                 location: 'BSD, Tangerang Selatan, Jakarta Barat',
+                hide: true,
                 description: 'Testing Description',
                 attribute: {
                     bedrooms: 3,

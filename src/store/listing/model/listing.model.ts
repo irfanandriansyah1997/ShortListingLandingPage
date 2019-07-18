@@ -10,12 +10,12 @@ import { ListingListInterface } from '@/store/listing/interfaces/listing.interfa
 import { CertificationType } from '@/store/listing/interfaces/listing/listing_model.interface';
 import { ListingTypeEnum, PropertyTypeEnum } from '@/store/listing/interfaces/listing/listing_type.interface';
 
-
 export const DefaultListingModel: ListingListInterface = {
     count: 2,
     properties: [
         {
             id: '#123abce',
+            hide: false,
             title: 'Dijual Rumah Nusaloka di BSD Tangerang Selatan',
             location: 'BSD, Tangerang Selatan, Jakarta Barat',
             description: `<p></p><p>RUMAH DIJUAL</p>
@@ -125,6 +125,7 @@ export const DefaultListingModel: ListingListInterface = {
             id: '#PGA68N',
             title: 'Dijual Kost-an Daerah Dago Bandung',
             location: 'Jl. Dago Pojok  Dago',
+            hide: true,
             description: 'Testing Description',
             link:
                 'https://www.olx.co.id/iklan/cluster-murah-strategis-di-serpong-park-IDAd7Uy.html?ad_type=OR#5e2fc97f72',
