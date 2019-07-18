@@ -12,19 +12,32 @@ import Shortlist from '@/modules/landing-page/components/molecules/shortlist/sho
 import Sidebar from '@/shared/components/molecules/sidebar/sidebar.component';
 
 import './style/style.scss';
+import EmptyStateComponent from '@/shared/helper/empty-state.helper';
+
+class LandingPageContent extends React.Component<ControllerProps> {
+    render() {
+        const { listingModel } = this.props;
+        const { properties, selected } = listingModel;
+
+        return (
+            <div className="ui-landing-page-module__content flex">
+                <Sidebar listing={listingModel} />
+                <Shortlist listing={properties[selected]} />
+            </div>
+        );
+    }
+}
 
 class LandingPageView extends React.Component<ControllerProps> {
     render() {
         const { listingModel } = this.props;
-        const { properties, selected } = listingModel;
+        const { properties } = listingModel;
         return (
             <div className="ui-landing-page-module">
                 <Header title="Listing 500 Juta" />
-
-                <div className="ui-landing-page-module__content flex">
-                    <Sidebar listing={listingModel} />
-                    <Shortlist listing={properties[selected]} />
-                </div>
+                <EmptyStateComponent count={properties.length}>
+                    <LandingPageContent {...this.props} />
+                </EmptyStateComponent>
             </div>
         );
     }

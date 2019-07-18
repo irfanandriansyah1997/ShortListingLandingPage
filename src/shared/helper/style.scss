@@ -1,0 +1,22 @@
+@import '@/shared/styles/import.scss';
+
+.ui-molecules-empty-state {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 82px);
+
+    img {
+        width: 200px;
+    }
+
+    &__text {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+            width: 350px;
+        }
+    }
+}
