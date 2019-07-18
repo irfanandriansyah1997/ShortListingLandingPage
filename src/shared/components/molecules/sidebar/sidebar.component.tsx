@@ -22,7 +22,7 @@ class Sidebar extends React.Component<PropsInterface> {
             <LandingPageContext.Consumer>
                 {(context: ControllerProps) => (
                     <div className="ui-molecules-sidebar flex fixed">
-                        {listing.properties.map((item: ListingInterface) => (
+                        {listing.properties.map((item: ListingInterface, index: number) => (
                             <CardListing
                                 key={item.id}
                                 id={item.id}
@@ -31,6 +31,7 @@ class Sidebar extends React.Component<PropsInterface> {
                                 src={item.mainPicture}
                                 location={item.location}
                                 hide={item.hide}
+                                active={listing.selected === index}
                                 onClick={() => context.actionSetActiveListing(item.id)}
                                 onDelete={() => console.log(`delete ${item.id}`)}
                                 onHide={() => console.log(`hide ${item.id}`)}

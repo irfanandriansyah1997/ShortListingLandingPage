@@ -6,7 +6,8 @@ export interface PropsInterface extends DefaultPropsInterface {
     src: string;
     price: string | number;
     location: string;
-    hide?: boolean;
+    hide: boolean;
+    active: boolean;
     onClick?: () => void;
     onHide?: () => void;
     onDelete?: () => void;

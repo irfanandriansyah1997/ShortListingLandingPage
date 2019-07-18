@@ -23,6 +23,7 @@ class Card extends React.Component<PropsInterface> {
             'elevate-lg',
             'elevate-xl'
         ]).isRequired,
+        active: PropTypes.bool.isRequired,
         rounded: PropTypes.bool,
         className: PropTypes.string
     };
@@ -34,7 +35,7 @@ class Card extends React.Component<PropsInterface> {
 
     get className(): string {
         const {
-            className, rounded, type, hoverType
+            className, rounded, type, hoverType, active
         } = this.props;
 
         return convert_obj_to_string({
@@ -43,6 +44,7 @@ class Card extends React.Component<PropsInterface> {
             'inline-flex': true,
             'ui-atomic-card': true,
             'ui-atomic-card--rounded': rounded,
+            'ui-atomic-card--active': active,
             [`ui-atomic-card--type-${type}`]: true,
             [`shadow--effect-${hoverType}`]: true
         });
