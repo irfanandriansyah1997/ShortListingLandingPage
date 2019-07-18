@@ -10,10 +10,16 @@
 
     @include padding(all, 28px 25px 75px);
 
-    .ui-molecules-alert {
-        width: calc(100% + 50px);
+    &--hide {
+        @include padding(all, 114px 25px 75px);
+    }
 
-        @include margin(all, -28px -25px 16px);
+    .ui-molecules-alert {
+        position: fixed;
+        width: 100%;
+        top: 82px;
+        left: 419px;
+        z-index: 100;
     }
 
     &__heading {

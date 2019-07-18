@@ -7,6 +7,7 @@
     left: 419px;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 
     @include background-color(white);
     @include padding(all, 0 25px);
