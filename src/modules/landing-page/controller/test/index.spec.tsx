@@ -25,7 +25,8 @@ const FIXTURE: Props = {
             selected: 0
         },
         action: {
-            activeListing: (listingID: number | string) => {}
+            activeListing: (listingID: number | string) => {},
+            removeListing: (listingID: number | string) => {}
         }
     }
 };

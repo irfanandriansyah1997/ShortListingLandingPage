@@ -16,6 +16,7 @@ export interface ControllerProps extends DefaultPropsInterface {
     actionSetLogin: (option: AuthModelInterface) => void;
     actionSetLogout: () => void;
     actionSetActiveListing: (listingID: number | string) => void;
+    actionRemoveListing: (listingID: number | string) => void;
     authModel: AuthModelInterface;
     listingModel: CustomListingInterface;
 }

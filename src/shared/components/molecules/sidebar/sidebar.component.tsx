@@ -13,11 +13,12 @@ class Sidebar extends React.Component<PropsInterface> {
         listing: PropTypes.shape({
             count: PropTypes.number,
             properties: PropTypes.arrayOf(PropTypes.shape({}))
-        }).isRequired
+        }).isRequired,
+        onDelete: PropTypes.func.isRequired
     };
 
     render(): React.ReactNode {
-        const { listing } = this.props;
+        const { listing, onDelete } = this.props;
         return (
             <LandingPageContext.Consumer>
                 {(context: ControllerProps) => (
@@ -33,7 +34,7 @@ class Sidebar extends React.Component<PropsInterface> {
                                 hide={item.hide}
                                 active={listing.selected === index}
                                 onClick={() => context.actionSetActiveListing(item.id)}
-                                onDelete={() => console.log(`delete ${item.id}`)}
+                                onDelete={() => onDelete(item.id)}
                                 onHide={() => console.log(`hide ${item.id}`)}
                             />
                         ))}

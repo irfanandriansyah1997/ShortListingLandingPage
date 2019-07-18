@@ -11,7 +11,7 @@ import { Props, defaultPropsType } from '@/modules/landing-page/interfaces/viewm
 import Core, { propTypes as defaultPropTypes, defaultProps as defaultPropsTypes } from '@/shared/core/viewmodel.core';
 import { StoreInterface } from '@/store/interfaces/store.interface';
 import { ListingListInterface, ListingActionInterface } from '@/store/listing/interfaces/listing.interface';
-import { setActive } from '@/store/listing/action/listing.action';
+import { setActiveAction, removeListingAction } from '@/store/listing/action/listing.action';
 
 export const defaultStatePropTypes = {
     count: PropTypes.number,
@@ -20,7 +20,8 @@ export const defaultStatePropTypes = {
 };
 
 export const defaultDispatchPropTypes = {
-    activeListing: PropTypes.func
+    activeListing: PropTypes.func,
+    removeListing: PropTypes.func
 };
 
 export const defaultAuthPropTypes = {
@@ -44,7 +45,8 @@ const mapStateToProps = (state: StoreInterface): ListingListInterface => ({
 });
 
 const mapDispatchToProps = (dispatch: any): ListingActionInterface => ({
-    activeListing: (listingID: number | string) => dispatch(setActive(listingID))
+    activeListing: (listingID: number | string) => dispatch(setActiveAction(listingID)),
+    removeListing: (listingID: number | string) => dispatch(removeListingAction(listingID))
 });
 
 const ViewModel = (ComposedComponent: React.ComponentClass<Props>) => {
@@ -59,13 +61,14 @@ const ViewModel = (ComposedComponent: React.ComponentClass<Props>) => {
 
         get store(): Props {
             const {
-                activeListing, count, properties, selected, ...temp
+                activeListing, removeListing, count, properties, selected, ...temp
             } = this.props;
 
             return {
                 landingPageModel: {
                     action: {
-                        activeListing
+                        activeListing,
+                        removeListing
                     },
                     model: {
                         count,

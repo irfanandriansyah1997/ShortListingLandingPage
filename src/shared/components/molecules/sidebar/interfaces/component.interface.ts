@@ -3,4 +3,5 @@ import { ListingListInterface } from '@/store/listing/interfaces/listing.interfa
 
 export interface PropsInterface extends DefaultPropsInterface {
     listing: ListingListInterface;
+    onDelete: (id: number | string) => void;
 }
