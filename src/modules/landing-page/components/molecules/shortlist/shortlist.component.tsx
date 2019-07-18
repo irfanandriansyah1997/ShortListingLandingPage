@@ -15,12 +15,13 @@ import Carousel from '@/shared/components/molecules/carousel/carousel.component'
 import Alert from '@/shared/components/molecules/alert/alert.component';
 import Table from '@/shared/components/molecules/table/table.component';
 import TextExpand from '@/shared/components/molecules/text-expand/text-expand.component';
+import AttributeInfo from '@/shared/components/atoms/attribute-info/attribute-info.component';
 import { PropsInterface as AlertPropTypes } from '@/shared/components/molecules/alert/interfaces/component.interface';
+import { convert_obj_to_string } from '@/shared/utils/string.utils';
 import ListingTranslator from '@/store/listing/translator/listing.translator';
 import { AttributeListingTranslatorInterface } from '@/store/listing/interfaces/translator/translator.interface';
 
 import './style.scss';
-import AttributeInfo from '@/shared/components/atoms/attribute-info/attribute-info.component';
 
 class Shortlist extends React.Component<PropsInterface> {
     static propTypes = {
@@ -43,12 +44,23 @@ class Shortlist extends React.Component<PropsInterface> {
         /* eslint-enable */
     }
 
+    get className(): string {
+        const { listing } = this.props;
+
+        return convert_obj_to_string({
+            'ui-molecules-shortlist': true,
+            flex: true,
+            relative: true,
+            'ui-molecules-shortlist--hide': listing.hide
+        });
+    }
+
     render() {
         const { listing } = this.props;
-        const { attribute, alertPropertyHide } = this;
+        const { attribute, alertPropertyHide, className } = this;
 
         return (
-            <div className="ui-molecules-shortlist flex relative">
+            <div className={className}>
                 {listing.hide ? <Alert {...alertPropertyHide} /> : null}
                 <Carousel images={listing.pictures} />
                 <div className="ui-molecules-shortlist__heading mt-25">
