@@ -1,0 +1,52 @@
+@import '@/shared/styles/import.scss';
+
+.ui-atomic-dialog {
+    $c: &;
+
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 200;
+
+    @include transition(0.31s cubic-bezier(0.7, 0.3, 0, 1));
+
+    &__backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+
+        @include background-color(rgba(get-color(black), 0.45));
+    }
+
+    &__content {
+        flex-direction: column;
+        align-items: center;
+        min-height: 200px;
+        overflow: hidden;
+        z-index: 100;
+    }
+
+    &--type {
+        &-popup {
+            #{$c}__content {
+                top: 50%;
+                left: 50%;
+                width: calc(100% - 30px);
+                max-width: 400px;
+
+                @include padding(all, 0);
+                @include background-color(white);
+                @include rounded(5px);
+                @include transition(0.31s cubic-bezier(0.7, 0.3, 0, 1));
+                @include transform-translate(-50%, -50%);
+                @include box-shadow-multi(0 8px 16px 0 rgba(62, 66, 70, 0.2));
+            }
+        }
+    }
+}

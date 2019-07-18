@@ -9,6 +9,7 @@ import { DefaultListingModel } from '@/store/listing/model/listing.model';
 import { ListingListInterface, ListingInterface } from '@/store/listing/interfaces/listing.interface';
 
 export const SET_LISTING = 'SET_LISTING';
+export const REMOVE_LISTING = 'REMOVE_LISTING';
 export const SET_ACTIVE_LISTING = 'SET_ACTIVE_LISTING';
 
 const getActivePosition = (listing: ListingInterface[], id: string | number) => {
@@ -41,6 +42,12 @@ const Reducers = (
         return {
             ...state,
             selected: getActivePosition(state.properties, action.payload.param)
+        };
+    case REMOVE_LISTING:
+        return {
+            ...state,
+            properties: state.properties.filter((item: ListingInterface) => item.id !== action.payload.param),
+            selected: 0
         };
     default:
         return state;

@@ -1,0 +1,109 @@
+.fade {
+    &-apear {
+        opacity: 0;
+
+        display: none;
+
+        &.fade-appear-active {
+            opacity: 1;
+            display: flex;
+        }
+    }
+
+    &-enter {
+        opacity: 0;
+
+        display: flex;
+
+        &.fade-enter-active {
+            opacity: 1;
+            display: flex;
+        }
+
+        &-done {
+            opacity: 1;
+            display: flex;
+        }
+    }
+
+    &-exit {
+        opacity: 0;
+        display: flex;
+
+        &.fade-exit-active {
+            opacity: 0;
+            display: flex;
+        }
+
+        &-done {
+            opacity: 0;
+            display: none;
+        }
+    }
+}
+
+.fade-scale-center {
+    &-apear {
+        display: none;
+        transform: translate(-50%, -50%) scale(0.75);
+        -webkit-transform: translate(-50%, -50%) scale(0.75);
+        -moz-transform: translate(-50%, -50%) scale(0.75);
+        -o-transform: translate(-50%, -50%) scale(0.75);
+
+        &.fade-scale-center-active {
+            display: flex;
+            transform: translate(-50%, -50%) scale(1);
+            -webkit-transform: translate(-50%, -50%) scale(1);
+            -moz-transform: translate(-50%, -50%) scale(1);
+            -o-transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    &-enter {
+        display: flex;
+        transform: translate(-50%, -50%) scale(0.75);
+        -webkit-transform: translate(-50%, -50%) scale(0.75);
+        -moz-transform: translate(-50%, -50%) scale(0.75);
+        -o-transform: translate(-50%, -50%) scale(0.75);
+
+        &.fade-scale-center-enter-active {
+            display: flex;
+            transform: translate(-50%, -50%) scale(1);
+            -webkit-transform: translate(-50%, -50%) scale(1);
+            -moz-transform: translate(-50%, -50%) scale(1);
+            -o-transform: translate(-50%, -50%) scale(1);
+        }
+
+        &-done {
+            display: flex;
+            transform: translate(-50%, -50%) scale(1);
+            -webkit-transform: translate(-50%, -50%) scale(1);
+            -moz-transform: translate(-50%, -50%) scale(1);
+            -o-transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    &-exit {
+        display: flex;
+        transform: translate(-50%, -50%) scale(0.75);
+        -webkit-transform: translate(-50%, -50%) scale(0.75);
+        -moz-transform: translate(-50%, -50%) scale(0.75);
+        -o-transform: translate(-50%, -50%) scale(0.75);
+
+        &.fade-scale-center-exit-active {
+            display: flex;
+            transform: translate(-50%, -50%) scale(0.75);
+            -webkit-transform: translate(-50%, -50%) scale(0.75);
+            -moz-transform: translate(-50%, -50%) scale(0.75);
+            -o-transform: translate(-50%, -50%) scale(0.75);
+        }
+
+        &-done {
+            display: none;
+            transform: translate(-50%, -50%) scale(0.75);
+            -webkit-transform: translate(-50%, -50%) scale(0.75);
+            -moz-transform: translate(-50%, -50%) scale(0.75);
+            -o-transform: translate(-50%, -50%) scale(0.75);
+        }
+    }
+}
