@@ -15,7 +15,7 @@ export const DefaultListingModel: ListingListInterface = {
     properties: [
         {
             id: '#123abce',
-            hide: false,
+            hide: true,
             title: 'Dijual Rumah Nusaloka di BSD Tangerang Selatan',
             location: 'BSD, Tangerang Selatan, Jakarta Barat',
             description: `<p></p><p>RUMAH DIJUAL</p>
@@ -125,7 +125,7 @@ export const DefaultListingModel: ListingListInterface = {
             id: '#PGA68N',
             title: 'Dijual Kost-an Daerah Dago Bandung',
             location: 'Jl. Dago Pojok  Dago',
-            hide: true,
+            hide: false,
             description: 'Testing Description',
             link:
                 'https://www.olx.co.id/iklan/cluster-murah-strategis-di-serpong-park-IDAd7Uy.html?ad_type=OR#5e2fc97f72',
