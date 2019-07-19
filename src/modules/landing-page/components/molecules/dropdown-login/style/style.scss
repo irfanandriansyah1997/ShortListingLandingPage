@@ -19,19 +19,47 @@
     .ui-molecule-dropdown-login {
         @include font-face(primary, white, xs, 500, normal, upper, none, 16);
 
-        &__content {
+        &__form {
             width: 352px;
             height: 361px;
+            padding: 24px;
 
-            form {
-                label {
-                    @include font-face(primary, #000, xs, 500, normal, upper, none, 16);
-                }
+            .ui-atomic-button {
+                height: 40px;
+                width: 130px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 32px auto 0;
             }
         }
 
         &__title {
-            margin-top: 24px;
+            @include font-face(primary, secondary-heading, sm, 600, normal, none, none, 16);
+        }
+
+        &__label {
+            margin-top: 16px;
+            margin-bottom: 8px;
+
+            @include font-face(primary, secondary-heading, sm, 600, normal, none, none, 16);
+        }
+
+        &__input {
+            border: solid 1px #424b5a;
+            border-radius: 4px;
+            background-color: #ffffff;
+            padding-left: 16px;
+            width: 100%;
+            height: 40px;
+
+            @include box-shadow-multi(0 8px 16px 0 heading);
+
+            &::placeholder {
+                opacity: 0.5;
+
+                @include font-face(primary, heading, sm, normal, normal, none, none, 16);
+            }
         }
     }
 }

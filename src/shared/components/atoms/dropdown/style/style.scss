@@ -9,11 +9,10 @@
     @include font-face(primary, white, xs, 500, normal, upper, none, 16);
 
     &__toggle {
-        button {
+        .ui-atomic-button {
             height: 40px;
             width: 130px;
         }
-
     }
 
     &__content {

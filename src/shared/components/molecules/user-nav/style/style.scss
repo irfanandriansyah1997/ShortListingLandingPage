@@ -8,15 +8,9 @@
         align-items: center;
 
         .shareTitle {
-            font-family: Avenir Next;
-            font-size: 12px;
-            font-weight: normal;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1.33;
-            letter-spacing: normal;
-            color: #3e4246;
             margin-right: 16px;
+
+            @include font-face(primary, secondary-heading, xs, 500, normal, none, none, 16);
         }
 
         .shareLink {
@@ -24,21 +18,14 @@
             align-items: center;
             justify-content: center;
             min-width: 267px;
-            border: solid 1px #ddd;
             border-radius: 2px;
             height: 32px;
             padding: 8px;
             margin-right: 24px;
 
+            @include border(all, thin, solid, border);
             &__text {
-                font-family: Avenir Next;
-                font-size: 12px;
-                font-weight: normal;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: 1.33;
-                letter-spacing: normal;
-                color: #3e4246;
+                @include font-face(primary, secondary-heading, xs, 500, normal, none, none, 16);
             }
 
             &__icon {
@@ -55,5 +42,27 @@
             width: 32px;
             height: 32px;
         }
+    }
+}
+
+.ui-atomic-copy-popup {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: #00e39d;
+    padding: 8px 12px;
+    animation: fadein 4s ease-in-out both 0s 1;
+
+}
+
+@keyframes fadein {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    72% {
+        opacity: 0;
     }
 }

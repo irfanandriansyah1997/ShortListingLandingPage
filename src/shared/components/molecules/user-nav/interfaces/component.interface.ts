@@ -10,3 +10,7 @@ export interface PropsInterface extends DefaultPropsInterface {
     profilePictureUrl: string;
     shareLink: string;
 }
+
+export interface StateTypes {
+    copied: boolean;
+}
