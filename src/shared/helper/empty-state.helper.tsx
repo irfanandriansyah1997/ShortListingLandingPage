@@ -5,7 +5,7 @@ import Text from '../components/atoms/text/text.component';
 
 import './style.scss';
 
-interface PropsInterface extends DefaultPropsInterface {
+export interface PropsInterface extends DefaultPropsInterface {
     count: number;
 }
 

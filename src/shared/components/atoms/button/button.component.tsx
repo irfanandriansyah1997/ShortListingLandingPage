@@ -13,7 +13,7 @@ class Button extends React.Component<PropsInterface> {
 
     static defaultProps = {
         onClick: () => {},
-        styling: 'default'
+        styling: null
     };
 
     get className(): string {
