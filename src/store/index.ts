@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 /**
  * Redux Store Setup
  * @author Irfan Andriansyah <irfan@99.co>
@@ -27,11 +28,7 @@ export default (initialState: any = {}) => {
     });
     const persistReducers = persistReducer(persistConfig, reducers);
 
-    const store = createStore(
-        persistReducers,
-        initialState,
-        composeEnhancers(applyMiddleware(thunk))
-    );
+    const store = createStore(persistReducers, initialState, composeEnhancers(applyMiddleware(thunk)));
     const persistor = persistStore(store);
 
     return {

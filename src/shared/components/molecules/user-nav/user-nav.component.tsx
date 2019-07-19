@@ -9,7 +9,6 @@ import Icon from '@/shared/components/atoms/icon/icon.component';
 import Text from '@/shared/components/atoms/text/text.component';
 import { copyToClipboard } from '@/shared/helper/clipboard-copy';
 
-
 import './style/style.scss';
 
 class UserNav extends React.Component<PropsInterface, StateTypes> {
@@ -69,19 +68,13 @@ class UserNav extends React.Component<PropsInterface, StateTypes> {
                         ) : (
                             <div className="ui-molecules-user-nav__bar">
                                 <div className="shareTitle">
-                                    <Text
-                                        fontWeight={400}
-                                        tag="h3"
-                                    >
+                                    <Text fontWeight={400} tag="h3">
                                         Share Link :
                                     </Text>
                                 </div>
                                 <div className="shareLink">
                                     <div className="shareLink__text">
-                                        <Text
-                                            fontWeight={400}
-                                            tag="p"
-                                        >
+                                        <Text fontWeight={400} tag="p">
                                             {shareLink}
                                         </Text>
                                     </div>

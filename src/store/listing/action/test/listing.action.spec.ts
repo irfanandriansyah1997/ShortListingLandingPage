@@ -6,11 +6,11 @@
 
 /* eslint-disable */
 
-import { setListing } from '@/store/listing/action/listing.action';
+import { setListing, setActiveAction, removeListingAction } from '@/store/listing/action/listing.action';
 import { ListingInterface } from '@/store/listing/interfaces/listing.interface';
 import { CertificationType } from '@/store/listing/interfaces/listing/listing_model.interface';
 import { ListingTypeEnum, PropertyTypeEnum } from '@/store/listing/interfaces/listing/listing_type.interface';
-import { SET_LISTING } from '@/store/listing/reducers/listing.reducers';
+import { SET_LISTING, SET_ACTIVE_LISTING, REMOVE_LISTING } from '@/store/listing/reducers/listing.reducers';
 
 require('config/enzyme.config');
 
@@ -84,6 +84,16 @@ describe('Testing action for listing store', () => {
         expect(setListing(param)).toStrictEqual({
             type: SET_LISTING,
             payload: { param }
+        });
+
+        expect(setActiveAction('#123abce')).toStrictEqual({
+            type: SET_ACTIVE_LISTING,
+            payload: { param: '#123abce' }
+        });
+
+        expect(removeListingAction('#123abce')).toStrictEqual({
+            type: REMOVE_LISTING,
+            payload: { param: '#123abce' }
         });
     });
 });

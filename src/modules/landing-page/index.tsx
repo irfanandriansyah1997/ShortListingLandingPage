@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 /**
  * Landing Page Modules
  * @author Ghazwan S. M. <ghazwan.sihamudin@gmail.com>

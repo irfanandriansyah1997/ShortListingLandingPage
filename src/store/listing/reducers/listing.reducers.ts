@@ -46,6 +46,7 @@ const Reducers = (
     case REMOVE_LISTING:
         return {
             ...state,
+            count: state.properties.filter((item: ListingInterface) => item.id !== action.payload.param).length,
             properties: state.properties.filter((item: ListingInterface) => item.id !== action.payload.param),
             selected: 0
         };
