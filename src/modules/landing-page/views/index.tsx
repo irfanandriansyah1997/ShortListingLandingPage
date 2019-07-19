@@ -72,11 +72,11 @@ class LandingPageContent extends React.Component<ControllerProps, StateInterface
 
 class LandingPageView extends React.Component<ControllerProps> {
     render() {
-        const { listingModel } = this.props;
+        const { authModel, listingModel } = this.props;
         const { properties } = listingModel;
         return (
             <div className="ui-landing-page-module">
-                <Header title="Listing 500 Juta" />
+                <Header isLogin={authModel.isLogin} title="Listing 500 Juta" />
                 <EmptyStateComponent count={properties.length}>
                     <LandingPageContent {...this.props} />
                 </EmptyStateComponent>
