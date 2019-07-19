@@ -64,7 +64,7 @@ class UserNav extends React.Component<PropsInterface, StateTypes> {
             <LandingPageContext.Consumer>
                 {(context: ControllerProps) => (
                     <div className="ui-molecules-user-nav">
-                        {isLogin === true ? (
+                        {isLogin === false ? (
                             <DropdownLogin />
                         ) : (
                             <div className="ui-molecules-user-nav__bar">

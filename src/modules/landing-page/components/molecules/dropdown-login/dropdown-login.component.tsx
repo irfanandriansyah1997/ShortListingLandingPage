@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import { DefaultAuthModel } from '@/store/auth/model/auth.model';
 import { PropsInterface, StateTypes } from './interfaces/component.interface';
 import Button from '@/shared/components/atoms/button/button.component';
 import Dropdown from '@/shared/components/atoms/dropdown/dropdown.component';
@@ -16,7 +15,13 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
         this.handleSubmit = this.handleSubmit.bind(this);
 
         this.state = {
-            model: ''
+            model: {
+                username: '',
+                email: '',
+                password: '',
+                photo_profile: '',
+                isLogin: false
+            }
         };
     }
 
@@ -52,19 +57,43 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
                         <form onSubmit={this.handleSubmit}>
                             <label htmlFor="username">
                                 <Text
+                                    name="ui-molecule-dropdown-login__label"
                                     tag="h3"
                                     styling="text"
                                     fontWeight={600}
                                 >
-                                    Username:
+                                    Username
                                 </Text>
                                 <input
+                                    className="ui-molecule-dropdown-login__input"
                                     name="username"
+                                    placeholder="Masukan username"
                                     type="text"
-                                    value={model}
+                                    value={model.username}
                                     onChange={this.handleChange}
                                 />
                             </label>
+                            <label htmlFor="password">
+                                <Text
+                                    name="ui-molecule-dropdown-login__label"
+                                    tag="h3"
+                                    styling="text"
+                                    fontWeight={600}
+                                >
+                                    Password
+                                </Text>
+                                <input
+                                    className="ui-molecule-dropdown-login__input"
+                                    name="password"
+                                    placeholder="Masukan password"
+                                    type="password"
+                                    value={model.password}
+                                    onChange={this.handleChange}
+                                />
+                            </label>
+                            <Button>
+                                LOGIN
+                            </Button>
                         </form>
                     </div>
                 </Dropdown>
