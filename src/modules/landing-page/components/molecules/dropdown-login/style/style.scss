@@ -1,0 +1,37 @@
+@import '@/shared/styles/import.scss';
+.ui-atomic-dropdown {
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    right: 0;
+
+    &__toggle {
+        position: absolute;
+    }
+
+    &__content {
+        position: absolute;
+        top: 60px;
+        right: 25px;
+    }
+
+    .ui-molecule-dropdown-login {
+        @include font-face(primary, white, xs, 500, normal, upper, none, 16);
+
+        &__content {
+            width: 352px;
+            height: 361px;
+
+            form {
+                label {
+                    @include font-face(primary, #000, xs, 500, normal, upper, none, 16);
+                }
+            }
+        }
+
+        &__title {
+            margin-top: 24px;
+        }
+    }
+}

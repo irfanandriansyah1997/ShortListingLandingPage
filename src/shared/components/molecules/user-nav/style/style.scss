@@ -1,6 +1,6 @@
 @import '@/shared/styles/import.scss';
 
-.user-nav {
+.ui-molecules-user-nav {
     margin-left: auto;
 
     &__bar {
@@ -43,6 +43,7 @@
 
             &__icon {
                 margin-left: auto;
+                cursor: pointer;
 
                 i.material-icons {
                     @include font-size(base);

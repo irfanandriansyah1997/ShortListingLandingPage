@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { PropsInterface } from './interfaces/component.interfaces';
-
 import './style/style.scss';
 import { convert_obj_to_string } from '@/shared/utils/string.utils';
 
