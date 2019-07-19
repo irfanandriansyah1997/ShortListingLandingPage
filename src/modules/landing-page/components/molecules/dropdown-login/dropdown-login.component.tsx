@@ -1,5 +1,14 @@
+/**
+ * Dropdown Login Component
+ * @author Ghazwan S. M. <ghazwan.sihamudin@gmail.com>
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.17
+ */
+
 import * as React from 'react';
+import { ControllerProps } from '@/modules/landing-page/interfaces/controller.interface';
 import { PropsInterface, StateTypes } from './interfaces/component.interface';
+import { LandingPageContext } from '@/modules/landing-page/controller';
 import Button from '@/shared/components/atoms/button/button.component';
 import Dropdown from '@/shared/components/atoms/dropdown/dropdown.component';
 import Text from '@/shared/components/atoms/text/text.component';
@@ -12,92 +21,97 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
         super(props);
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-
         this.state = {
             model: {
                 username: '',
-                email: '',
                 password: '',
-                photo_profile: '',
-                isLogin: false
+                email: ''
             }
         };
     }
 
-    handleSubmit() {
-    }
-
     handleChange(event: any) {
-        this.setState({ model: event.target.value });
+        const { name, value } = event.target;
+        const { model } = this.state;
+
+        this.setState({
+            model: {
+                ...model,
+                [`${name}`]: value
+            }
+        });
     }
 
     render(): React.ReactNode {
         const { model } = this.state;
 
         return (
-            <div className="ui-molecule-dropdown-login">
-                <Dropdown
-                    actionElement={(
-                        <Button>
-                            LOGIN
-                        </Button>
-                    )}
-                >
-                    <div className="ui-molecule-dropdown-login__form">
-                        <Text
-                            align="center"
-                            name="ui-molecule-dropdown-login__title"
-                            tag="h3"
-                            styling="text"
-                            fontWeight={600}
+            <LandingPageContext.Consumer>
+                {(context: ControllerProps) => (
+                    <div className="ui-molecule-dropdown-login">
+                        <Dropdown
+                            actionElement={(
+                                <Button>
+                                    LOGIN
+                                </Button>
+                            )}
                         >
-                            Silahkan login
-                        </Text>
-                        <form onSubmit={this.handleSubmit}>
-                            <label htmlFor="username">
+                            <div className="ui-molecule-dropdown-login__form">
                                 <Text
-                                    name="ui-molecule-dropdown-login__label"
+                                    align="center"
+                                    name="ui-molecule-dropdown-login__title"
                                     tag="h3"
                                     styling="text"
                                     fontWeight={600}
                                 >
-                                    Username
+                                    Silahkan login
                                 </Text>
-                                <input
-                                    className="ui-molecule-dropdown-login__input"
-                                    name="username"
-                                    placeholder="Masukan username"
-                                    type="text"
-                                    value={model.username}
-                                    onChange={this.handleChange}
-                                />
-                            </label>
-                            <label htmlFor="password">
-                                <Text
-                                    name="ui-molecule-dropdown-login__label"
-                                    tag="h3"
-                                    styling="text"
-                                    fontWeight={600}
-                                >
-                                    Password
-                                </Text>
-                                <input
-                                    className="ui-molecule-dropdown-login__input"
-                                    name="password"
-                                    placeholder="Masukan password"
-                                    type="password"
-                                    value={model.password}
-                                    onChange={this.handleChange}
-                                />
-                            </label>
-                            <Button>
-                                LOGIN
-                            </Button>
-                        </form>
+                                <form onSubmit={() => context.actionSetLogin(model)}>
+                                    <label htmlFor="username">
+                                        <Text
+                                            name="ui-molecule-dropdown-login__label"
+                                            tag="h3"
+                                            styling="text"
+                                            fontWeight={600}
+                                        >
+                                            Username
+                                        </Text>
+                                        <input
+                                            className="ui-molecule-dropdown-login__input"
+                                            name="username"
+                                            placeholder="Masukan username"
+                                            type="text"
+                                            value={model.username}
+                                            onChange={this.handleChange}
+                                        />
+                                    </label>
+                                    <label htmlFor="password">
+                                        <Text
+                                            name="ui-molecule-dropdown-login__label"
+                                            tag="h3"
+                                            styling="text"
+                                            fontWeight={600}
+                                        >
+                                            Password
+                                        </Text>
+                                        <input
+                                            className="ui-molecule-dropdown-login__input"
+                                            name="password"
+                                            placeholder="Masukan password"
+                                            type="password"
+                                            value={model.password}
+                                            onChange={this.handleChange}
+                                        />
+                                    </label>
+                                    <Button>
+                                        LOGIN
+                                    </Button>
+                                </form>
+                            </div>
+                        </Dropdown>
                     </div>
-                </Dropdown>
-            </div>
+                )}
+            </LandingPageContext.Consumer>
         );
     }
 }
