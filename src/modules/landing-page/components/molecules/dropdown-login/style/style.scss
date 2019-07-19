@@ -19,19 +19,30 @@
     .ui-molecule-dropdown-login {
         @include font-face(primary, white, xs, 500, normal, upper, none, 16);
 
-        &__content {
+        &__form {
             width: 352px;
             height: 361px;
+            padding: 24px;
 
             form {
+
                 label {
-                    @include font-face(primary, #000, xs, 500, normal, upper, none, 16);
+                }
+
+                input {
+                    border: solid 1px #424b5a;
+                    border-radius: 4px;
+                    background-color: #ffffff;
+                    width: 100%;
+                    height: 40px;
+
+                    @include box-shadow-multi(0 8px 16px 0 rgba(62, 66, 70, 0.2));
                 }
             }
         }
 
         &__title {
-            margin-top: 24px;
+
         }
     }
 }

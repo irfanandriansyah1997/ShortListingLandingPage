@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { ControllerProps } from '@/modules/landing-page/interfaces/controller.interface';
 import { LandingPageContext } from '@/modules/landing-page/controller';
-import { PropsInterface } from './interfaces/component.interface';
+import { PropsInterface, StateTypes } from './interfaces/component.interface';
 import DropdownLogin from '@/modules/landing-page/components/molecules/dropdown-login/dropdown-login.component';
 import Avatar from '@/shared/components/atoms/avatar/avatar.component';
 import Icon from '@/shared/components/atoms/icon/icon.component';
@@ -12,7 +12,7 @@ import { copyToClipboard } from '@/shared/helper/clipboard-copy';
 
 import './style/style.scss';
 
-class UserNav extends React.Component<PropsInterface> {
+class UserNav extends React.Component<PropsInterface, StateTypes> {
     static propTypes = {
         isLogin: PropTypes.bool.isRequired,
         profilePictureUrl: PropTypes.string.isRequired,
@@ -23,16 +23,42 @@ class UserNav extends React.Component<PropsInterface> {
         super(props);
 
         this.handleCopy = this.handleCopy.bind(this);
+
+        this.state = {
+            copied: false
+        };
     }
 
     handleCopy(e: any) {
         e.preventDefault();
         const { shareLink } = this.props;
+
         copyToClipboard(shareLink);
+        this.setState({
+            copied: true
+        });
+        this.showCopyPopup();
+        setTimeout(() => {
+            this.setState({ copied: false });
+        }, 1000);
+    }
+
+    showCopyPopup() {
+        return (
+            <div className="ui-atomic-copy-popup">
+                <Text
+                    fontWeight={500}
+                    tag="span"
+                >
+                    URL copied to clipboard
+                </Text>
+            </div>
+        );
     }
 
     render() {
         const { isLogin, profilePictureUrl, shareLink } = this.props;
+        const { copied } = this.state;
 
         return (
             <LandingPageContext.Consumer>
@@ -67,6 +93,7 @@ class UserNav extends React.Component<PropsInterface> {
                                         role="presentation"
                                     >
                                         <Icon>filter_none</Icon>
+                                        {copied ? this.showCopyPopup() : null}
                                     </div>
                                 </div>
                                 <div className="profileImage">

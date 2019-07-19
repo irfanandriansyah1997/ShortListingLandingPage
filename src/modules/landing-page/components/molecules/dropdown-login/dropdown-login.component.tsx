@@ -44,7 +44,7 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
                             align="center"
                             name="ui-molecule-dropdown-login__title"
                             tag="h3"
-                            styling="subheading"
+                            styling="text"
                             fontWeight={600}
                         >
                             Silahkan login
@@ -52,7 +52,7 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
                         <form onSubmit={this.handleSubmit}>
                             <label htmlFor="username">
                                 <Text
-                                    tag="span"
+                                    tag="h3"
                                     styling="text"
                                     fontWeight={600}
                                 >

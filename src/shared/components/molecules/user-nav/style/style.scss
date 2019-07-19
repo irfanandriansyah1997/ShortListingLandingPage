@@ -57,3 +57,25 @@
         }
     }
 }
+
+.ui-atomic-copy-popup {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: #00e39d;
+    padding: 8px 12px;
+    animation: fadein 4s ease-in-out both 0s 1;
+
+}
+
+@keyframes fadein {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    72% {
+        opacity: 0;
+    }
+}
