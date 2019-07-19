@@ -19,7 +19,7 @@
         width: 100%;
         top: 82px;
         left: 419px;
-        z-index: 100;
+        z-index: 2;
 
         @include box-shadow-multi(0 2px 8px 0 rgba(62, 66, 70, 0.1));
     }
