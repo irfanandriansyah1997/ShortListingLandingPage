@@ -1,17 +1,23 @@
 @import '@/shared/styles/import.scss';
 
 .ui-atomic-dropdown {
-    @include font-face(primary, white, xs, 500, normal, upper, none, 16);
     min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include font-face(primary, white, xs, 500, normal, upper, none, 16);
 
     &__toggle {
         button {
+            height: 40px;
             width: 130px;
         }
 
     }
 
     &__content {
-
+        @include background-color(table-field);
+        @include box-shadow-multi(0 8px 16px 0 rgba(62, 66, 70, 0.2));
     }
 }

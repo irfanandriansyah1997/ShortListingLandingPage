@@ -7,6 +7,8 @@ import DropdownLogin from '@/modules/landing-page/components/molecules/dropdown-
 import Avatar from '@/shared/components/atoms/avatar/avatar.component';
 import Icon from '@/shared/components/atoms/icon/icon.component';
 import Text from '@/shared/components/atoms/text/text.component';
+import { copyToClipboard } from '@/shared/helper/clipboard-copy';
+
 
 import './style/style.scss';
 
@@ -20,20 +22,13 @@ class UserNav extends React.Component<PropsInterface> {
     constructor(props: PropsInterface) {
         super(props);
 
-        this.copyToClipboard = this.copyToClipboard.bind(this);
+        this.handleCopy = this.handleCopy.bind(this);
     }
 
-    copyToClipboard(e: any) {
+    handleCopy(e: any) {
         e.preventDefault();
         const { shareLink } = this.props;
-        const dummy = document.createElement('input');
-
-        document.body.appendChild(dummy);
-        dummy.setAttribute('id', 'dummy_id');
-        (document.getElementById('dummy_id') as HTMLInputElement).value = shareLink;
-        dummy.select();
-        document.execCommand('copy');
-        document.body.removeChild(dummy);
+        copyToClipboard(shareLink);
     }
 
     render() {
@@ -44,9 +39,7 @@ class UserNav extends React.Component<PropsInterface> {
                 {(context: ControllerProps) => (
                     <div className="ui-molecules-user-nav">
                         {isLogin === true ? (
-                            <div className="ui-molecules-user-nav__login">
-                                <DropdownLogin />
-                            </div>
+                            <DropdownLogin />
                         ) : (
                             <div className="ui-molecules-user-nav__bar">
                                 <div className="shareTitle">
@@ -69,8 +62,8 @@ class UserNav extends React.Component<PropsInterface> {
 
                                     <div
                                         className="shareLink__icon"
-                                        onClick={this.copyToClipboard}
-                                        onKeyDown={this.copyToClipboard}
+                                        onClick={this.handleCopy}
+                                        onKeyDown={this.handleCopy}
                                         role="presentation"
                                     >
                                         <Icon>filter_none</Icon>

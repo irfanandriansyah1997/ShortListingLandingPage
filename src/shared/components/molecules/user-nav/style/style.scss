@@ -3,9 +3,6 @@
 .ui-molecules-user-nav {
     margin-left: auto;
 
-    &__login {
-    }
-
     &__bar {
         display: flex;
         align-items: center;
@@ -46,6 +43,7 @@
 
             &__icon {
                 margin-left: auto;
+                cursor: pointer;
 
                 i.material-icons {
                     @include font-size(base);

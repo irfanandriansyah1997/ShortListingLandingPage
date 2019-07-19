@@ -24,7 +24,6 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
     }
 
     handleChange(event: any) {
-        const { model } = this.state;
         this.setState({ model: event.target.value });
     }
 
@@ -42,7 +41,8 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
                 >
                     <div className="ui-molecule-dropdown-login__form">
                         <Text
-                            name="ui-molecules-card-listing__title"
+                            align="center"
+                            name="ui-molecule-dropdown-login__title"
                             tag="h3"
                             styling="subheading"
                             fontWeight={600}
@@ -51,13 +51,19 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
                         </Text>
                         <form onSubmit={this.handleSubmit}>
                             <label htmlFor="username">
+                                <Text
+                                    tag="span"
+                                    styling="text"
+                                    fontWeight={600}
+                                >
+                                    Username:
+                                </Text>
                                 <input
                                     name="username"
                                     type="text"
                                     value={model}
                                     onChange={this.handleChange}
                                 />
-                                Username:
                             </label>
                         </form>
                     </div>
