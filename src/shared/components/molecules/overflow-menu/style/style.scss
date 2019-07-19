@@ -4,17 +4,13 @@
     height: 34px;
     width: 34px;
 
-.ui-molecules-overflow-menu {
-    float: right;
-    margin-top: -10px;
-    
     #clickableAwesomeFont {
         cursor: pointer;
         z-index: 1;
         right: 0;
     }
 
-    .ui-atomic-overflow-menu--style-body {
+    .ui-atomic-dropdown--style-body {
         background-color: #ffffff;
         top: 5px;
         right: 0;

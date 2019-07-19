@@ -19,7 +19,7 @@ describe('Testing reducers for auth store', () => {
     it('Invoke function set login', () => {
         expect(Reducers(DefaultAuthModel, { type: SET_LOGIN, payload: param })).toStrictEqual({
             ...param,
-            isLogin: false
+            isLogin: true
         });
     });
 

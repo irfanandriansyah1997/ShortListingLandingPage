@@ -1,11 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-<<<<<<< HEAD
 import { PropsInterface } from './interfaces/component.interfaces';
-=======
-import { PropsInterface } from './interfaces/component.interface';
->>>>>>> feat(component): Add and improve components.
-
 import './style/style.scss';
 import { convert_obj_to_string } from '@/shared/utils/string.utils';
 

@@ -52,7 +52,7 @@ module.exports = {
         'max-len': [
             2,
             {
-                code: 140
+                code: 120
             }
         ],
         'no-bitwise': [

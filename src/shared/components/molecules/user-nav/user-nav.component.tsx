@@ -17,6 +17,25 @@ class UserNav extends React.Component<PropsInterface> {
         shareLink: PropTypes.string.isRequired
     };
 
+    constructor(props: PropsInterface) {
+        super(props);
+
+        this.copyToClipboard = this.copyToClipboard.bind(this);
+    }
+
+    copyToClipboard(e: any) {
+        e.preventDefault();
+        const { shareLink } = this.props;
+        const dummy = document.createElement('input');
+
+        document.body.appendChild(dummy);
+        dummy.setAttribute('id', 'dummy_id');
+        (document.getElementById('dummy_id') as HTMLInputElement).value = shareLink;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+    }
+
     render() {
         const { isLogin, profilePictureUrl, shareLink } = this.props;
 
@@ -24,25 +43,36 @@ class UserNav extends React.Component<PropsInterface> {
             <LandingPageContext.Consumer>
                 {(context: ControllerProps) => (
                     <div className="ui-molecules-user-nav">
-                        {isLogin === false ? (
+                        {isLogin === true ? (
                             <div className="ui-molecules-user-nav__login">
                                 <DropdownLogin />
                             </div>
                         ) : (
                             <div className="ui-molecules-user-nav__bar">
                                 <div className="shareTitle">
-                                    <Text tag="h3" fontWeight={400}>
+                                    <Text
+                                        fontWeight={400}
+                                        tag="h3"
+                                    >
                                         Share Link :
                                     </Text>
                                 </div>
                                 <div className="shareLink">
                                     <div className="shareLink__text">
-                                        <Text tag="p" fontWeight={400}>
+                                        <Text
+                                            fontWeight={400}
+                                            tag="p"
+                                        >
                                             {shareLink}
                                         </Text>
                                     </div>
 
-                                    <div className="shareLink__icon">
+                                    <div
+                                        className="shareLink__icon"
+                                        onClick={this.copyToClipboard}
+                                        onKeyDown={this.copyToClipboard}
+                                        role="presentation"
+                                    >
                                         <Icon>filter_none</Icon>
                                     </div>
                                 </div>

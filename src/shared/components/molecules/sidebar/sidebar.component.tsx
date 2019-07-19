@@ -19,7 +19,6 @@ class Sidebar extends React.Component<PropsInterface> {
 
     render(): React.ReactNode {
         const { listing, onDelete } = this.props;
-
         return (
             <LandingPageContext.Consumer>
                 {(context: ControllerProps) => (
