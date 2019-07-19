@@ -35,7 +35,6 @@ class Sidebar extends React.Component<PropsInterface> {
                                 active={listing.selected === index}
                                 onClick={() => context.actionSetActiveListing(item.id)}
                                 onDelete={() => onDelete(item.id)}
-                                onHide={() => console.log(`hide ${item.id}`)}
                             />
                         ))}
                     </div>

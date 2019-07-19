@@ -25,7 +25,6 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
 
     handleChange(event: any) {
         const { model } = this.state;
-        console.log(model);
         this.setState({ model: event.target.value });
     }
 
