@@ -1,9 +1,16 @@
+/**
+ * Landing Page View
+ * @author Ghazwan S. M. <ghazwan.sihamudin@gmail.com>
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.12
+ */
+
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { PropsInterface, StateTypes } from './interfaces/component.interface';
 import { copyToClipboard } from '@/shared/helper/clipboard-copy';
 import DropdownLogin from '@/modules/landing-page/components/molecules/dropdown-login/dropdown-login.component';
-import Avatar from '@/shared/components/atoms/avatar/avatar.component';
+import DropdownUsernav from '@/modules/landing-page/components/molecules/dropdown-usernav/dropdown-usernav.component';
 import Icon from '@/shared/components/atoms/icon/icon.component';
 import Text from '@/shared/components/atoms/text/text.component';
 
@@ -92,7 +99,7 @@ class UserNav extends React.Component<PropsInterface, StateTypes> {
                             </div>
                         </div>
                         <div className="profileImage">
-                            <Avatar className="avatar" src={profilePictureUrl} alt="user profile" size={32} />
+                            <DropdownUsernav profilePictureUrl={profilePictureUrl} />
                         </div>
                     </div>
                 )}

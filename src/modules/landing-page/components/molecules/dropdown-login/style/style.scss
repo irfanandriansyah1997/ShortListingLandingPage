@@ -1,14 +1,6 @@
 @import '@/shared/styles/import.scss';
 .ui-atomic-dropdown {
-    min-height: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
     right: 0;
-
-    &__toggle {
-        position: absolute;
-    }
 
     &__content {
         position: absolute;

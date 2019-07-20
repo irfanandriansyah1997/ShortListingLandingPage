@@ -9,6 +9,8 @@
     @include font-face(primary, white, xs, 500, normal, upper, none, 16);
 
     &__toggle {
+        position: absolute;
+
         .ui-atomic-button {
             height: 40px;
             width: 130px;
@@ -16,6 +18,8 @@
     }
 
     &__content {
+        position: absolute;
+
         @include background-color(table-field);
         @include box-shadow-multi(0 8px 16px 0 rgba(62, 66, 70, 0.2));
     }

@@ -1,3 +1,10 @@
+/**
+ * Dropdown Login Component
+ * @author Ghazwan S. M. <ghazwan.sihamudin@gmail.com>
+ * @author Irfan Andriansyah <irfan@99.co>
+ * @since 2019.07.17
+ */
+
 import * as React from 'react';
 import { ControllerProps } from '@/modules/landing-page/interfaces/controller.interface';
 import { PropsInterface, StateTypes } from './interfaces/component.interface';
@@ -14,8 +21,6 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
         super(props);
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-
         this.state = {
             model: {
                 username: '',
@@ -23,9 +28,6 @@ class DropdownLoginComponent extends React.Component<PropsInterface, StateTypes>
                 email: ''
             }
         };
-    }
-
-    handleSubmit() {
     }
 
     handleChange(event: any) {

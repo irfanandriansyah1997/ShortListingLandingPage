@@ -1,3 +1,9 @@
+/**
+ * Header Component
+ * @author Ghazwan S. M. <ghazwan.sihamudin@gmail.com>
+ * @since 2019.07.18
+ */
+
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import Text from '@/shared/components/atoms/text/text.component';
