@@ -10,7 +10,11 @@ import { connect } from 'react-redux';
 import { Props, defaultPropsType } from '@/modules/landing-page/interfaces/viewmodel.interface';
 import Core, { propTypes as defaultPropTypes, defaultProps as defaultPropsTypes } from '@/shared/core/viewmodel.core';
 import { StoreInterface } from '@/store/interfaces/store.interface';
-import { ListingListInterface, ListingActionInterface } from '@/store/listing/interfaces/listing.interface';
+import {
+    ListingListInterface,
+    ListingActionInterface,
+    ListingInterface
+} from '@/store/listing/interfaces/listing.interface';
 import { setActiveAction, removeListingAction } from '@/store/listing/action/listing.action';
 
 export const defaultStatePropTypes = {
@@ -59,10 +63,23 @@ const ViewModel = (ComposedComponent: React.ComponentClass<Props>) => {
 
         static defaultProps = defaultProps;
 
+        get properties(): ListingInterface[] {
+            const { properties, authModel } = this.props;
+
+            return properties.filter((item: ListingInterface) => {
+                if (authModel.model.isLogin) {
+                    return true;
+                }
+
+                return !item.hide;
+            });
+        }
+
         get store(): Props {
             const {
-                activeListing, removeListing, count, properties, selected, ...temp
+                activeListing, removeListing, count, selected, ...temp
             } = this.props;
+            const { properties } = this;
 
             return {
                 landingPageModel: {
