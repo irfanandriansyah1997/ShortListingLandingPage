@@ -38,10 +38,8 @@ class Carousel extends React.Component<PropsInterface, StateInterface> {
         case OnChangePositionEnum.ADD:
             this.setState({ position: position + 1 === length ? 0 : position + 1 });
             break;
-        case OnChangePositionEnum.MINUS:
-            this.setState({ position: position === 0 ? length - 1 : position - 1 });
-            break;
         default:
+            this.setState({ position: position === 0 ? length - 1 : position - 1 });
             break;
         }
     }

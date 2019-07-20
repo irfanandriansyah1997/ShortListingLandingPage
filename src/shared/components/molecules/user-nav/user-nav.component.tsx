@@ -11,10 +11,8 @@ import { PropsInterface, StateTypes } from './interfaces/component.interface';
 import { copyToClipboard } from '@/shared/helper/clipboard-copy';
 import DropdownLogin from '@/modules/landing-page/components/molecules/dropdown-login/dropdown-login.component';
 import DropdownUsernav from '@/modules/landing-page/components/molecules/dropdown-usernav/dropdown-usernav.component';
-// import Avatar from '@/shared/components/atoms/avatar/avatar.component';
 import Icon from '@/shared/components/atoms/icon/icon.component';
 import Text from '@/shared/components/atoms/text/text.component';
-
 
 import './style/style.scss';
 

@@ -20,6 +20,15 @@ const FIXTURE: PropsInterface[] = [
         title: 'Rumah Dijual',
         hide: true,
         active: true
+    },
+    {
+        id: '#123456',
+        location: 'Padalarang',
+        price: 'Rp. 750 Juta',
+        src: 'image',
+        title: 'Rumah Dijual',
+        hide: true,
+        active: false
     }
 ];
 
@@ -32,6 +41,12 @@ describe('Testing card listing component in molecules component ', () => {
             expect(card.find('Text[name="ui-molecules-card-listing__price mb-8"]').text()).toBe(item.price);
             expect(card.find('Text[name="ui-molecules-card-listing__title mb-4"]').text()).toBe(item.title);
             expect(card.find('Text[name="ui-molecules-card-listing__location"]').text()).toBe(item.location);
+
+            if (item.hide) {
+                expect(card.find('.ui-molecules-card-listing__action__show-listing').exists()).toBeTruthy();
+            } else {
+                expect(card.find('.ui-molecules-card-listing__action__show-listing').exists()).toBeFalsy();
+            }
 
             return true;
         });

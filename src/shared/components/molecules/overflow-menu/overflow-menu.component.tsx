@@ -19,8 +19,8 @@ class OverflowMenuComponent extends React.Component<PropsInterface> {
     };
 
     static defaultProps = {
-        onHide: () => {},
-        onDelete: () => {}
+        onHide: null,
+        onDelete: null
     };
 
     constructor(props: any) {
@@ -38,10 +38,22 @@ class OverflowMenuComponent extends React.Component<PropsInterface> {
         const { hide } = this.props;
         return (
             <div className="ui-atomic-dropdown--style-body absolute">
-                <div role="button" onClick={this.actionHide} onKeyPress={this.actionHide} tabIndex={0}>
+                <div
+                    className="ui-molecules-overflow-menu__hide"
+                    role="button"
+                    onClick={this.actionHide}
+                    onKeyPress={this.actionHide}
+                    tabIndex={0}
+                >
                     {hide ? 'Unhide' : 'Hide'}
                 </div>
-                <div role="button" onClick={this.actionDelete} onKeyDown={this.actionDelete} tabIndex={0}>
+                <div
+                    className="ui-molecules-overflow-menu__delete"
+                    role="button"
+                    onClick={this.actionDelete}
+                    onKeyDown={this.actionDelete}
+                    tabIndex={0}
+                >
                     Delete
                 </div>
             </div>
@@ -52,6 +64,7 @@ class OverflowMenuComponent extends React.Component<PropsInterface> {
         const { onHide } = this.props;
         this.handleClick();
 
+        /* istanbul ignore next */
         if (onHide) {
             onHide();
         }
@@ -61,6 +74,7 @@ class OverflowMenuComponent extends React.Component<PropsInterface> {
         const { onDelete } = this.props;
         this.handleClick();
 
+        /* istanbul ignore next */
         if (onDelete) {
             onDelete();
         }

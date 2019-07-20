@@ -22,9 +22,8 @@ class DeleteDialog extends React.Component<PropsInterface, StateInterface> {
     };
 
     static getDerivedStateFromProps(props: PropsInterface, state: StateInterface) {
+        /* istanbul ignore next */
         if (props.show !== state.show) {
-            document.body.style.overflow = props.show ? 'hidden' : 'initial';
-
             return {
                 show: props.show
             };
@@ -40,26 +39,39 @@ class DeleteDialog extends React.Component<PropsInterface, StateInterface> {
         this.state = {
             show
         };
+        this.setCloseDialog = this.setCloseDialog.bind(this);
+    }
+
+    setCloseDialog(): void {
+        const { onCloseDialog } = this.props;
+
+        this.setState({ show: false }, () => {
+            onCloseDialog();
+        });
     }
 
     render(): React.ReactNode {
-        const { onCloseDialog, onAcceptDelete } = this.props;
+        const { onAcceptDelete } = this.props;
         const { show } = this.state;
+        const { setCloseDialog } = this;
+
         return (
             <Dialog
                 className="ui-molecules-delete-dialog"
                 type={DialogType.POPUP}
-                onCloseDialog={onCloseDialog}
+                onCloseDialog={setCloseDialog}
                 show={show}
             >
                 <Text styling="subheading" fontWeight={400} tag="p" align="center">
                     Apakah Anda yakin akan menghapus listing ini?
                 </Text>
                 <div className="ui-molecules-delete-dialog__button mt-25">
-                    <Button styling="border" onClick={onCloseDialog}>
+                    <Button styling="border" onClick={setCloseDialog}>
                         Tidak
                     </Button>
-                    <Button onClick={onAcceptDelete}>Ya</Button>
+                    <Button styling="default" onClick={onAcceptDelete}>
+                        Ya
+                    </Button>
                 </div>
             </Dialog>
         );

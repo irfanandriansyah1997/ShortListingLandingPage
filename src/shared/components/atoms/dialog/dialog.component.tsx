@@ -74,18 +74,13 @@ class Dialog extends React.PureComponent<PropsInterface, StateInterface> {
 
     render(): React.ReactNode {
         const { show } = this.state;
-        const { type, children } = this.props;
+        const { children } = this.props;
         const { className } = this;
 
         return (
             <CSSTransition in={show} appear timeout={600} classNames="fade">
                 <div className={className}>
-                    <CSSTransition
-                        in={show}
-                        appear
-                        timeout={300}
-                        classNames={type === DialogType.POPUP ? 'fade-scale-center' : 'slide-down'}
-                    >
+                    <CSSTransition in={show} appear timeout={300} classNames="fade-scale-center">
                         <div className="ui-atomic-dialog__content absolute flex no-m">{children}</div>
                     </CSSTransition>
                     <div

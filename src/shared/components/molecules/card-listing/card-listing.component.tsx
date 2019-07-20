@@ -36,20 +36,6 @@ class CardListing extends React.Component<PropsInterface> {
         onDelete: () => {}
     };
 
-    constructor(props: PropsInterface) {
-        super(props);
-
-        this.onClickCard = this.onClickCard.bind(this);
-    }
-
-    onClickCard(): void {
-        const { onClick } = this.props;
-
-        if (onClick) {
-            onClick();
-        }
-    }
-
     get className(): string {
         const { hide } = this.props;
 
@@ -63,20 +49,13 @@ class CardListing extends React.Component<PropsInterface> {
 
     render(): React.ReactNode {
         const {
-            id, title, src, price, location, onDelete, onHide, hide, active
+            id, title, src, price, location, onClick, onDelete, onHide, hide, active
         } = this.props;
         const { className } = this;
 
         return (
-            <Card
-                className={className}
-                hoverType="elevate-sm"
-                type="border"
-                onClick={this.onClickCard}
-                active={active}
-                rounded
-            >
-                <Image src={src} alt={title} onClick={this.onClickCard} className="ui-molecules-card-listing__image" />
+            <Card className={className} hoverType="elevate-sm" type="border" onClick={onClick} active={active} rounded>
+                <Image src={src} alt={title} onClick={onClick} className="ui-molecules-card-listing__image" />
                 <div className="ui-molecules-card-listing__content relative">
                     <div className="ui-molecules-card-listing__action absolute flex">
                         {hide ? (
@@ -91,7 +70,7 @@ class CardListing extends React.Component<PropsInterface> {
                         tag="p"
                         styling="text"
                         fontWeight={500}
-                        onClick={this.onClickCard}
+                        onClick={onClick}
                     >
                         {id}
                     </Text>
@@ -100,7 +79,7 @@ class CardListing extends React.Component<PropsInterface> {
                         tag="h3"
                         styling="subheading"
                         fontWeight={600}
-                        onClick={this.onClickCard}
+                        onClick={onClick}
                     >
                         {price}
                     </Text>
@@ -109,7 +88,7 @@ class CardListing extends React.Component<PropsInterface> {
                         tag="h3"
                         styling="subheading"
                         fontWeight={600}
-                        onClick={this.onClickCard}
+                        onClick={onClick}
                     >
                         {title}
                     </Text>
@@ -118,7 +97,7 @@ class CardListing extends React.Component<PropsInterface> {
                         tag="span"
                         styling="text"
                         fontWeight={400}
-                        onClick={this.onClickCard}
+                        onClick={onClick}
                     >
                         {location}
                     </Text>
