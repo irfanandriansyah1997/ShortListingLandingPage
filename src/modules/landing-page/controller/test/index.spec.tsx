@@ -26,7 +26,8 @@ const FIXTURE: Props = {
         },
         action: {
             activeListing: (listingID: number | string) => {},
-            removeListing: (listingID: number | string) => {}
+            removeListing: (listingID: number | string) => {},
+            hideListing: (listingID: number | string) => {}
         }
     }
 };

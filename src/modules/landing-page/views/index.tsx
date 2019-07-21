@@ -31,6 +31,7 @@ class LandingPageContent extends React.Component<ControllerProps, StateInterface
 
         this.showModalDeleteListing = this.showModalDeleteListing.bind(this);
         this.deleteListing = this.deleteListing.bind(this);
+        this.hideListing = this.hideListing.bind(this);
     }
 
     showModalDeleteListing(listingID: number | string): void {
@@ -51,6 +52,16 @@ class LandingPageContent extends React.Component<ControllerProps, StateInterface
         this.setState({ show: false });
     }
 
+    hideListing(listingID: number | string): void {
+        const { actionHideListing } = this.props;
+
+        if (listingID) {
+            actionHideListing(listingID);
+        }
+
+        this.setState({});
+    }
+
     render() {
         const { listingModel } = this.props;
         const { show } = this.state;
@@ -58,7 +69,11 @@ class LandingPageContent extends React.Component<ControllerProps, StateInterface
 
         return (
             <div className="ui-landing-page-module__content flex">
-                <Sidebar listing={listingModel} onDelete={this.showModalDeleteListing} />
+                <Sidebar
+                    listing={listingModel}
+                    onDelete={this.showModalDeleteListing}
+                    onHide={this.hideListing}
+                />
                 <Shortlist listing={properties[selected]} />
                 <DeleteDialog
                     show={show}

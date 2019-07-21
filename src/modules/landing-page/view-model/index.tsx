@@ -15,7 +15,7 @@ import {
     ListingActionInterface,
     ListingInterface
 } from '@/store/listing/interfaces/listing.interface';
-import { setActiveAction, removeListingAction } from '@/store/listing/action/listing.action';
+import { setActiveAction, removeListingAction, hideListingAction } from '@/store/listing/action/listing.action';
 
 export const defaultStatePropTypes = {
     count: PropTypes.number,
@@ -50,7 +50,8 @@ const mapStateToProps = (state: StoreInterface): ListingListInterface => ({
 
 const mapDispatchToProps = (dispatch: any): ListingActionInterface => ({
     activeListing: (listingID: number | string) => dispatch(setActiveAction(listingID)),
-    removeListing: (listingID: number | string) => dispatch(removeListingAction(listingID))
+    removeListing: (listingID: number | string) => dispatch(removeListingAction(listingID)),
+    hideListing: (listingID: number | string) => dispatch(hideListingAction(listingID))
 });
 
 const ViewModel = (ComposedComponent: React.ComponentClass<Props>) => {
@@ -79,7 +80,7 @@ const ViewModel = (ComposedComponent: React.ComponentClass<Props>) => {
 
         get store(): Props {
             const {
-                activeListing, removeListing, count, selected, ...temp
+                activeListing, removeListing, hideListing, count, selected, ...temp
             } = this.props;
             const { properties } = this;
 
@@ -87,7 +88,8 @@ const ViewModel = (ComposedComponent: React.ComponentClass<Props>) => {
                 landingPageModel: {
                     action: {
                         activeListing,
-                        removeListing
+                        removeListing,
+                        hideListing
                     },
                     model: {
                         count,
