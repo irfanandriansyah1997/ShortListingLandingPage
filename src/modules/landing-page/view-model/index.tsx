@@ -66,13 +66,15 @@ const ViewModel = (ComposedComponent: React.ComponentClass<Props>) => {
         get properties(): ListingInterface[] {
             const { properties, authModel } = this.props;
 
-            return properties.filter((item: ListingInterface) => {
-                if (authModel.model.isLogin) {
-                    return true;
-                }
+            return properties
+                .sort((x, y) => (Number(x.hide) - Number(y.hide)))
+                .filter((item: ListingInterface) => {
+                    if (authModel.model.isLogin) {
+                        return true;
+                    }
 
-                return !item.hide;
-            });
+                    return !item.hide;
+                });
         }
 
         get store(): Props {
