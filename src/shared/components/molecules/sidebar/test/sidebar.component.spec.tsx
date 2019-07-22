@@ -14,6 +14,7 @@ import { DefaultListingModel } from '@/store/listing/model/listing.model';
 
 const FIXTURE_CONTEXT: ControllerProps = {
     actionRemoveListing: jest.fn(),
+    actionHideListing: jest.fn(),
     actionSetActiveListing: jest.fn(),
     actionSetLogin: jest.fn(),
     actionSetLogout: jest.fn(),
@@ -28,9 +29,10 @@ const FIXTURE_CONTEXT: ControllerProps = {
 describe('Testing sidebar component in molecules component ', () => {
     it('Test render sidebar component', () => {
         const onDeleteMock = jest.fn();
+        const onHideMock = jest.fn();
         const dialog = mount(
             <LandingPageContext.Provider value={FIXTURE_CONTEXT}>
-                <Sidebar listing={FIXTURE_CONTEXT.listingModel} onDelete={onDeleteMock} />
+                <Sidebar listing={FIXTURE_CONTEXT.listingModel} onDelete={onDeleteMock} onHide={onHideMock} />
             </LandingPageContext.Provider>
         );
 

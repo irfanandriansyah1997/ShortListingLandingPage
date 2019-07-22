@@ -37,4 +37,5 @@ export interface ListingListInterface {
 export interface ListingActionInterface {
     activeListing: (listingID: number | string) => void;
     removeListing: (listingID: number | string) => void;
+    hideListing: (listingID: number | string) => void;
 }
